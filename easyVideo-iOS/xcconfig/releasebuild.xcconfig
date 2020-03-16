@@ -1,0 +1,21 @@
+//
+//  releasebuild.xcconfig
+//  easyVideo-iOS
+//
+//  Created by quanhao huang on 2020/1/8.
+//  Copyright © 2020 quanhao huang. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Pods/Target Support Files/Pods-easyVideo-iOS/Pods-easyVideo-iOS.release.xcconfig"
+
+WX_APP_ID = FAKE_WX_APP_ID
+PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.yourapp
+PRODUCT_NAME = HJT-DEMO
+DEVELOPMENT_TEAM = FAKE_CODE_SIGN_ID
+CLOUD_LOCATION_SERVER_ADDRESS = cloudcenter.hexmeet.com
+CLOUD_TRIAL_URL = http:\/\/www.hjtcloud.com/try
+
+UNIVERSAL_LINK = https:\/\/swinfo.cninnovatel.com/hjt/

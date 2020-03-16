@@ -1,0 +1,18 @@
+/* 
+  InfoPlist.strings
+  easyVideo-iOS
+
+  Created by quanhao huang on 2020/2/14.
+  Copyright © 2020 quanhao huang. All rights reserved.
+*/
+
+/* Permissions */
+"NSCameraUsageDescription" = "应用使用相机进行视频通话";
+"NSMicrophoneUsageDescription" = "应用使用麦克风进行视频/音频通话";
+
+"CompanyCopyright" = "版权所有 © 2020 easyVideo Company\n保留一切权利";
+"CompanyName" = "easyVideo";
+"CFBundleDisplayName" = "easyVideo";
+"AppDownloadlink" = "https://a.app.qq.com/o/simple.jsp?pkgname=com.yourcompany.easyVideo";
+"Appdescription" = "easyVideo云视讯客户端APP";
+"CloudAddress" = "https://cloudcenter.yourcompany.com/location/locate_domain_zone";

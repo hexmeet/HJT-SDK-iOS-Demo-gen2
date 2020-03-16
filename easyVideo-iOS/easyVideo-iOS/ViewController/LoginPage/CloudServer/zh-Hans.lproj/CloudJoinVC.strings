@@ -1,0 +1,18 @@
+
+/* Class = "UITextField"; placeholder = "输入会议ID"; ObjectID = "ESu-8c-B9g"; */
+"ESu-8c-B9g.placeholder" = "输入会议ID";
+
+/* Class = "UILabel"; text = "加入会议"; ObjectID = "P62-2j-Ket"; */
+"P62-2j-Ket.text" = "加入会议";
+
+/* Class = "UITextField"; placeholder = "会议中显示的用户"; ObjectID = "QVU-5S-oaG"; */
+"QVU-5S-oaG.placeholder" = "会议中显示的用户";
+
+/* Class = "UIButton"; normalTitle = "加入"; ObjectID = "dSb-R3-ay2"; */
+"dSb-R3-ay2.normalTitle" = "加入";
+
+/* Class = "UIButton"; normalTitle = "关闭麦克风"; ObjectID = "dza-3G-1T7"; */
+"dza-3G-1T7.normalTitle" = "关闭麦克风";
+
+/* Class = "UIButton"; normalTitle = "关闭摄像头"; ObjectID = "fH8-VW-j3H"; */
+"fH8-VW-j3H.normalTitle" = "关闭摄像头";

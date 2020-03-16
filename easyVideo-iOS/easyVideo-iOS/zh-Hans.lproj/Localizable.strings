@@ -1,0 +1,145 @@
+/* 
+  Localizable.strings
+  easyVideo-iOS
+
+  Created by quanhao huang on 2020/1/9.
+  Copyright © 2020 quanhao huang. All rights reserved.
+*/
+"login.note.writePassWord" = "请输入账号密码";
+"login.note.loginIn" = "登录中...";
+"login.note.writeServerAddress" = "请输入服务器地址";
+
+"me.set" = "设置";
+"me.password" = "密码";
+"me.invite" = "邀请好友使用";
+"me.about" = "关于";
+"me.headimg" = "头像";
+"me.name" = "姓名";
+"me.account" = "账号";
+"me.mobile" = "手机";
+"me.email" = "邮箱";
+"me.company" = "公司";
+"me.dep" = "部门";
+
+"set.senddiagnostics" = "发送诊断信息";
+"set.feedback" = "意见反馈";
+"set.autoanswer" = "自动应答";
+"set.enablehighframerate" = "启用高帧率视频";
+"set.disableprompt" = "关闭提示";
+"set.about.licenceAndServiceAgreement" = "软件许可及服务协议";
+"set.about.checkversion" = "检查更新";
+
+"conf.wechat.shared.meetingId" = "会议ID:";
+"conf.room.room" = "的会议室";
+"conf.password" = "密码：";
+"conf.room.roomId" = "会议室ID:";
+
+"video.control.btn.mute" = "静音";
+"video.control.btn.unmute" = "解除静音";
+"video.control.btn.stopVideo" = "停止视频";
+"video.control.btn.startVideo" = "启用视频";
+"video.statistics.title" = "媒体统计信息";
+"video.statistics.encrypt" = "已加密";
+"video.statistics.column.thisEnd.audio" = "音频发送";
+"video.statistics.column.farEnd.audio" = "音频接收";
+"video.statistics.column.thisEnd.video" = "视频发送";
+"video.statistics.column.farEnd.video" = "视频接收";
+"video.statistics.column.thisEnd.content" = "内容发送";
+"video.statistics.column.farEnd.content" = "内容接收";
+"video.audiomode" = "切到语音模式";
+"video.videomode" = "切到视频模式";
+
+"alert.cantconnert.server" = "无法连接到服务，请检查网络";
+"alert.passworderror1" = "密码错误。账号将在";
+"alert.passworderror2" = "次失败尝试后被锁定 5 分钟";
+"alert.passworderror3" = "密码错误次数已达上限，账号已被锁定，5分钟后自动解除";
+"alert.changeName" = "改名";
+"alert.updateName.propt" = "请输入名字";
+"alert.cancel" = "取消";
+"alert.sure" = "确定";
+"alert.pwd.pop.title" = "验证原密码";
+"alert.pwd.pop.content" = "为保障你的数据安全，修改密码前请填写原密码。";
+"alert.password" = "请输入密码";
+"alert.note.loginout" = "确定退出登录？";
+"alert.passwordError" = "密码错误";
+"alert.modifyp.accout" = "当前帐号";
+"alert.modifyp.password" = "新密码";
+"alert.modifyp.againpassword" = "确认新密码";
+"alert.modifyp.input" = "请填写密码";
+"alert.modifyp.agintinput" = "请再次填写确认";
+"alert.pass.note.writeNew" = "请输入要修改的密码";
+"alert.pass.note.format" = "密码格式错误，请输入4-16位字符，请不要包含空格";
+"alert.pass.note.notMatch" = "两次填写的密码不一致";
+"alert.changepasswordok" = "密码修改成功";
+"alert.wechat.notInstalled" = "尚未安装微信，不能分享！";
+"alert.dontneedupload" = "已经是最新版本";
+"alert.HLogingView.titleTrying" = "正在努力加载中...";
+"alert.HLogingView.titleLoadFailed" = "加载失败请检查您的网络";
+"alert.reload" = "重新加载";
+"alert.inputmeetingnumber" = "请输入会议号码";
+"alert.network_stable" = "当前网络连接不稳定，可能会影响到您的会议体验";
+"alert.network_poor" = "当前网络连接很差，建议检查网络连接或者切换网络";
+"alert.network_insufficient" = "当前网络带宽不足，可能会影响到您的会议体验";
+"alert.network_shortage" = "当前网络带宽严重不足，建议检查网络带宽或者切换网络";
+"alert.unmuteAudioNotAllowed" = "当前会议禁止解除静音";
+"alert.openmainvenuemodel" = "当前会议禁止切换分屏";
+"alert.unmuteAudioIndication" = "主持人正在解除静音，是否同意解除静音?";
+"alert.micmute" = "麦克风已静音";
+"alert.invalidConfNumber" = "无效的会议号码";
+"alert.cloudnotactivat" = "您呼叫的云平台尚未激活";
+"alert.meetingnotstart" = "会议号码不存在或者此会议还未开始，请检查后重试";
+"alert.meetingdosenotanonymouscall" = "只允许会议室拥有者激活会议室";
+"alert.allowmeeting" = "该会议不允许匿名呼叫";
+"alert.trialexpired" = "试用已过期";
+"alert.limit" = "当前入会人数已达上限";
+"alert.joinmeetingerr" = "入会失败: ";
+"alert.invitedMeeting" = "正在邀请您加入会议:";
+"alert.p2pinvited" = "正在邀请您";
+"alert.alertlabel.nospeak" = "已被静音，您的声音不会被听到";
+"alert.alertlabel.speak" = "已解除静音，与会者将听到您的声音";
+"alert.handsup.approve" = "发言申请已发送，请稍候";
+"alert.changeName" = "改名";
+"alert.emailnotSet" = "邮件服务器未配置！";
+"alert.sendSuccess" = "发送成功";
+"alert.sendFailure" = "发送失败";
+"alert.saved" = "已保存";
+"alert.cancelled" = "已取消";
+"alert.networkunavailable" = "网络异常，请检查您的网络";
+"alert.callendAlert" = "会议结束或被主持人挂断";
+"alert.leavemeeting" = "您确定离开该会议？";
+
+"errorcode.1100" = "账号或密码错误";
+"error.1112" = "系统管理员无登录应用权限，请使用用户账号登录";
+"error.2025" = "当前与会人数已达平台会议端口上限";
+"error.2024" = "当前与会人数已达组织端口上限";
+"error.2011" = "您呼叫的云会议室已过期";
+"error.2009" = "您呼叫的群组尚未绑定云会议室";
+"error.2007" = "呼叫超时，请重试";
+"error.4055" = "加入失败，会议已锁定";
+"error.4051" = "对方不在线";
+"error.4049" = "呼叫失败，对方正在通话中";
+"error.4057" = "该会议室已被占用";
+"error.10" = "呼叫失败，对方忙";
+"error.101" = "对方已挂断";
+"error.14" = "呼叫超时，对方未接听";
+"error.8" = "服务器不可达";
+"error.9" = "无效服务器";
+
+"takePhoto" = "拍照";
+"takeLibrary" = "从相册选择";
+
+"title.modifyPassword" = "修改密码";
+"title.infomation" = "个人信息";
+"title.parametersetting" = "参数设置";
+"title.about" = "关于";
+"title.termsservice" = "软件许可及服务协议";
+"title.joinmeeting" = "加入会议";
+
+"tabbar.meetings" = "会议";
+"tabbar.chat" = "聊天";
+"tabbar.join" = "加入会议";
+"tabbar.contacts" = "通讯录";
+"tabbar.me" = "我";
+
+"conf.questionDiagnose" = " 问题诊断";
+"conf.questionDiagnose.detail" = "<html><font size='3px'>感谢您付出宝贵时间参与问题诊断。为了能够更好的了解问题细节，请您提供以下信息:<br/>1.问题发生的时间:(例如，2017年1月1日 19:30)<br/>2.问题描述：</font></html>";

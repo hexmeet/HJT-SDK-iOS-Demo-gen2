@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "高级设置"; ObjectID = "aIf-NI-e5i"; */
+"aIf-NI-e5i.text" = "高级设置";
+
+/* Class = "UIButton"; normalTitle = "保存"; ObjectID = "b2b-6M-rzo"; */
+"b2b-6M-rzo.normalTitle" = "保存";
+
+/* Class = "UILabel"; text = "HTTPS"; ObjectID = "lXE-jq-bc5"; */
+"lXE-jq-bc5.text" = "HTTPS";
+
+/* Class = "UITextField"; placeholder = "端口（选填）"; ObjectID = "weV-YE-LXQ"; */
+"weV-YE-LXQ.placeholder" = "端口（选填）";

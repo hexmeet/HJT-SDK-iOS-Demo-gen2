@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "13910001020"; ObjectID = "0Ti-nF-tOY"; */
+"0Ti-nF-tOY.text" = "13910001020";
+
+/* Class = "UILabel"; text = "即将进入会议"; ObjectID = "DKc-Sh-aOQ"; */
+"DKc-Sh-aOQ.text" = "Join the Meeting";
+
+/* Class = "UITextField"; placeholder = "会议中显示的用户"; ObjectID = "U3e-0X-5kA"; */
+"U3e-0X-5kA.placeholder" = "Username in meeting";
+
+/* Class = "UIButton"; normalTitle = "关闭摄像头"; ObjectID = "gpe-gN-mXk"; */
+"gpe-gN-mXk.normalTitle" = "Turn of Camera";
+
+/* Class = "UIButton"; normalTitle = "关闭麦克风"; ObjectID = "iCa-jK-toQ"; */
+"iCa-jK-toQ.normalTitle" = "Turn of Microphone";
+
+/* Class = "UIButton"; normalTitle = "加入"; ObjectID = "qf1-bJ-bug"; */
+"qf1-bJ-bug.normalTitle" = "Join";
+
+/* Class = "UIButton"; normalTitle = "取消"; ObjectID = "te3-F8-Cbn"; */
+"te3-F8-Cbn.normalTitle" = "Cancel";

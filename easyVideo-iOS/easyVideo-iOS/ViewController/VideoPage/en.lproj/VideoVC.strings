@@ -1,0 +1,60 @@
+
+/* Class = "UILabel"; text = "正在发言"; ObjectID = "9wE-sg-q0B"; */
+"9wE-sg-q0B.text" = "is speaking";
+
+/* Class = "UILabel"; text = "REC"; ObjectID = "Br8-US-oBt"; */
+"Br8-US-oBt.text" = "REC";
+
+/* Class = "UILabel"; text = "分屏切换"; ObjectID = "GJo-R7-wps"; */
+"GJo-R7-wps.text" = "Layout";
+
+/* Class = "UILabel"; text = "切换"; ObjectID = "Jfu-eJ-UUr"; */
+"Jfu-eJ-UUr.text" = "Switch";
+
+/* Class = "UIButton"; normalTitle = "退出语音模式"; ObjectID = "Mrr-oR-8De"; */
+"Mrr-oR-8De.normalTitle" = "Switch to video";
+
+/* Class = "UILabel"; text = "挂断"; ObjectID = "Nbe-Ma-Z3O"; */
+"Nbe-Ma-Z3O.text" = "Hang Up";
+
+/* Class = "UILabel"; text = "内容"; ObjectID = "Qtd-vq-eFx"; */
+"Qtd-vq-eFx.text" = "Content";
+
+/* Class = "UIButton"; normalTitle = "申请发言"; ObjectID = "a7p-sZ-qtX"; */
+"a7p-sZ-qtX.normalTitle" = "Speech Request";
+
+/* Class = "UIButton"; normalTitle = "更改名称"; ObjectID = "aIc-2B-YUv"; */
+"aIc-2B-YUv.normalTitle" = "Rename";
+
+/* Class = "UILabel"; text = "会议管理"; ObjectID = "bU5-AY-kKq"; */
+"bU5-AY-kKq.text" = "Management";
+
+/* Class = "UILabel"; text = "聊天"; ObjectID = "e0H-dE-wiz"; */
+"e0H-dE-wiz.text" = "Chat";
+
+/* Class = "UILabel"; text = "13910001020"; ObjectID = "exf-Gz-Zaj"; */
+"exf-Gz-Zaj.text" = "13910001020";
+
+/* Class = "UIButton"; normalTitle = "关闭本地视频"; ObjectID = "fMm-yK-bBA"; */
+"fMm-yK-bBA.normalTitle" = "Hide Local Video";
+
+/* Class = "UIButton"; selectedTitle = "开启本地视频"; ObjectID = "fMm-yK-bBA"; */
+"fMm-yK-bBA.selectedTitle" = "Show Local Video";
+
+/* Class = "UILabel"; text = "静音"; ObjectID = "hbl-Fr-lPi"; */
+"hbl-Fr-lPi.text" = "Mute";
+
+/* Class = "UILabel"; text = "停止视频"; ObjectID = "pnB-jv-U5k"; */
+"pnB-jv-U5k.text" = "Stop Video";
+
+/* Class = "UILabel"; text = "00:00:00"; ObjectID = "sZh-O0-gtm"; */
+"sZh-O0-gtm.text" = "00:00:00";
+
+/* Class = "UILabel"; text = "更多"; ObjectID = "sxh-R1-YaH"; */
+"sxh-R1-YaH.text" = "More";
+
+/* Class = "UILabel"; text = "视频"; ObjectID = "ydZ-CY-Zjc"; */
+"ydZ-CY-Zjc.text" = "Video";
+
+/* Class = "UIButton"; normalTitle = "切到语音模式"; ObjectID = "zrB-ci-pgf"; */
+"zrB-ci-pgf.normalTitle" = "Audio Mode";

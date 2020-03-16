@@ -1,0 +1,12 @@
+
+/* Class = "UIButton"; normalTitle = "加入会议"; ObjectID = "6Ng-w2-kdh"; */
+"6Ng-w2-kdh.normalTitle" = "Join a Meeting";
+
+/* Class = "UIButton"; normalTitle = "登录"; ObjectID = "Soh-1O-OPC"; */
+"Soh-1O-OPC.normalTitle" = "Log In";
+
+/* Class = "UILabel"; text = "云用户"; ObjectID = "XcJ-RJ-LKo"; */
+"XcJ-RJ-LKo.text" = "Cloud User";
+
+/* Class = "UIButton"; normalTitle = "设置"; ObjectID = "zhq-U5-Pyk"; */
+"zhq-U5-Pyk.normalTitle" = "Settings";

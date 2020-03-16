@@ -1,0 +1,145 @@
+/* 
+  Localizable.strings
+  easyVideo-iOS
+
+  Created by quanhao huang on 2020/1/9.
+  Copyright © 2020 quanhao huang. All rights reserved.
+*/
+"login.note.writePassWord" = "Please enter your account number or password";
+"login.note.loginIn" = "Logging in...";
+"login.note.writeServerAddress" = "Please enter the address of the server";
+
+"me.set" = "Settings";
+"me.password" = "Password";
+"me.invite" = "Invite Friends";
+"me.about" = "About";
+"me.headimg" = "Photo";
+"me.name" = "Name";
+"me.account" = "Account";
+"me.mobile" = "Mobile";
+"me.email" = "Email";
+"me.company" = "Company";
+"me.dep" = "Department";
+
+"set.senddiagnostics" = "Send Diagnostics Data";
+"set.feedback" = "Feedback";
+"set.autoanswer" = "Auto Answer";
+"set.enablehighframerate" = "Enable high frame rate video";
+"set.disableprompt" = "Disable prompt";
+"set.about.licenceAndServiceAgreement" = "Terms of Service";
+"set.about.checkversion" = "Check for Updates";
+
+"conf.wechat.shared.meetingId" = "Meeting ID:";
+"conf.room.room" = "'s room";
+"conf.password" = "Password:";
+"conf.room.roomId" = "Room ID:";
+
+"video.control.btn.mute" = "Mute";
+"video.control.btn.unmute" = "Unmute";
+"video.control.btn.stopVideo" = "Stop Video";
+"video.control.btn.startVideo" = "Start Video";
+"video.statistics.title" = "Media Statics";
+"video.statistics.encrypt" = "Encrypted";
+"video.statistics.column.thisEnd.audio" = "This End(Audio)";
+"video.statistics.column.farEnd.audio" = "Far End(Audio)";
+"video.statistics.column.thisEnd.video" = "This End(Video)";
+"video.statistics.column.farEnd.video" = "Far End(Video)";
+"video.statistics.column.thisEnd.content" = "This End(Content)";
+"video.statistics.column.farEnd.content" = "Far End(Content)";
+"video.audiomode" = "Audio Mode";
+"video.videomode" = "Video Mode";
+
+"alert.cantconnert.server" = "Unable to connect to the server. Please check your network connection.";
+"alert.passworderror1" = "Incorrect password. Your account will be locked for 5 minutes after";
+"alert.passworderror2" = "more failed attempts.";
+"alert.passworderror3" = "Your account has been disabled. Please contact your administrator.";
+"alert.changeName" = "Rename";
+"alert.updateName.propt" = "Please input name";
+"alert.cancel" = "Cancel";
+"alert.sure" = "OK";
+"alert.pwd.pop.title" = "Verify Original Password";
+"alert.pwd.pop.content" = "For password safety,input the original one before edit:";
+"alert.password" = "Please input password";
+"alert.note.loginout" = "Are you sure to log out?";
+"alert.passwordError" = "Password mistake";
+"alert.modifyp.accout" = "Account";
+"alert.modifyp.password" = "New";
+"alert.modifyp.againpassword" = "Confirm";
+"alert.modifyp.input" = "Enter a new password";
+"alert.modifyp.agintinput" = "Enter again";
+"alert.pass.note.writeNew" = "Please enter a password to modify";
+"alert.pass.note.format" = "Incorrect password format. It needs to be 4-16 charactors long and does not contain spaces.";
+"alert.pass.note.notMatch" = "Password does not match";
+"alert.changepasswordok" = "Password changed successfully";
+"alert.wechat.notInstalled" = "WeChat has not been installed, can not be shared!";
+"alert.dontneedupload" = "No updates available";
+"alert.HLogingView.titleTrying" = "Trying to load...";
+"alert.HLogingView.titleLoadFailed" = "Load failed，please check your network.";
+"alert.reload" = "Reload";
+"alert.inputmeetingnumber" = "Please enter the meeting number";
+"alert.network_stable" = "Network is not stable now, it may impact your conferencing experience.";
+"alert.network_poor" = "Network is in very poor status, recommend checking network or switching to better network.";
+"alert.network_insufficient" = "Network bandwidth is insufficient, it may impact your conferencing experience.";
+"alert.network_shortage" = "Network bandwidth is in serious shortage, recommend checking network bandwidth or switching to better network.";
+"alert.unmuteAudioNotAllowed" = "Not allowed to unmute";
+"alert.unmuteAudioIndication" = "Meeting manager is unmuting you, do you agree?";
+"alert.openmainvenuemodel" = "Not allowed to change layout";
+"alert.micmute" = "Microphone Muted";
+"alert.invalidConfNumber" = "Invalid meeting ID.";
+"alert.cloudnotactivat" = "The called cloud platform is not activated.";
+"alert.meetingnotstart" = "Invalid meeting ID or meeting has not started yet, please double check.";
+"alert.meetingdosenotanonymouscall" = "Only the owner can activate the meeting room.";
+"alert.allowmeeting" = "This meeting room does not allow anonymous calls.";
+"alert.trialexpired" = "Trial expired.";
+"alert.limit" = "The number of participants has reached the limit.";
+"alert.joinmeetingerr" = "Join meeting error: ";
+"alert.invitedMeeting" = "You are invited to join meeting:";
+"alert.p2pinvited" = "Inviting you";
+"alert.alertlabel.nospeak" = "You have been muted by meeting host.";
+"alert.alertlabel.speak" = "You are unmuted, other participants can hear you now.";
+"alert.handsup.approve" = "Speech request has been sent";
+"alert.changeName" = "Rename";
+"alert.emailnotSet" = "Mail service has not been configured";
+"alert.sendSuccess" = "Send success";
+"alert.sendFailure" = "Send failure";
+"alert.saved" = "Saved";
+"alert.cancelled" = "Has been cancelled";
+"alert.networkunavailable" = "Network unavailable. Please check and try again.";
+"alert.callendAlert" = "Meeting ended or terminated by meeting host.";
+"alert.leavemeeting" = "Are you sure to leave the meeting?";
+
+"errorcode.1100" = "Incorrect account or password.";
+"error.1112" = "Administrator is not allowed to arccess app. Please use user account.";
+"error.2025" = "The number of participants has reached the platform limit.";
+"error.2024" = "The number of participants has reached the organization limit.";
+"error.2011" = "Meeting room expired.";
+"error.2009" = "There is no meeting room bound to the called group.";
+"error.2007" = "Call timeout, please retry.";
+"error.4055" = "Join failed, conference is locked.";
+"error.4051" = "The other party is not online.";
+"error.4049" = "Call failed due to the party is in call.";
+"error.4057" = "The meeting room is being used.";
+"error.10" = "Call failed due to the party is busy.";
+"error.101" = "The other party has hung up.";
+"error.14" = "Call failed due to the party has not answer.";
+"error.8" = "Server unreachable.";
+"error.9" = "Invalid server.";
+
+"takePhoto" = "Take photo";
+"takeLibrary" = "Choose from Album";
+
+"title.modifyPassword" = "Modify Password";
+"title.infomation" = "Infomation";
+"title.parametersetting" = "Parameter setting";
+"title.about" = "About";
+"title.termsservice" = "Terms of Service";
+"title.joinmeeting" = "Join a Meeting";
+
+"tabbar.meetings" = "Meetings";
+"tabbar.chat" = "Chat";
+"tabbar.join" = "Join Meeting";
+"tabbar.contacts" = "Contacts";
+"tabbar.me" = "Me";
+
+"conf.questionDiagnose" = " Diagnostics";
+"conf.questionDiagnose.detail" = "<html><font size='3px'> Thanks a lot for your time for helping us to diagnose problems. To help us to know the details of the problems, please help to provide the following information. <br/>1.Time when the problem happened:(e.g., Jan 1st, 2017 19:30)<br/>2.Problem description：</font></html>";

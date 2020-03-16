@@ -1,0 +1,48 @@
+
+/* Class = "UIButton"; normalTitle = "立即入会"; ObjectID = "0MC-Zw-b4Y"; */
+"0MC-Zw-b4Y.normalTitle" = "立即入会";
+
+/* Class = "UIButton"; normalTitle = "3"; ObjectID = "2Od-rz-K7y"; */
+"2Od-rz-K7y.normalTitle" = "3";
+
+/* Class = "UIButton"; normalTitle = "7"; ObjectID = "7rx-cO-tGd"; */
+"7rx-cO-tGd.normalTitle" = "7";
+
+/* Class = "UILabel"; text = "关闭摄像头"; ObjectID = "D5J-Tz-BzM"; */
+"D5J-Tz-BzM.text" = "关闭摄像头";
+
+/* Class = "UIButton"; normalTitle = "1"; ObjectID = "Gi0-bV-coj"; */
+"Gi0-bV-coj.normalTitle" = "1";
+
+/* Class = "UIButton"; normalTitle = "6"; ObjectID = "OHK-bv-d8Q"; */
+"OHK-bv-d8Q.normalTitle" = "6";
+
+/* Class = "UIButton"; normalTitle = "0"; ObjectID = "Q1q-Ql-Zh7"; */
+"Q1q-Ql-Zh7.normalTitle" = "0";
+
+/* Class = "UIButton"; normalTitle = "8"; ObjectID = "Y3s-2g-Hdc"; */
+"Y3s-2g-Hdc.normalTitle" = "8";
+
+/* Class = "UILabel"; text = "关闭麦克风"; ObjectID = "bIT-bj-C8U"; */
+"bIT-bj-C8U.text" = "关闭麦克风";
+
+/* Class = "UIButton"; normalTitle = "2"; ObjectID = "bqj-gD-rdd"; */
+"bqj-gD-rdd.normalTitle" = "2";
+
+/* Class = "UITextField"; placeholder = "请输入会议号码(加*密码)"; ObjectID = "cI0-v8-fgh"; */
+"cI0-v8-fgh.placeholder" = "请输入会议号码(加*密码)";
+
+/* Class = "UIButton"; highlightedTitle = "*"; ObjectID = "g2R-SY-CyY"; */
+"g2R-SY-CyY.highlightedTitle" = "*";
+
+/* Class = "UIButton"; normalTitle = "*"; ObjectID = "g2R-SY-CyY"; */
+"g2R-SY-CyY.normalTitle" = "*";
+
+/* Class = "UIButton"; normalTitle = "4"; ObjectID = "ghL-65-cPF"; */
+"ghL-65-cPF.normalTitle" = "4";
+
+/* Class = "UIButton"; normalTitle = "5"; ObjectID = "vWs-nr-tUn"; */
+"vWs-nr-tUn.normalTitle" = "5";
+
+/* Class = "UIButton"; normalTitle = "9"; ObjectID = "wrJ-MR-8ca"; */
+"wrJ-MR-8ca.normalTitle" = "9";
