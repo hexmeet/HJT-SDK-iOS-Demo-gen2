@@ -1,0 +1,24 @@
+
+/* Class = "UITextField"; placeholder = "服务器"; ObjectID = "2Bc-Oh-4zu"; */
+"2Bc-Oh-4zu.placeholder" = "服务器";
+
+/* Class = "UITextField"; placeholder = "会议中显示的用户"; ObjectID = "7yS-QB-Z54"; */
+"7yS-QB-Z54.placeholder" = "会议中显示的用户";
+
+/* Class = "UIButton"; normalTitle = "关闭麦克风"; ObjectID = "ETZ-YG-COV"; */
+"ETZ-YG-COV.normalTitle" = "关闭麦克风";
+
+/* Class = "UIButton"; normalTitle = "高级设置"; ObjectID = "Vqd-lm-sel"; */
+"Vqd-lm-sel.normalTitle" = "高级设置";
+
+/* Class = "UITextField"; placeholder = "输入会议ID"; ObjectID = "dFJ-my-Be8"; */
+"dFJ-my-Be8.placeholder" = "输入会议ID";
+
+/* Class = "UIButton"; normalTitle = "加入"; ObjectID = "dIh-Ou-fu4"; */
+"dIh-Ou-fu4.normalTitle" = "加入";
+
+/* Class = "UILabel"; text = "加入会议"; ObjectID = "xpO-KU-Q1o"; */
+"xpO-KU-Q1o.text" = "加入会议";
+
+/* Class = "UIButton"; normalTitle = "关闭摄像头"; ObjectID = "yLd-Tz-qnO"; */
+"yLd-Tz-qnO.normalTitle" = "关闭摄像头";

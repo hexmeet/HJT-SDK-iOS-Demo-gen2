@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="NormalWithTFCell" customModule="easyVideo_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="头像" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2V-1X-rCn">
+                        <rect key="frame" x="15" y="12.5" width="33" height="19.5"/>
+                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                        <color key="textColor" red="0.19215686269999999" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IJe-rh-15c">
+                        <rect key="frame" x="100" y="12" width="204" height="20"/>
+                        <color key="textColor" red="0.56862745100000001" green="0.56862745100000001" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hf1-x4-BDt" userLabel="line">
+                        <rect key="frame" x="15" y="43" width="293" height="1"/>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="NFq-JM-iHa"/>
+                            <constraint firstAttribute="height" constant="1" id="eAw-xd-mgE"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="F2V-1X-rCn" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="XR6-IP-S1C"/>
+                    <constraint firstItem="F2V-1X-rCn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="dMA-du-uWx"/>
+                    <constraint firstItem="IJe-rh-15c" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="100" id="iPB-Lx-WUs"/>
+                    <constraint firstItem="Hf1-x4-BDt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="ked-wH-gUS"/>
+                    <constraint firstAttribute="trailing" secondItem="Hf1-x4-BDt" secondAttribute="trailing" constant="12" id="lOJ-Jd-F4O"/>
+                    <constraint firstItem="IJe-rh-15c" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="nOa-8J-syK"/>
+                    <constraint firstAttribute="bottom" secondItem="Hf1-x4-BDt" secondAttribute="bottom" id="xaP-0R-gDq"/>
+                    <constraint firstAttribute="trailing" secondItem="IJe-rh-15c" secondAttribute="trailing" constant="16" id="yBt-mI-HnV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cellTF" destination="IJe-rh-15c" id="GLv-a3-HuI"/>
+                <outlet property="cellTitleLb" destination="F2V-1X-rCn" id="kzc-JL-21y"/>
+                <outlet property="line" destination="Hf1-x4-BDt" id="7hy-7g-tLa"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="80"/>
+        </tableViewCell>
+    </objects>
+</document>

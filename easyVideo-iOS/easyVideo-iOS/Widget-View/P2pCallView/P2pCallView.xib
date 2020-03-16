@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="P2pCallView" customModule="easyVideo_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gbs-G9-HsF">
+                    <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8EI-hs-SKj">
+                    <rect key="frame" x="398" y="60" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="xxg-Ti-02x"/>
+                        <constraint firstAttribute="height" constant="100" id="yNz-hZ-0S5"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="浅草more" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bV-Rp-VCV">
+                    <rect key="frame" x="401" y="180" width="94.5" height="26.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在呼叫..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9l-Ph-52c">
+                    <rect key="frame" x="408.5" y="221.5" width="79.5" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xx-KZ-sCS">
+                    <rect key="frame" x="413" y="299" width="70" height="70"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="PHn-lR-iZl"/>
+                        <constraint firstAttribute="width" constant="70" id="RAl-pT-wXg"/>
+                    </constraints>
+                    <state key="normal" image="btn_hangup">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="hangUpAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="ObO-bL-Qxo"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="挂断" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdL-No-Fmo">
+                    <rect key="frame" x="435.5" y="384" width="25" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="2xx-KZ-sCS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0Sb-Vf-Gl7"/>
+                <constraint firstItem="6bV-Rp-VCV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="3NQ-70-We8"/>
+                <constraint firstItem="8EI-hs-SKj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="5Qp-TN-fKs"/>
+                <constraint firstItem="mdL-No-Fmo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="7pu-Ti-T3X"/>
+                <constraint firstItem="Gbs-G9-HsF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7y2-y8-1aC"/>
+                <constraint firstAttribute="bottom" secondItem="mdL-No-Fmo" secondAttribute="bottom" constant="15" id="Gnx-TC-duj"/>
+                <constraint firstItem="Q9l-Ph-52c" firstAttribute="top" secondItem="6bV-Rp-VCV" secondAttribute="bottom" constant="15" id="S7K-le-VB1"/>
+                <constraint firstItem="8EI-hs-SKj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="SkU-CA-0nY"/>
+                <constraint firstItem="Q9l-Ph-52c" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="VAI-LQ-ai8"/>
+                <constraint firstItem="6bV-Rp-VCV" firstAttribute="top" secondItem="8EI-hs-SKj" secondAttribute="bottom" constant="20" id="cxx-95-J40"/>
+                <constraint firstAttribute="bottom" secondItem="Gbs-G9-HsF" secondAttribute="bottom" id="hkA-HA-OIG"/>
+                <constraint firstItem="Gbs-G9-HsF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tYk-Ma-cZX"/>
+                <constraint firstAttribute="trailing" secondItem="Gbs-G9-HsF" secondAttribute="trailing" id="txN-iZ-LxU"/>
+                <constraint firstItem="mdL-No-Fmo" firstAttribute="top" secondItem="2xx-KZ-sCS" secondAttribute="bottom" constant="15" id="yuw-o0-8kI"/>
+            </constraints>
+            <connections>
+                <outlet property="callLb" destination="Q9l-Ph-52c" id="jOu-Kd-sc8"/>
+                <outlet property="headImg" destination="8EI-hs-SKj" id="B9f-FT-2Sp"/>
+                <outlet property="nameLb" destination="6bV-Rp-VCV" id="AhI-0C-QlV"/>
+                <outlet property="videoView" destination="Gbs-G9-HsF" id="YtF-Gt-6BU"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="86"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn_hangup" width="70" height="70"/>
+    </resources>
+</document>

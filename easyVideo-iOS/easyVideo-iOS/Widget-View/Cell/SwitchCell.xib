@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="SwitchCell" customModule="easyVideo_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMe-rg-3vM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
+                        <subviews>
+                            <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="自动应答" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QbG-Kv-xYp">
+                                <rect key="frame" x="15" y="7" width="66" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.19215686269999999" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oqd-wY-eWD">
+                                <rect key="frame" x="261" y="1.5" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchActionForSeetingVC:" destination="KGk-i7-Jjw" eventType="valueChanged" id="a7P-25-Q9H"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QbG-Kv-xYp" firstAttribute="centerY" secondItem="DMe-rg-3vM" secondAttribute="centerY" id="Re5-Lo-dAJ"/>
+                            <constraint firstItem="QbG-Kv-xYp" firstAttribute="leading" secondItem="DMe-rg-3vM" secondAttribute="leading" constant="15" id="WSJ-PI-q8B"/>
+                            <constraint firstItem="oqd-wY-eWD" firstAttribute="centerY" secondItem="DMe-rg-3vM" secondAttribute="centerY" id="epW-R2-ndO"/>
+                            <constraint firstAttribute="trailing" secondItem="oqd-wY-eWD" secondAttribute="trailing" constant="10" id="wHh-sz-dlI"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="DMe-rg-3vM" secondAttribute="bottom" constant="10" id="0PH-od-3C6"/>
+                    <constraint firstItem="DMe-rg-3vM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="1od-3H-G3c"/>
+                    <constraint firstItem="DMe-rg-3vM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="MFV-Xl-eab"/>
+                    <constraint firstAttribute="trailing" secondItem="DMe-rg-3vM" secondAttribute="trailing" id="bM3-Sg-Npk"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cellTitle" destination="QbG-Kv-xYp" id="zGh-0H-b7i"/>
+                <outlet property="switchBtn" destination="oqd-wY-eWD" id="NkA-2P-EvQ"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="104"/>
+        </tableViewCell>
+    </objects>
+</document>

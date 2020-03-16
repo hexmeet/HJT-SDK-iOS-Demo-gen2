@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NetworkVC" customModule="HJT" customModuleProvider="target">
+            <connections>
+                <outlet property="alertTitleLb" destination="LlH-Vp-9Fd" id="d2x-DK-YPt"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5qK-PB-ePX">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_warning" translatesAutoresizingMaskIntoConstraints="NO" id="Gsg-Ym-1Ed">
+                            <rect key="frame" x="101.5" y="12" width="16" height="16"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="网络异常，请检查您的网络" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LlH-Vp-9Fd">
+                            <rect key="frame" x="127.5" y="12" width="159.5" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.49019607843137253" green="0.031372549019607843" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.97647058823529409" green="0.85098039215686272" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="LlH-Vp-9Fd" firstAttribute="leading" secondItem="Gsg-Ym-1Ed" secondAttribute="trailing" constant="10" id="AHd-6X-0st"/>
+                        <constraint firstItem="LlH-Vp-9Fd" firstAttribute="centerY" secondItem="5qK-PB-ePX" secondAttribute="centerY" id="BCS-QB-7N7"/>
+                        <constraint firstItem="Gsg-Ym-1Ed" firstAttribute="centerY" secondItem="5qK-PB-ePX" secondAttribute="centerY" id="S10-yt-WhJ"/>
+                        <constraint firstAttribute="height" constant="40" id="XC6-li-L3A"/>
+                        <constraint firstItem="LlH-Vp-9Fd" firstAttribute="centerX" secondItem="5qK-PB-ePX" secondAttribute="centerX" id="cH9-lE-HKz"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5qK-PB-ePX" secondAttribute="trailing" id="3F0-26-QtZ"/>
+                <constraint firstItem="5qK-PB-ePX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4bF-HT-3M8"/>
+                <constraint firstItem="5qK-PB-ePX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bGf-Xl-TTv"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="99"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="image_warning" width="16" height="16"/>
+    </resources>
+</document>

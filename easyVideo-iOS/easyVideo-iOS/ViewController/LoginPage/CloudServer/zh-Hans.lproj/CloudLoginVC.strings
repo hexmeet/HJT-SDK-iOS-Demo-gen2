@@ -1,0 +1,12 @@
+
+/* Class = "UIButton"; normalTitle = "登录"; ObjectID = "jXj-lm-Foj"; */
+"jXj-lm-Foj.normalTitle" = "登录";
+
+/* Class = "UITextField"; placeholder = "账号/手机号/邮箱"; ObjectID = "kh5-3q-gju"; */
+"kh5-3q-gju.placeholder" = "账号/手机号/邮箱";
+
+/* Class = "UILabel"; text = "云登录"; ObjectID = "pSr-Ki-MiU"; */
+"pSr-Ki-MiU.text" = "云登录";
+
+/* Class = "UITextField"; placeholder = "密码"; ObjectID = "uJr-WF-GYs"; */
+"uJr-WF-GYs.placeholder" = "密码";

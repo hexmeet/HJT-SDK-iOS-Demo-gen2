@@ -1,0 +1,23 @@
+//
+//  easyVideo.pch
+//  easyVideo-iOS
+//
+//  Created by quanhao huang on 2020/1/7.
+//  Copyright © 2020 quanhao huang. All rights reserved.
+//
+
+#ifndef easyVideo_pch
+#define easyVideo_pch
+
+//16进制色值
+#define HEXCOLOR(c) [UIColor colorWithRed:((c>>16)&0xFF)/255.0 green:((c>>8)&0xFF)/255.0 blue:(c&0xFF)/255.0 alpha:1.0]
+#define APPDELEGATE (AppDelegate *)[UIApplication sharedApplication].delegate
+
+#import <easyVideo_iOS-Swift.h>
+#import "EVUserIdManager.h"
+#import "EMMessageManager.h"
+#import "emsdk/EMEngineObj.h"
+#import <MJRefresh.h>
+#import "EMManager.h"
+
+#endif /* easyVideo_pch */

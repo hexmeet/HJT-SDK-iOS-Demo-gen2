@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginVC" customModule="easyVideo_iOS" customModuleProvider="target">
+            <connections>
+                <outlet property="cloudImg" destination="gZh-yn-vvZ" id="VjN-Rj-15l"/>
+                <outlet property="companyImg" destination="hrJ-JO-chW" id="SQy-bb-j62"/>
+                <outlet property="companyLb" destination="XMz-gR-i7w" id="oRH-5w-YlS"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_hjt_cn" translatesAutoresizingMaskIntoConstraints="NO" id="bge-Ze-qF9">
+                    <rect key="frame" x="156.5" y="197.5" width="101" height="32"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EVS-0Q-iQm" userLabel="centerView">
+                    <rect key="frame" x="0.0" y="229.5" width="414" height="497"/>
+                    <subviews>
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_company" translatesAutoresizingMaskIntoConstraints="NO" id="hrJ-JO-chW">
+                            <rect key="frame" x="127.5" y="98" width="159" height="159"/>
+                        </imageView>
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_cloud" translatesAutoresizingMaskIntoConstraints="NO" id="gZh-yn-vvZ">
+                            <rect key="frame" x="127.5" y="309.5" width="159" height="159"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="gZh-yn-vvZ" secondAttribute="height" multiplier="1:1" id="76f-TW-D0d"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="私有部署" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUF-os-Ti7">
+                            <rect key="frame" x="174.5" y="266" width="65.5" height="19.5"/>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                            <color key="textColor" red="0.19215686269999999" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="云用户" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6f-vR-FC0">
+                            <rect key="frame" x="182.5" y="477.5" width="49" height="19.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.19215686269999999" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="gZh-yn-vvZ" firstAttribute="top" secondItem="bUF-os-Ti7" secondAttribute="bottom" constant="24" id="6ke-IA-Ef3"/>
+                        <constraint firstItem="hrJ-JO-chW" firstAttribute="height" secondItem="gZh-yn-vvZ" secondAttribute="height" id="IIM-fH-XlI"/>
+                        <constraint firstItem="U6f-vR-FC0" firstAttribute="centerX" secondItem="EVS-0Q-iQm" secondAttribute="centerX" id="OU4-E6-3FX"/>
+                        <constraint firstAttribute="bottom" secondItem="U6f-vR-FC0" secondAttribute="bottom" id="bHR-t5-CkO"/>
+                        <constraint firstItem="gZh-yn-vvZ" firstAttribute="height" secondItem="EVS-0Q-iQm" secondAttribute="height" multiplier="120/375" id="eWS-f3-hLg"/>
+                        <constraint firstItem="hrJ-JO-chW" firstAttribute="width" secondItem="gZh-yn-vvZ" secondAttribute="width" id="fU9-Rf-vEr"/>
+                        <constraint firstItem="hrJ-JO-chW" firstAttribute="centerX" secondItem="EVS-0Q-iQm" secondAttribute="centerX" id="gj6-R6-rj4"/>
+                        <constraint firstItem="U6f-vR-FC0" firstAttribute="top" secondItem="gZh-yn-vvZ" secondAttribute="bottom" constant="9" id="gpY-4t-k5H"/>
+                        <constraint firstItem="gZh-yn-vvZ" firstAttribute="centerX" secondItem="EVS-0Q-iQm" secondAttribute="centerX" id="syR-Sv-qDq"/>
+                        <constraint firstItem="bUF-os-Ti7" firstAttribute="centerX" secondItem="EVS-0Q-iQm" secondAttribute="centerX" id="vPA-zG-CX3"/>
+                        <constraint firstItem="bUF-os-Ti7" firstAttribute="top" secondItem="hrJ-JO-chW" secondAttribute="bottom" constant="9" id="yLr-ka-57x"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中创视讯" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMz-gR-i7w">
+                    <rect key="frame" x="178.5" y="831" width="57.5" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="F4m-Ub-kbj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.75686274509999996" green="0.75686274509999996" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="EVS-0Q-iQm" firstAttribute="top" secondItem="bge-Ze-qF9" secondAttribute="bottom" id="Bej-Cq-W1a"/>
+                <constraint firstItem="EVS-0Q-iQm" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="370/667" id="GXH-W2-8Gi"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="XMz-gR-i7w" secondAttribute="bottom" constant="10" id="I2z-Ed-cuz"/>
+                <constraint firstItem="EVS-0Q-iQm" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="30" id="IIq-kb-IbL"/>
+                <constraint firstItem="bge-Ze-qF9" firstAttribute="width" secondItem="bge-Ze-qF9" secondAttribute="height" multiplier="19:6" id="INB-ay-IUc"/>
+                <constraint firstItem="XMz-gR-i7w" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="VpC-vw-tUM"/>
+                <constraint firstItem="EVS-0Q-iQm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Wr6-nP-rg3"/>
+                <constraint firstItem="EVS-0Q-iQm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hgz-xo-C6E"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EVS-0Q-iQm" secondAttribute="trailing" id="i2f-0o-Tpm"/>
+                <constraint firstItem="bge-Ze-qF9" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="yeV-fI-IkZ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="107"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_cloud" width="120" height="120"/>
+        <image name="icon_company" width="120" height="120"/>
+        <image name="logo_hjt_cn" width="100" height="32"/>
+    </resources>
+</document>

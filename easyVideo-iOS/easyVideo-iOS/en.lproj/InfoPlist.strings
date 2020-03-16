@@ -1,0 +1,18 @@
+/* 
+  InfoPlist.strings
+  easyVideo-iOS
+
+  Created by quanhao huang on 2020/2/14.
+  Copyright © 2020 quanhao huang. All rights reserved.
+*/
+
+/* Permissions */
+"NSCameraUsageDescription" = "App use camera for video call";
+"NSMicrophoneUsageDescription" = "App use microphone for video/audio call";
+
+"CompanyCopyright" = "Copyright © 2020 easyVideo Co., Ltd. All rights reserved.";
+"CompanyName" = "easyVideo";
+"CFBundleDisplayName" = "easyVideo";
+"AppDownloadlink" = "https://a.app.qq.com/o/simple.jsp?pkgname=com.yourcompany.easyVideo";
+"Appdescription" = "easyVideo - Video Communication Cloud Client APP";
+"CloudAddress" = "https://cloudcenter.yourcompany.com/location/locate_domain_zone";

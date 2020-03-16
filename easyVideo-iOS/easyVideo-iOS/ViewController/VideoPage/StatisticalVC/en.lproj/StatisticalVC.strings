@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "速率（kbps）"; ObjectID = "4EF-yT-aeS"; */
+"4EF-yT-aeS.text" = "Rate Used(kbps)";
+
+/* Class = "UILabel"; text = "编解码器"; ObjectID = "O6i-FC-quf"; */
+"O6i-FC-quf.text" = "Transport Protocol";
+
+/* Class = "UILabel"; text = "丢包率"; ObjectID = "SvE-MC-oIO"; */
+"SvE-MC-oIO.text" = "Packet Loss Rate";
+
+/* Class = "UILabel"; text = "分辨率"; ObjectID = "c7k-df-QLo"; */
+"c7k-df-QLo.text" = "Resolution";
+
+/* Class = "UILabel"; text = "媒体方向"; ObjectID = "kxB-Lv-oj2"; */
+"kxB-Lv-oj2.text" = "Channel";
+
+/* Class = "UILabel"; text = "媒体统计信息"; ObjectID = "x43-Ee-Al6"; */
+"x43-Ee-Al6.text" = "媒体统计信息";

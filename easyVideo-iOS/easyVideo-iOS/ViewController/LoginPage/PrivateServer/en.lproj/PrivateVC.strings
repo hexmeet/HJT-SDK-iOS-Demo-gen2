@@ -1,0 +1,12 @@
+
+/* Class = "UIButton"; normalTitle = "登录"; ObjectID = "2lS-3N-WnP"; */
+"2lS-3N-WnP.normalTitle" = "Log In";
+
+/* Class = "UIButton"; normalTitle = "设置"; ObjectID = "318-Rq-BiN"; */
+"318-Rq-BiN.normalTitle" = "Settings";
+
+/* Class = "UIButton"; normalTitle = "加入会议"; ObjectID = "6gG-Zy-Ozn"; */
+"6gG-Zy-Ozn.normalTitle" = "Join a Meeting";
+
+/* Class = "UILabel"; text = "私有部署"; ObjectID = "zJj-VW-rA2"; */
+"zJj-VW-rA2.text" = "Privte Cloud User";

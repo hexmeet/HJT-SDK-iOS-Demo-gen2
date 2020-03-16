@@ -1,0 +1,18 @@
+
+/* Class = "UIButton"; normalTitle = "登录"; ObjectID = "0yd-n9-Bpd"; */
+"0yd-n9-Bpd.normalTitle" = "登录";
+
+/* Class = "UILabel"; text = "私有部署登录"; ObjectID = "SDn-89-3ni"; */
+"SDn-89-3ni.text" = "私有部署登录";
+
+/* Class = "UITextField"; placeholder = "密码"; ObjectID = "V70-Vh-i9e"; */
+"V70-Vh-i9e.placeholder" = "密码";
+
+/* Class = "UITextField"; placeholder = "服务器"; ObjectID = "eQ3-EQ-7E3"; */
+"eQ3-EQ-7E3.placeholder" = "服务器";
+
+/* Class = "UIButton"; normalTitle = "高级设置"; ObjectID = "eou-WL-BaR"; */
+"eou-WL-BaR.normalTitle" = "高级设置";
+
+/* Class = "UITextField"; placeholder = "账号/手机号/邮箱"; ObjectID = "fyH-6k-Fg8"; */
+"fyH-6k-Fg8.placeholder" = "账号/手机号/邮箱";
