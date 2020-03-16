@@ -111,7 +111,7 @@ extension BaseTabBarVC {
                 }
                 
                 let vc = UIViewControllerCJHelper.findCurrentShowingViewController()
-                vc.navigationController?.popToRootViewController(animated: true)
+                vc?.navigationController?.popToRootViewController(animated: true)
                 
                 self.videoVC?.joinMeetingMode()
             }
@@ -132,7 +132,7 @@ extension BaseTabBarVC {
             self.hiddenVideoWindow()
             
             let vc = UIViewControllerCJHelper.findCurrentShowingViewController()
-            self.appDelegate.networkWindow?.frame = CGRect(x: 0, y: (vc.navigationController?.navigationBar.frame.height ?? 64) + UIApplication.shared.statusBarFrame.height, width: UIScreen.main.bounds.width, height: 40)
+            self.appDelegate.networkWindow?.frame = CGRect(x: 0, y: (vc?.navigationController?.navigationBar.frame.height ?? 64) + UIApplication.shared.statusBarFrame.height, width: UIScreen.main.bounds.width, height: 40)
         }
         videoWidow?.rootViewController = videoVC
         videoWidow?.isHidden = false

@@ -163,7 +163,7 @@ extension AppDelegate {
     
     func showNetworkWindow() {
         let vc = UIViewControllerCJHelper.findCurrentShowingViewController()
-        networkWindow?.frame = CGRect(x: 0, y: (vc.navigationController?.navigationBar.frame.height ?? 64) + UIApplication.shared.statusBarFrame.height, width: UIScreen.main.bounds.width, height: 40)
+        networkWindow?.frame = CGRect(x: 0, y: (vc?.navigationController?.navigationBar.frame.height ?? 64) + UIApplication.shared.statusBarFrame.height, width: UIScreen.main.bounds.width, height: 40)
         networkWindow?.isHidden = false
     }
     
