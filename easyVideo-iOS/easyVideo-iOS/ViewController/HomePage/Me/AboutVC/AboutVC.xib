@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutVC" customModule="easyVideo_iOS" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutVC" customModule="HJT" customModuleProvider="target">
             <connections>
                 <outlet property="companyCopyrightLb" destination="cuW-ew-IaV" id="dZH-Em-PWd"/>
                 <outlet property="versionNumberLb" destination="1Ft-iz-YKE" id="JKv-ky-84s"/>
@@ -23,8 +23,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHL-Vr-Dag">
                     <rect key="frame" x="0.0" y="44" width="414" height="200"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HexMeet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ft-iz-YKE">
-                            <rect key="frame" x="172.5" y="150" width="69" height="25"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EasyVideo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ft-iz-YKE">
+                            <rect key="frame" x="167.5" y="150" width="79.5" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="25" id="JfW-5f-nKx"/>
                             </constraints>

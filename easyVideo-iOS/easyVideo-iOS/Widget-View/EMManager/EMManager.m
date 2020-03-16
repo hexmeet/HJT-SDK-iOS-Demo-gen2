@@ -1,6 +1,6 @@
 //
 //  EMManager.m
-//  HexMeet
+//  EasyVideo
 //
 //  Created by quanhao huang on 2019/12/3.
 //  Copyright © 2019 fo. All rights reserved.

@@ -121,6 +121,7 @@
 		FCBD28C223C3012400E1069F /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCBD28C023C3012400E1069F /* SwitchCell.xib */; };
 		FCBD28C523C3013D00E1069F /* NormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBD28C323C3013D00E1069F /* NormalCell.swift */; };
 		FCBD28C623C3013D00E1069F /* NormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCBD28C423C3013D00E1069F /* NormalCell.xib */; };
+		FCBD5A5C241FAE1000BE1288 /* EasyVideo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCBD5A5A241FAE1000BE1288 /* EasyVideo.xcdatamodeld */; };
 		FCC096B523CEAACB006088BC /* VideoVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC096B423CEAACB006088BC /* VideoVC+Ext.swift */; };
 		FCC096D923CEEDFC006088BC /* enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC096D823CEEDFC006088BC /* enum.swift */; };
 		FCC096DD23CF1D21006088BC /* ConnectingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC096DB23CF1D21006088BC /* ConnectingVC.swift */; };
@@ -163,7 +164,6 @@
 		FCC9D859241DD60C005A92DD /* UITextField+ExtentRange.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC9D858241DD60C005A92DD /* UITextField+ExtentRange.m */; };
 		FCC9D85C241DD6E5005A92DD /* UIViewController+custom.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC9D85A241DD6E4005A92DD /* UIViewController+custom.m */; };
 		FCC9D862241DD812005A92DD /* EMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC9D85F241DD811005A92DD /* EMManager.m */; };
-		FCC9D868241E0881005A92DD /* HexMeet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCC9D866241E0881005A92DD /* HexMeet.xcdatamodeld */; };
 		FCCE787123D425F60027499B /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCE787023D425F60027499B /* Utils.m */; };
 		FCCE787423D450F60027499B /* PasswordReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE787323D450F60027499B /* PasswordReminderView.swift */; };
 		FCCE787623D451020027499B /* PasswordReminderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCCE787523D451020027499B /* PasswordReminderView.xib */; };
@@ -355,6 +355,7 @@
 		FCBD28C023C3012400E1069F /* SwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
 		FCBD28C323C3013D00E1069F /* NormalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalCell.swift; sourceTree = "<group>"; };
 		FCBD28C423C3013D00E1069F /* NormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NormalCell.xib; sourceTree = "<group>"; };
+		FCBD5A5B241FAE1000BE1288 /* EasyVideo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EasyVideo.xcdatamodel; sourceTree = "<group>"; };
 		FCC096B423CEAACB006088BC /* VideoVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoVC+Ext.swift"; sourceTree = "<group>"; };
 		FCC096D823CEEDFC006088BC /* enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enum.swift; sourceTree = "<group>"; };
 		FCC096DB23CF1D21006088BC /* ConnectingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectingVC.swift; sourceTree = "<group>"; };
@@ -416,7 +417,6 @@
 		FCC9D85F241DD811005A92DD /* EMManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMManager.m; sourceTree = "<group>"; };
 		FCC9D860241DD811005A92DD /* EMManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMManager.h; sourceTree = "<group>"; };
 		FCC9D861241DD812005A92DD /* EMDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMDelegate.h; sourceTree = "<group>"; };
-		FCC9D867241E0881005A92DD /* HexMeet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HexMeet.xcdatamodel; sourceTree = "<group>"; };
 		FCCE786F23D425F60027499B /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		FCCE787023D425F60027499B /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		FCCE787323D450F60027499B /* PasswordReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordReminderView.swift; sourceTree = "<group>"; };
@@ -730,7 +730,7 @@
 				FCA897CD23BF3C7E00A0C78E /* ViewController */,
 				FCA897AD23BF0E6100A0C78E /* ExtensionClass */,
 				FCA8976C23BEF1B300A0C78E /* AppDelegate.swift */,
-				FCC9D866241E0881005A92DD /* HexMeet.xcdatamodeld */,
+				FCBD5A5A241FAE1000BE1288 /* EasyVideo.xcdatamodeld */,
 				FC2DAFD523C704BC00F802D7 /* Localizable.strings */,
 				FCD3543223F6E3E80045A02C /* InfoPlist.strings */,
 				FC7FEAEC23C4668F00BE940F /* easyVideo.pch */,
@@ -1363,6 +1363,7 @@
 				FCC9D81C241DD0DB005A92DD /* ChatListCell.swift in Sources */,
 				FC7FEAEB23C4621D00BE940F /* DDLogWrapper.m in Sources */,
 				FC93990523C037BC00C057B8 /* UIViewController+Ext.swift in Sources */,
+				FCBD5A5C241FAE1000BE1288 /* EasyVideo.xcdatamodeld in Sources */,
 				FCC9D85C241DD6E5005A92DD /* UIViewController+custom.m in Sources */,
 				FC7E674923C5B50F00B9CAFA /* DispatchQueue+Ext.swift in Sources */,
 				FCC3BD4A23D00C280018045E /* ConferenceVC.swift in Sources */,
@@ -1403,7 +1404,6 @@
 				FCC9D827241DD187005A92DD /* EmojiCollectionCell.swift in Sources */,
 				FC7FEAD223C4242C00BE940F /* UserInformationVC.swift in Sources */,
 				FCA897B123BF0EDE00A0C78E /* UIView+Ext.swift in Sources */,
-				FCC9D868241E0881005A92DD /* HexMeet.xcdatamodeld in Sources */,
 				FCBD28BC23C2F63800E1069F /* AboutVC.swift in Sources */,
 				FC17162C23FA9B52007861FE /* FeedbackVC.swift in Sources */,
 				FC349D6C23FCE655001B948E /* HQEditImageCaptureView.m in Sources */,
@@ -1844,13 +1844,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		FCC9D866241E0881005A92DD /* HexMeet.xcdatamodeld */ = {
+		FCBD5A5A241FAE1000BE1288 /* EasyVideo.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				FCC9D867241E0881005A92DD /* HexMeet.xcdatamodel */,
+				FCBD5A5B241FAE1000BE1288 /* EasyVideo.xcdatamodel */,
 			);
-			currentVersion = FCC9D867241E0881005A92DD /* HexMeet.xcdatamodel */;
-			path = HexMeet.xcdatamodeld;
+			currentVersion = FCBD5A5B241FAE1000BE1288 /* EasyVideo.xcdatamodel */;
+			path = EasyVideo.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

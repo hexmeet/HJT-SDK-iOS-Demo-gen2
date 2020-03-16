@@ -1,6 +1,6 @@
 //
 //  EMMessageManager.h
-//  HexMeet
+//  EasyVideo
 //
 //  Created by quanhao huang on 2019/12/5.
 //  Copyright © 2019 fo. All rights reserved.
