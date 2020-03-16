@@ -1,6 +1,6 @@
 //
 //  ChatListVC.m
-//  HexMeet
+//  EasyVideo
 //
 //  Created by quanhao huang on 2019/11/8.
 //  Copyright © 2019 fo. All rights reserved.

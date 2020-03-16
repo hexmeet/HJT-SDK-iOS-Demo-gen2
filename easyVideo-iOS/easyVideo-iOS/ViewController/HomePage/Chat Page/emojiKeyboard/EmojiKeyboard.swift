@@ -1,6 +1,6 @@
 //
 //  EmojiKeyboard.swift
-//  HexMeet
+//  EasyVideo
 //
 //  Created by quanhao huang on 2019/11/20.
 //  Copyright © 2019 fo. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  ChatPageViewController.m
-//  HexMeet
+//  EasyVideo
 //
 //  Created by quanhao huang on 2019/12/2.
 //  Copyright © 2019 fo. All rights reserved.

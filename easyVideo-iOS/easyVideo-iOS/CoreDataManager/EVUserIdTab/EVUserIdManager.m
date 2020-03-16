@@ -1,6 +1,6 @@
 //
 //  EVUserIdManager.m
-//  HexMeet
+//  EasyVideo
 //
 //  Created by quanhao huang on 2019/12/13.
 //  Copyright © 2019 fo. All rights reserved.
@@ -9,7 +9,7 @@
 #import "EVUserIdManager.h"
 
 //获取CoreData的.xcdatamodel文件的名称
-static NSString * const coreDataModelName = @"HexMeet";
+static NSString * const coreDataModelName = @"EasyVideo";
 //获取CodeData
 static NSString * const coreDataEntityName = @"EVUserIdTab";
 //数据库

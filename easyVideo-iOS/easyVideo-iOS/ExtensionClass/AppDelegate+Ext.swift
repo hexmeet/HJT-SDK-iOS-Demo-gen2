@@ -68,7 +68,8 @@ extension AppDelegate {
         DDLogWrapper.logInfo("evengine.getDevice(.videoCapture)")
         evengine.getDevice(.audioCapture)
         DDLogWrapper.logInfo("evengine.getDevice(.audioCapture)")
-        evengine.setUserAgent("HexMeet", version: getInfoString("CFBundleVersion"))
+        
+        evengine.setUserAgent(Bundle.main.bundleIdentifier ?? "easyVideo", version: getInfoString("CFBundleVersion"))
         
         if getSetParameter(enableMicphone) == nil {
             let setInfo = getSetPlist()
