@@ -75,9 +75,9 @@ class UserInformationVC: BaseViewController, UITableViewDelegate, UITableViewDat
     func edit(_ vc: HQImageEditViewController, finishiEditShotImage image: UIImage, originSizeImage: UIImage) {
         var portraitImg = originSizeImage
         portraitImg = self.imageByScalingToMaxSize(portraitImg)
-//        let data = (portraitImg).jpegData(compressionQuality: 1)
-//        let length = data!.count/1000
 
+        Utils.save(portraitImg)
+        
         let headImgPath = "\(FileTools.getDocumentsFailePath())/header.jpg"
 
         try? portraitImg.jpegData(compressionQuality: 1.0)?.write(to: URL.init(string: "file://\(headImgPath)")!, options: .atomicWrite)

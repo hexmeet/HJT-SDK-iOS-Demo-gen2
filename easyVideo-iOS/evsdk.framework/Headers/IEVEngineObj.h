@@ -178,7 +178,8 @@ typedef NS_ENUM (NSUInteger, EVCallError) {
     EVCallNotAllowAnonymousParty = 2033,
     EVCallTrialOrgExpired = 2035,
     EVCallLocalZoneNotStarted = 2043,
-    EVCallLocalZoneStopped = 2045
+    EVCallLocalZoneStopped = 2045,
+    EVCallRoomBusy = 4057
 };
 
 //////////////////////////////

@@ -44,7 +44,7 @@
     
     [[EMManager sharedInstance] addEMDelegate:self];
     
-    self.title = @"聊天";
+    self.title = NSLocalizedString(@"tabbar.chat", @"消息");
     
     appDelegate = APPDELEGATE;
     
@@ -70,6 +70,8 @@
     
     [[IQKeyboardManager sharedManager] setEnable:YES];
     [[IQKeyboardManager sharedManager] setEnableAutoToolbar:YES];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"backVideo" object:nil];
     
     self.navigationController.navigationBarHidden = navHidden;
     self.tabBarController.tabBar.hidden = navHidden;
@@ -105,6 +107,8 @@
         if (block) {
             block();
         }
+        
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 
@@ -147,7 +151,7 @@
                                 if ([user.emuserId isEqualToString:message.from]) {
                                     message.imagUrl = user.imageUrl;
                                     message.name = user.name;
-                                    if ([self->_userId isEqualToString:user.evuserId]) {
+                                    if ([self->_userId isEqualToString:user.evuserId] && ![user.evuserId isEqualToString:@"0"]) {
                                         message.type = MessageModelTypeMe;
                                     }else {
                                         message.type = MessageModelTypeOther;
@@ -197,6 +201,8 @@
     self.mainTableView.separatorStyle = NO;
     
     self.inputTextField.delegate = self;
+    self.inputTextField.inputAssistantItem.leadingBarButtonGroups = @[];
+    self.inputTextField.inputAssistantItem.trailingBarButtonGroups = @[];
     
     if (_backBool) {
         _inputRightConstraint.constant = 44;
@@ -253,9 +259,11 @@
         };
     }
         
-        //注册键盘显示通知
+    //注册键盘显示通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backVideo) name:@"backVideo" object:nil];
     
 }
 
@@ -343,14 +351,12 @@
     
     [[EVUserIdManager sharedInstance] selectEntity:nil ascending:YES filterString:nil success:^(NSArray * _Nonnull results) {
         for (EMGroupMemberInfo *user in results) {
-            NSLog(@"showVideoWindow%@ message.from%@", user.emuserId, message.from);
+   
             if ([user.emuserId isEqualToString:message.from]) {
-                
-//                [self.iconView sd_setImageWithURL:[NSURL URLWithString:user.imageUrl]];
                 messageModel.imagUrl = user.imageUrl;
                 messageModel.name = user.name;
                 
-                if ([self->_userId isEqualToString:user.evuserId]) {
+                if ([self->_userId isEqualToString:user.evuserId] && ![user.evuserId isEqualToString:@"0"]) {
                     messageModel.type = MessageModelTypeMe;
                 }else {
                     messageModel.type = MessageModelTypeOther;
@@ -447,6 +453,20 @@
         self->_backViewBottomConstraint.constant = 0;
         [self.view layoutIfNeeded];
     }];
+}
+
+- (void)backVideo
+{
+    if (_backBool) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }else {
+        ShowVideoWindow block = self.showVideoWindow;
+        if (block) {
+            block();
+        }
+        
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView

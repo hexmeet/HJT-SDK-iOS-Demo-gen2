@@ -12,7 +12,7 @@
 "Vqd-lm-sel.normalTitle" = "Advanced Settings";
 
 /* Class = "UITextField"; placeholder = "输入会议ID"; ObjectID = "dFJ-my-Be8"; */
-"dFJ-my-Be8.placeholder" = "Meeting ID";
+"dFJ-my-Be8.placeholder" = "Input Meeting ID(plus*password)";
 
 /* Class = "UIButton"; normalTitle = "加入"; ObjectID = "dIh-Ou-fu4"; */
 "dIh-Ou-fu4.normalTitle" = "Join";

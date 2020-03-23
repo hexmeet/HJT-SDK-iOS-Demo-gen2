@@ -1,6 +1,6 @@
 
 /* Class = "UITextField"; placeholder = "输入会议ID"; ObjectID = "ESu-8c-B9g"; */
-"ESu-8c-B9g.placeholder" = "Meeting ID";
+"ESu-8c-B9g.placeholder" = "Input Meeting ID(plus*password)";
 
 /* Class = "UILabel"; text = "加入会议"; ObjectID = "P62-2j-Ket"; */
 "P62-2j-Ket.text" = "Join a Meeting";

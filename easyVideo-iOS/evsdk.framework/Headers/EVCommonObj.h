@@ -115,6 +115,7 @@ typedef NS_ENUM (NSUInteger, EVErrorType) {
 __attribute__((visibility("default"))) @interface EVError : NSObject
 @property (assign, nonatomic) EVErrorType type;
 @property (assign, nonatomic) int code;
+@property (copy, nonatomic) NSString *_Nonnull action;
 @property (copy, nonatomic) NSString *_Nonnull msg;
 @property (copy, nonatomic) NSArray<NSString *> * _Nullable args;
 @end
@@ -207,6 +208,15 @@ __attribute__((visibility("default"))) @interface EVCallLog : NSObject
 //////////////////////////////
 //  Event
 //////////////////////////////
+
+typedef NS_ENUM (NSUInteger, EVRegisterState) {
+    EVRegisterStateNone = 0,
+    EVRegisterStateSucceed = 1,
+    EVRegisterStateFailed = 2,
+    EVRegisterStateProgress = 3,
+    EVRegisterStateForceClear = 4
+};
+
 __attribute__((visibility("default"))) @interface EVFeatureSupport : NSObject 
 @property (assign, nonatomic) bool contactWebPage;
 @property (assign, nonatomic) bool p2pCall;
@@ -266,6 +276,7 @@ __attribute__((visibility("default"))) @interface EVContentInfo : NSObject
 - (void)onError:(EVError *_Nonnull)err;
 - (void)onWarn:(EVWarn *_Nonnull)warn;
 - (void)onLoginSucceed:(EVUserInfo *_Nonnull)user;
+- (void)onRegisterState:(EVCallType)type state:(EVRegisterState)state;
 - (void)onDownloadUserImageComplete:(NSString *_Nonnull)path;
 - (void)onUploadUserImageComplete:(NSString *_Nonnull)path;
 - (void)onNetworkState:(bool)reachable;
@@ -280,7 +291,7 @@ __attribute__((visibility("default"))) @interface EVContentInfo : NSObject
 - (void)onMuteSpeakingDetected;
 - (void)onCallLogUpdated:(EVCallLog * _Nonnull)call_log;
 - (void)onMicMutedShow:(int)mic_muted;
-- (void)onAudioData:(int)sample_rate data:(void *_Nonnull)data len:(int)len;
+- (void)onAudioData:(int)sample_rate data:(const unsigned char *)data len:(int)len;
 @end
 
 //////////////////////////////
@@ -307,6 +318,7 @@ __attribute__((visibility("default"))) @interface EVContentInfo : NSObject
 - (NSString * _Nonnull) encryptPassword:(EVEncryptType)type password:(NSString * _Nonnull)password;
 - (int) downloadUserImage:(NSString *_Nonnull)path;
 - (int) uploadUserImage:(NSString *_Nonnull)path;
+- (EVRegisterState) getRegisterState:(EVCallType)type;
 
 //Provision
 - (NSString * _Nonnull) getSerialNumber;

@@ -67,6 +67,12 @@ typedef void (^AlertBtnActionBlock)(BOOL flag);
 
 + (UINavigationController *)currentNC;
 
+//判断名字
++ (BOOL)judgeSpecialCharacter:(NSArray *)arr withStr:(NSString *)str;
+
+//保存图片
++ (void)saveImage:(UIImage *)image;
+
 @end
 
 NS_ASSUME_NONNULL_END

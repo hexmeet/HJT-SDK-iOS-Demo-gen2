@@ -24,7 +24,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="200"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EasyVideo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ft-iz-YKE">
-                            <rect key="frame" x="167.5" y="150" width="79.5" height="25"/>
+                            <rect key="frame" x="167.5" y="155" width="79.5" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="25" id="JfW-5f-nKx"/>
                             </constraints>
@@ -33,20 +33,20 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about_logo" translatesAutoresizingMaskIntoConstraints="NO" id="vEZ-46-XNg">
-                            <rect key="frame" x="139.5" y="58" width="135" height="84"/>
+                            <rect key="frame" x="146" y="59" width="122" height="76"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="vEZ-46-XNg" secondAttribute="height" multiplier="61:38" id="NdR-Lw-8d3"/>
+                                <constraint firstAttribute="height" constant="76" id="272-9N-YOw"/>
+                                <constraint firstAttribute="width" constant="122" id="Twz-gf-Kdn"/>
                             </constraints>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="1Ft-iz-YKE" firstAttribute="top" secondItem="vEZ-46-XNg" secondAttribute="bottom" constant="8" id="1zr-iu-F7a"/>
-                        <constraint firstItem="vEZ-46-XNg" firstAttribute="centerY" secondItem="cHL-Vr-Dag" secondAttribute="centerY" id="Tuj-4Z-mnO"/>
-                        <constraint firstItem="vEZ-46-XNg" firstAttribute="centerX" secondItem="cHL-Vr-Dag" secondAttribute="centerX" id="Xos-BN-Xil"/>
-                        <constraint firstItem="1Ft-iz-YKE" firstAttribute="centerX" secondItem="vEZ-46-XNg" secondAttribute="centerX" id="aNS-tD-Dpl"/>
+                        <constraint firstAttribute="bottom" secondItem="1Ft-iz-YKE" secondAttribute="bottom" constant="20" id="Bmc-2x-TI1"/>
+                        <constraint firstItem="1Ft-iz-YKE" firstAttribute="top" secondItem="vEZ-46-XNg" secondAttribute="bottom" constant="20" id="GRH-cb-jwJ"/>
+                        <constraint firstItem="1Ft-iz-YKE" firstAttribute="centerX" secondItem="vEZ-46-XNg" secondAttribute="centerX" id="WDt-Ge-mVG"/>
                         <constraint firstAttribute="height" constant="200" id="oIq-Vc-LTK"/>
-                        <constraint firstItem="vEZ-46-XNg" firstAttribute="width" secondItem="cHL-Vr-Dag" secondAttribute="width" multiplier="122/375" id="uK4-hh-bQY"/>
+                        <constraint firstItem="vEZ-46-XNg" firstAttribute="centerX" secondItem="cHL-Vr-Dag" secondAttribute="centerX" id="pXU-jJ-GVv"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="版权所有 ©2020 北京中创视讯科技有限公司  保留一切权利" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuW-ew-IaV">

@@ -12,6 +12,8 @@
 //16进制色值
 #define HEXCOLOR(c) [UIColor colorWithRed:((c>>16)&0xFF)/255.0 green:((c>>8)&0xFF)/255.0 blue:(c&0xFF)/255.0 alpha:1.0]
 #define APPDELEGATE (AppDelegate *)[UIApplication sharedApplication].delegate
+#define NSLocalizedString(key, comment) \
+[NSBundle.mainBundle localizedStringForKey:(key) value:@"" table:nil]
 
 #import <easyVideo_iOS-Swift.h>
 #import "EVUserIdManager.h"

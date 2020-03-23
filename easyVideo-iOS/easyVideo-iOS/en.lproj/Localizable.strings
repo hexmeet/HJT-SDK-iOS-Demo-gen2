@@ -107,9 +107,13 @@
 "alert.networkunavailable" = "Network unavailable. Please check and try again.";
 "alert.callendAlert" = "Meeting ended or terminated by meeting host.";
 "alert.leavemeeting" = "Are you sure to leave the meeting?";
+"alert.specialcharacter" = "The username can not contain\",<,>";
+"alert.open.carmer" = "Video application needs to get camera permissions";
+"alert.open.micphone" = "Video application needs to get microphone permissions";
 
 "errorcode.1100" = "Incorrect account or password.";
 "error.1112" = "Administrator is not allowed to arccess app. Please use user account.";
+"error.2003" = "No meeting port resources available.";
 "error.2025" = "The number of participants has reached the platform limit.";
 "error.2024" = "The number of participants has reached the organization limit.";
 "error.2011" = "Meeting room expired.";

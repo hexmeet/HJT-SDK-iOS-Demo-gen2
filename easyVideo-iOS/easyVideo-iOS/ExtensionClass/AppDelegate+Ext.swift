@@ -20,9 +20,9 @@ extension AppDelegate {
     
     // MARK: WXApi
     func registeredWeChat() {
-        var universalLinke = getInfoString("Universal_link") as NSString
-        universalLinke = universalLinke.replacingOccurrences(of: "\\/", with: "/") as NSString
-        WXApi.registerApp(getInfoString("WXapp_Id"), universalLink: String(universalLinke))
+        var universalLinke = getInfoString("Universal_link")
+        universalLinke = universalLinke.replacingOccurrences(of: "\\/", with: "/")
+        WXApi.registerApp(getInfoString("WXapp_Id"), universalLink: universalLinke)
     }
     
     // MARK: JPUSH
@@ -86,6 +86,7 @@ extension AppDelegate {
         emengine.setLog(.message, path: logPath, file: "emsdk", size: 1024*1024*20)
         emengine.enableLog(true)
         emengine.enableSecure(true)
+        emengine.setRootCA(FileTools.bundleFile("rootca.pem"))
         
         DDLogWrapper.logInfo("emsdk-macos: applicationDidFinishLaunching end")
     }
@@ -95,7 +96,7 @@ extension AppDelegate {
         DDLog().add(DDASLLogger.sharedInstance)
         DDLog().add(DDTTYLogger.sharedInstance)
         
-        let fileManager = DDLogFileManagerDefault.init(logsDirectory: path)
+        let fileManager = DDLogFileWrapper(logsDirectory: path, fileName: "EVUILOG.log")
         let fileLogger = DDFileLogger.init(logFileManager: fileManager)
         
         fileLogger.rollingFrequency = 60 * 60 * 24 * 1000
@@ -254,6 +255,7 @@ extension AppDelegate {
         
         let vc = UIViewControllerCJHelper.findCurrentShowingViewController() as! BaseViewController
         self.evengine.logout()
+        DDLogWrapper.logInfo("evengine.logout() for loginOut");
         
         vc.whetherTheLogin()
         

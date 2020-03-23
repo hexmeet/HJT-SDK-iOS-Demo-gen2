@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AnonymousLinkVC: BaseViewController {
+class AnonymousLinkVC: BaseViewController, UITextFieldDelegate {
     
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var meetingNumberLb: UILabel!
@@ -24,6 +24,18 @@ class AnonymousLinkVC: BaseViewController {
         super.viewDidLoad()
 
         initContent()
+    }
+    
+    // MARK: UITextFieldDelegate
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == disPlayNameLb {
+            if !Utils.judgeSpecialCharacter(["\"", "<", ">"], withStr: string) {
+                self.view.endEditing(true)
+                showHud("alert.specialcharacter".localized, self.view, .MBProgressHUBPositionBottom, 2)
+            }
+            return Utils.judgeSpecialCharacter(["\"", "<", ">"], withStr: string)
+        }
+        return true
     }
 
 }

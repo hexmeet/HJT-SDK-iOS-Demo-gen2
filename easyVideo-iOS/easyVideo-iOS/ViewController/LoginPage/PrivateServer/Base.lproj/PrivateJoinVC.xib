@@ -50,7 +50,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" returnKeyType="next"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入会议ID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dFJ-my-Be8" customClass="LimitTextField">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入会议号码(加*密码)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dFJ-my-Be8" customClass="LimitTextField">
                             <rect key="frame" x="0.0" y="54" width="315" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="2Bn-l9-ZkE"/>
@@ -69,7 +69,7 @@
                                 <outlet property="delegate" destination="-1" id="vJb-cS-wU5"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="会议中显示的用户" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7yS-QB-Z54" customClass="LimitTextField">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="会议中显示的用户名" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7yS-QB-Z54" customClass="LimitTextField">
                             <rect key="frame" x="0.0" y="108" width="315" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="okQ-7x-Laq"/>

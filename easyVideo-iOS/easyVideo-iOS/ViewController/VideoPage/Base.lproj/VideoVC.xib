@@ -141,11 +141,11 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ba-Lx-vKb">
-                            <rect key="frame" x="0.0" y="265" width="240" height="128"/>
+                            <rect key="frame" x="0.0" y="128" width="240" height="128"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nKi-W7-B33" customClass="VideoView" customModule="HJT" customModuleProvider="target">
                                     <rect key="frame" x="12.5" y="0.0" width="227.5" height="128"/>
-                                    <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="nKi-W7-B33" secondAttribute="height" multiplier="16:9" id="Ggq-w4-1zH"/>
                                     </constraints>
@@ -161,7 +161,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F1G-Pb-0H7">
-                            <rect key="frame" x="568" y="265" width="240" height="128"/>
+                            <rect key="frame" x="568" y="128" width="240" height="128"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oSs-N7-4OX" customClass="VideoView" customModule="HJT" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="227.5" height="128"/>
@@ -191,12 +191,12 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="F1G-Pb-0H7" secondAttribute="bottom" id="12b-nW-1z7"/>
+                        <constraint firstItem="F1G-Pb-0H7" firstAttribute="top" secondItem="d2q-3L-gnG" secondAttribute="bottom" id="6Fi-5W-hnX"/>
                         <constraint firstAttribute="trailing" secondItem="LoO-NY-fCn" secondAttribute="trailing" constant="20" id="CoV-Ny-kPc"/>
                         <constraint firstAttribute="trailing" secondItem="d2q-3L-gnG" secondAttribute="trailing" id="Jwv-EO-FET"/>
+                        <constraint firstItem="5ba-Lx-vKb" firstAttribute="top" secondItem="4vb-S0-NOe" secondAttribute="bottom" id="RMG-Mb-Y5Z"/>
                         <constraint firstAttribute="bottom" secondItem="LoO-NY-fCn" secondAttribute="bottom" constant="20" id="aPF-93-52O"/>
                         <constraint firstItem="5ba-Lx-vKb" firstAttribute="leading" secondItem="xCX-rd-eg5" secondAttribute="leading" id="dBR-IB-tL6"/>
-                        <constraint firstAttribute="bottom" secondItem="5ba-Lx-vKb" secondAttribute="bottom" id="dPS-PR-IpF"/>
                         <constraint firstItem="4vb-S0-NOe" firstAttribute="leading" secondItem="xCX-rd-eg5" secondAttribute="leading" id="dqL-eO-j4g"/>
                         <constraint firstAttribute="trailing" secondItem="F1G-Pb-0H7" secondAttribute="trailing" id="lqM-8k-rKs"/>
                         <constraint firstItem="d2q-3L-gnG" firstAttribute="top" secondItem="xCX-rd-eg5" secondAttribute="top" id="nF3-2K-rQc"/>
@@ -470,7 +470,7 @@
                                             <rect key="frame" x="0.0" y="5" width="80" height="44"/>
                                             <size key="titleShadowOffset" width="5" height="0.0"/>
                                             <state key="normal" image="button:2Ti-rt-3rr:image"/>
-                                            <state key="selected" image="0AC346B2-FE50-40CE-B746-0B9D5CA04A04"/>
+                                            <state key="selected" image="C31C0AA0-A9F8-4F63-BD25-BB1ED3C6AADA"/>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -771,7 +771,7 @@
         </view>
     </objects>
     <resources>
-        <image name="0AC346B2-FE50-40CE-B746-0B9D5CA04A04" width="12" height="12">
+        <image name="C31C0AA0-A9F8-4F63-BD25-BB1ED3C6AADA" width="12" height="12">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05T
 S2V5ZWRBcmNoaXZlctEICVRyb290gAGvEBcLDBkaIRQmKisyNTo9PkNGR0pUXF1hZFUkbnVsbNYNDg8Q

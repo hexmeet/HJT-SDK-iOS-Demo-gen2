@@ -36,6 +36,8 @@ extension VideoVC {
     
     //Need to do to get out of meetings
     func callEndMethod() {
+        NotificationCenter.default.post(name: NSNotification.Name("backVideo"), object: nil)
+        
         moreMenuView.isHidden = true
         statisticalBg.isHidden = true
         webBg.isHidden = true

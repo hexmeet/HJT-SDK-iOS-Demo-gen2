@@ -126,20 +126,28 @@ extension BaseViewController {
             
             let data1 = path + "/evsdk1.log"
             let data2 = path + "/evsdk2.log"
-            let data3 = path + "/EVUILOG.log"
-            let data4 = path + "/EVUILOG2.log"
-            let data5 = path + "/crash.txt"
-            let data6 = path + "/weblog.log"
-            let data7 = path + "/weblog2.log"
+            let data3 = path + "/evsdk3.log"
+            let data4 = path + "/EVUILOG.log"
+            let data5 = path + "/EVUILOG2.log"
+            let data6 = path + "/crash.txt"
+            let data7 = path + "/weblog.log"
+            let data8 = path + "/weblog2.log"
+            let data9 = FileTools.getDocumentsFailePath() + "/emsdk1.log"
+            let data10 = FileTools.getDocumentsFailePath() + "/emsdk2.log"
+            let data11 = FileTools.getDocumentsFailePath() + "/emsdk3.log"
             
             if zip.createZipFile2(zipFile) {
                 zip.addFile(toZip: data1, newname: "evsdk1.log")
                 zip.addFile(toZip: data2, newname: "evsdk2.log")
-                zip.addFile(toZip: data3, newname: "EVUILOG.log")
-                zip.addFile(toZip: data4, newname: "EVUILOG2.log")
-                zip.addFile(toZip: data5, newname: "crash.txt")
-                zip.addFile(toZip: data6, newname: "weblog.log")
-                zip.addFile(toZip: data7, newname: "weblog2.log")
+                zip.addFile(toZip: data3, newname: "evsdk3.log")
+                zip.addFile(toZip: data4, newname: "EVUILOG.log")
+                zip.addFile(toZip: data5, newname: "EVUILOG2.log")
+                zip.addFile(toZip: data6, newname: "crash.txt")
+                zip.addFile(toZip: data7, newname: "weblog.log")
+                zip.addFile(toZip: data8, newname: "weblog2.log")
+                zip.addFile(toZip: data9, newname: "emlog1.log")
+                zip.addFile(toZip: data10, newname: "emlog2.log")
+                zip.addFile(toZip: data11, newname: "emlog3.log")
             }
             
             if !zip.closeZipFile2() {
@@ -178,6 +186,8 @@ extension LoginVC {
         self.cloudImg.addGestureRecognizer(cloudGest)
         
         companyLb.text = "CompanyName".infoPlist
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     func viewWillAppear() {
@@ -535,17 +545,22 @@ extension PrivateLoginVC {
         if err.type == .sdk || err.type == .locate {
             if err.code == 10009 {
                 showHud("errorcode.1100".localized, self.view, .MBProgressHUBPositionBottom, 3)
-            }else if err.code == 8 {
+            }else if err.code == 8 && err.action == "loginWithLocation" {
                 showHud("error.8".localized, self.view, .MBProgressHUBPositionBottom, 3)
-            }else if err.code == 9 {
+            }else if err.code == 9 && err.action == "loginWithLocation" {
                 showHud("error.9".localized, self.view, .MBProgressHUBPositionBottom, 3)
             }else {
+                if err.action == "downloadUserImage" {
+                    return
+                }
                 showHud("alert.cantconnert.server".localized, self.view, .MBProgressHUBPositionBottom, 3)
             }
         }else if err.type == .server {
             if err.code == 1101 {
                 let alert = "\("alert.passworderror1".localized) \(String((err.args?[0])!)) \("alert.passworderror2".localized)"
                 showHud(alert, self.view, .MBProgressHUBPositionBottom, 3)
+                appDelegate.evengine.logout()
+                DDLogWrapper.logInfo("evengine.logout()");
             }else if err.code == 1102 {
                 showHud("alert.passworderror3".localized, self.view, .MBProgressHUBPositionBottom, 3)
             }else if err.code == 1100 {
@@ -556,7 +571,7 @@ extension PrivateLoginVC {
                 showHud("alert.cantconnert.server".localized, self.view, .MBProgressHUBPositionBottom, 3)
             }
         }
-        appDelegate.evengine.logout()
+        
     }
 }
 
@@ -654,16 +669,21 @@ extension CloudLoginVC {
         if err.type == .sdk || err.type == .locate {
             if err.code == 10009 {
                 showHud("errorcode.1100".localized, self.view, .MBProgressHUBPositionBottom, 3)
-            }else if err.code == 8 {
+            }else if err.code == 8 && err.action == "loginWithLocation" {
                 showHud("error.8".localized, self.view, .MBProgressHUBPositionBottom, 3)
-            }else if err.code == 9 {
+            }else if err.code == 9 && err.action == "loginWithLocation" {
                 showHud("error.9".localized, self.view, .MBProgressHUBPositionBottom, 3)
             }else {
+                if err.action == "downloadUserImage" {
+                    return
+                }
                 showHud("alert.cantconnert.server".localized, self.view, .MBProgressHUBPositionBottom, 3)
             }
         }else if err.type == .server {
             if err.code == 1101 {
                 let alert = "\("alert.passworderror1".localized) \(String((err.args?[0])!)) \("alert.passworderror2".localized)"
+                appDelegate.evengine.logout()
+                DDLogWrapper.logInfo("evengine.logout()");
                 showHud(alert, self.view, .MBProgressHUBPositionBottom, 3)
             }else if err.code == 1102 {
                 showHud("alert.passworderror3".localized, self.view, .MBProgressHUBPositionBottom, 3)
@@ -675,7 +695,6 @@ extension CloudLoginVC {
                 showHud("alert.cantconnert.server".localized, self.view, .MBProgressHUBPositionBottom, 3)
             }
         }
-        appDelegate.evengine.logout()
     }
     
     @objc func buttonMethod(sender: UIButton) {
@@ -872,22 +891,23 @@ extension MeetingVC {
     
     func userContentController_(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if message.name == "callbackObj" {
-            DDLogWrapper.logInfo("MeetingVC callbackObj message.body:\(message.body)")
-            if "\(message.body)".contains("joinConf") {
-                joinConf("\(message.body)")
-            }else if "\(message.body)".contains("isShowNav") {
+            let body = "\(message.body)"
+            if body.contains("joinConf") {
+                joinConf(body)
+            }else if body.contains("isShowNav") {
                 whetherNeedtoDisplatabBar(message)
-            }else if "\(message.body)".contains("shareWechat") {
-                shareWechat("\(message.body)")
-            }else if "\(message.body)".contains("shareEmail") {
-                shareEmail("\(message.body)")
-            }else if "\(message.body)".contains("tokenExpired") {
+            }else if body.contains("shareWechat") {
+                shareWechat(body)
+            }else if body.contains("shareEmail") {
+                shareEmail(body)
+            }else if body.contains("tokenExpired") {
                 updateToken(webKit)
                 loadMeetingVCWeb()
-            }else if "\(message.body)".contains("clearCache") {
+            }else if body.contains("clearCache") {
                 deleteWebCache()
-            }else if "\(message.body)".contains("webLog") {
-                saveWebLog("\(message.body)")
+                loadMeetingVCWeb()
+            }else if body.contains("webLog") {
+                saveWebLog(body)
             }
         }
     }
@@ -901,16 +921,21 @@ extension MeetingVC {
     
     func loadMeetingVCWeb() {
         if getUserParameter(loginState) == "YES" {
-            var url = "\(getUserParameter(customizedH5UrlPrefix) ?? "")/mobile/#/conferences?token=\(getUserParameter(token) ?? "")"
+            let token = appDelegate.evengine.getUserInfo()?.token ?? ""
+            if token == "" {
+                didFailProvisionalNavigation()
+                return
+            }
+            var url = "\(getUserParameter(customizedH5UrlPrefix) ?? "")/mobile/#/conferences?token=\(token)"
             
             let languages = NSLocale.preferredLanguages
             let currentLanguage = languages[0]
-            if currentLanguage.contains("zh")  {
+            if currentLanguage.contains("zh") {
                 url = "\(url)&lang=cn&v=\(getUserParameter(doradoVersion) ?? "")"
             }else {
                 url = "\(url)&lang=en&v=\(getUserParameter(doradoVersion) ?? "")"
             }
-            webKit.load(URLRequest(url: URL(string: url)!, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 20.0))
+            webKit.load(URLRequest(url: URL(string: url)!))
             DDLogWrapper.logInfo("MeetingVC url:\(url)")
         }
     }
@@ -1096,6 +1121,9 @@ extension JoinMeetingVC {
         
         meetIdTF.delegate = self
         meetIdTF.inputView = UIView.init(frame: .zero)
+        let item = meetIdTF.inputAssistantItem
+        item.leadingBarButtonGroups = []
+        item.trailingBarButtonGroups = []
         
         cameraSwitch.addTarget(self, action: #selector(switchAction(sender:)), for: .touchUpInside)
         microphoneSwitch.addTarget(self, action: #selector(switchAction(sender:)), for: .touchUpInside)
@@ -1323,20 +1351,21 @@ extension ContactVC {
     }
     
     func userContentController_(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        let body = "\(message.body)"
+        
         if message.name == "callbackObj" {
-            DDLogWrapper.logInfo("ContactVC callbackObj message.body:\(message.body)")
-            
-            if (message.body as! String).contains("isShowNav") {
+            if body.contains("isShowNav") {
                 whetherNeedtoDisplatabBar(message)
-            }else if (message.body as! String).contains("p2pCall") {
+            }else if body.contains("p2pCall") {
                 p2pCallMethod(message)
-            }else if (message.body as! String).contains("tokenExpired") {
+            }else if body.contains("tokenExpired") {
                 updateToken(webKit)
                 loadMeetingVCWeb()
-            }else if (message.body as! String).contains("clearCache") {
+            }else if body.contains("clearCache") {
                 deleteWebCache()
-            }else if "\(message.body)".contains("webLog") {
-                saveWebLog("\(message.body)")
+                loadMeetingVCWeb()
+            }else if body.contains("webLog") {
+                saveWebLog(body)
             }
         }
     }
@@ -1351,8 +1380,13 @@ extension ContactVC {
     func loadMeetingVCWeb() {
         webKit.frame = self.view.frame
         
+        let token = appDelegate.evengine.getUserInfo()?.token ?? ""
+        if token == "" {
+            didFailProvisionalNavigation()
+            return
+        }
         if getUserParameter(loginState) == "YES" {
-            var url = "\(getUserParameter(customizedH5UrlPrefix) ?? "")/mobile/#/contacts?token=\(getUserParameter(token) ?? "")"
+            var url = "\(getUserParameter(customizedH5UrlPrefix) ?? "")/mobile/#/contacts?token=\(token)"
             
             let languages = NSLocale.preferredLanguages
             let currentLanguage = languages[0]
@@ -1362,7 +1396,7 @@ extension ContactVC {
                 url = "\(url)&lang=en&v=\(getUserParameter(doradoVersion) ?? "")"
             }
 
-            webKit.load(URLRequest(url: URL(string: url)!, cachePolicy:.reloadIgnoringLocalCacheData, timeoutInterval: 20.0))
+            webKit.load(URLRequest(url: URL(string: url)!))
             DDLogWrapper.logInfo("ContactVC web url:\(url)")
         }
     }
@@ -1778,7 +1812,7 @@ extension UserInformationVC {
                     self?.imgPicker.allowsEditing = false
                     self?.imgPicker.transitioningDelegate = self
                     self?.imgPicker.modalPresentationStyle = .fullScreen
-                    self?.imgPicker.navigationBar.barTintColor = .black
+                    self?.imgPicker.navigationBar.barTintColor = .white
                     UIBarButtonItem.appearance().tintColor = UIColor.black
 
                     self?.present(self!.imgPicker, animated: true, completion: {
@@ -1982,7 +2016,12 @@ extension ConferenceVC {
     func loadWebView(_ meetingId:String) {
         meetingNumber = meetingId
         let info = appDelegate.evengine.getUserInfo()
-        var url = "\(info?.customizedH5UrlPrefix ?? "")/mobile/#/confControl?numericId=\(meetingId)&token=\(info?.token ?? "")&deviceId=\(info?.deviceId ?? 0)"
+        let token = info?.token ?? ""
+        if token == "" {
+            didFailProvisionalNavigation()
+            return
+        }
+        var url = "\(info?.customizedH5UrlPrefix ?? "")/mobile/#/confControl?numericId=\(meetingId)&token=\(token)&deviceId=\(info?.deviceId ?? 0)"
         
         let languages = NSLocale.preferredLanguages
         let currentLanguage = languages[0]
@@ -1992,24 +2031,25 @@ extension ConferenceVC {
             url = "\(url)&lang=en&v=\(info?.doradoVersion ?? "")"
         }
 
-        webKit.load(URLRequest(url: URL(string: url)!, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 20.0))
+        webKit.load(URLRequest(url: URL(string: url)!))
         DDLogWrapper.logInfo("ConferenceVC web url:\(url)")
     }
     
     func userContentController_(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if message.name == "callbackObj" {
-            DDLogWrapper.logInfo("ConferenceVC callbackObj message.body:\(message.body)")
-            
-            if (message.body as! String).contains("tokenExpired") {
+            let body = "\(message.body)"
+            if body.contains("tokenExpired") {
                 updateToken(webKit)
-            }else if "\(message.body)".contains("shareWechat") {
-                shareWechat("\(message.body)")
-            }else if "\(message.body)".contains("shareEmail") {
-                shareEmail("\(message.body)")
-            }else if (message.body as! String).contains("clearCache") {
+                loadWebView(meetingNumber)
+            }else if body.contains("clearCache") {
                 deleteWebCache()
-            }else if "\(message.body)".contains("webLog") {
-                saveWebLog("\(message.body)")
+                loadWebView(meetingNumber)
+            }else if body.contains("shareWechat") {
+                shareWechat(body)
+            }else if body.contains("shareEmail") {
+                shareEmail(body)
+            }else if body.contains("webLog") {
+                saveWebLog(body)
             }
         }
     }

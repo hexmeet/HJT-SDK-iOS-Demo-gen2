@@ -244,11 +244,25 @@ extension VideoVC {
             appDelegate.evengine.enableCamera(true)
             DDLogWrapper.logInfo("evengine.enableCamera(true)")
         }
+        
+        appDelegate.evengine.audioInterruption(0)
     }
     
     @objc func didEnterBackground() {
         appDelegate.evengine.enableCamera(false)
         DDLogWrapper.logInfo("evengine.enableCamera(false)")
+    }
+    
+    @objc func hiddenTool() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.topConstraint.constant = -49
+            self.bottomConstraint.constant = -49
+            self.moreMenuView.isHidden = true
+            self.view.layoutIfNeeded()
+        }) { (flag) in
+            self.topNavBar.isHidden = true
+            self.bottomNavBar.isHidden = true
+        }
     }
     
     func joinChatMode() {
@@ -339,6 +353,8 @@ extension VideoVC {
             self.topNavBar.isHidden = false
             self.bottomNavBar.isHidden = false
             UIView.animate(withDuration: 0.5) {
+                NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(self.hiddenTool), object: nil)
+                self.perform(#selector(self.hiddenTool), with: nil, afterDelay: 10)
                 self.topConstraint.constant = 0
                 self.bottomConstraint.constant = 0
                 self.moreMenuView.isHidden = true
@@ -348,10 +364,7 @@ extension VideoVC {
     }
     
     @objc func videoBghandleSingleTap() {
-        one.videoStateView.isHidden = !one.videoStateView.isHidden
-        two.videoStateView.isHidden = !two.videoStateView.isHidden
-        three.videoStateView.isHidden = !three.videoStateView.isHidden
-        four.videoStateView.isHidden = !four.videoStateView.isHidden
+        NotificationCenter.default.post(name: NSNotification.Name("backVideo"), object: nil)
     }
     
     @objc func handlePanGesture(_ p: UIPanGestureRecognizer) {
@@ -437,6 +450,8 @@ extension VideoVC {
         
         layoutMode = .galleryMode
         chooseLayoutMode(layoutMode)
+        
+        perform(#selector(hiddenTool), with: nil, afterDelay: 10)
     }
     
     @objc func refreshJoinTime() {
@@ -576,6 +591,10 @@ extension VideoVC {
         alert.addAction(UIAlertAction(title: "alert.sure".localized, style: .default, handler: { [weak self] (_) in
             let textField = alert.textFields?.first
             if textField?.text?.count != 0 {
+                if !Utils.judgeSpecialCharacter(["\"", "<", ">"], withStr: textField!.text!) {
+                    self?.showAlert("alert.specialcharacter".localized)
+                    return
+                }
                 self?.appDelegate.evengine.setInConfDisplayName((textField?.text)!)
                 
                 DDLogWrapper.logInfo("setInConfDisplayName name:\(textField!.text!)")
@@ -682,21 +701,40 @@ extension VideoVC {
             threeBg.isHidden = true
             fourBg.isHidden = true
             
-            oneConstraint.constant = CGFloat(width-height*16/9)/2
-            oneTop.constant = 0
-            twoTop.constant = 0
-            
-            onewidth.constant = CGFloat(width)
-            oneheight.constant = CGFloat(height)
-            
-            twowidth.constant = 0
-            twoheight.constant = 0
-            
-            threewidth.constant = 0
-            threeheight.constant = 0
-            
-            fourwidth.constant = 0
-            fourheight.constant = 0
+            if height*16/9 <= width {
+                oneConstraint.constant = CGFloat(width-height*16/9)/2
+                oneTop.constant = 0
+                twoTop.constant = 0
+                
+                onewidth.constant = CGFloat(width)
+                oneheight.constant = CGFloat(height)
+                
+                twowidth.constant = 0
+                twoheight.constant = 0
+                
+                threewidth.constant = 0
+                threeheight.constant = 0
+                
+                fourwidth.constant = 0
+                fourheight.constant = 0
+            }else {
+                
+                oneTop.constant = CGFloat(height-width*9/16)/2
+                
+                twoTop.constant = 0
+                
+                onewidth.constant = CGFloat(width)
+                oneheight.constant = CGFloat(height-(height-width*9/16))
+                
+                twowidth.constant = 0
+                twoheight.constant = 0
+                
+                threewidth.constant = 0
+                threeheight.constant = 0
+                
+                fourwidth.constant = 0
+                fourheight.constant = 0
+            }
             
         }else if type == .twovideo {
             oneBg.isHidden = false
@@ -725,17 +763,31 @@ extension VideoVC {
             threeBg.isHidden = false
             fourBg.isHidden = true
             
-            oneConstraint.constant = 0
-            oneTop.constant = 0
-            twoTop.constant = 0
-            onewidth.constant = CGFloat(width/2)
-            oneheight.constant = CGFloat(height/2)
-            
-            twowidth.constant = CGFloat(width/2)
-            twoheight.constant = CGFloat(height/2)
-            
-            threewidth.constant = CGFloat(width/2)
-            threeheight.constant = CGFloat(height/2)
+            if height*16/9 <= width {
+                oneConstraint.constant = 0
+                oneTop.constant = 0
+                twoTop.constant = 0
+                onewidth.constant = CGFloat(width/2)
+                oneheight.constant = CGFloat(height/2)
+                
+                twowidth.constant = CGFloat(width/2)
+                twoheight.constant = CGFloat(height/2)
+                
+                threewidth.constant = CGFloat(width/2)
+                threeheight.constant = CGFloat(height/2)
+            }else {
+                oneTop.constant = CGFloat(height-width*9/16)/2
+                twoTop.constant = CGFloat(height-width*9/16)/2
+                
+                onewidth.constant = CGFloat(width/2)
+                oneheight.constant = CGFloat((height-(height-width*9/16))/2)
+                
+                twowidth.constant = CGFloat(width/2)
+                twoheight.constant = CGFloat((height-(height-width*9/16))/2)
+                
+                threewidth.constant = CGFloat(width/2)
+                threeheight.constant = CGFloat((height-(height-width*9/16))/2)
+            }
             
             fourwidth.constant = 0
             fourheight.constant = 0
@@ -745,20 +797,37 @@ extension VideoVC {
             threeBg.isHidden = false
             fourBg.isHidden = false
             
-            oneConstraint.constant = 0
-            oneTop.constant = 0
-            twoTop.constant = 0
-            onewidth.constant = CGFloat(width/2)
-            oneheight.constant = CGFloat(height/2)
-            
-            twowidth.constant = CGFloat(width/2)
-            twoheight.constant = CGFloat(height/2)
-            
-            threewidth.constant = CGFloat(width/2)
-            threeheight.constant = CGFloat(height/2)
-            
-            fourwidth.constant = CGFloat(width/2)
-            fourheight.constant = CGFloat(height/2)
+            if height*16/9 <= width {
+                oneConstraint.constant = 0
+                oneTop.constant = 0
+                twoTop.constant = 0
+                onewidth.constant = CGFloat(width/2)
+                oneheight.constant = CGFloat(height/2)
+                
+                twowidth.constant = CGFloat(width/2)
+                twoheight.constant = CGFloat(height/2)
+                
+                threewidth.constant = CGFloat(width/2)
+                threeheight.constant = CGFloat(height/2)
+                
+                fourwidth.constant = CGFloat(width/2)
+                fourheight.constant = CGFloat(height/2)
+            }else {
+                oneTop.constant = CGFloat(height-width*9/16)/2
+                twoTop.constant = CGFloat(height-width*9/16)/2
+                
+                onewidth.constant = CGFloat(width/2)
+                oneheight.constant = CGFloat((height-(height-width*9/16))/2)
+                
+                twowidth.constant = CGFloat(width/2)
+                twoheight.constant = CGFloat((height-(height-width*9/16))/2)
+                
+                threewidth.constant = CGFloat(width/2)
+                threeheight.constant = CGFloat((height-(height-width*9/16))/2)
+                
+                fourwidth.constant = CGFloat(width/2)
+                fourheight.constant = CGFloat((height-(height-width*9/16))/2)
+            }
         }
     }
     
