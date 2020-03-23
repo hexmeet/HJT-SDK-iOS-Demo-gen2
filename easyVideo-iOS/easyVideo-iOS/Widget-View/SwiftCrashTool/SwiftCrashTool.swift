@@ -44,6 +44,9 @@ class SwiftCrashTool {
         func SignalExceptionHandler(signal:Int32) -> Void {
             var mstr: String = ""
             //增加错误信息
+            let timeFormatter = DateFormatter()
+            timeFormatter.dateFormat = "yyy-MM-dd' at 'HH:mm:ss.SSS"
+            mstr = "======异常崩溃报告======\ndate: \(timeFormatter.string(from: Date()))"
             for symbol in Thread.callStackSymbols {
                 mstr = mstr.appendingFormat("%@\r\n", symbol)
             }

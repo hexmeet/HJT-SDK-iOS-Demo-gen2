@@ -26,3 +26,4 @@
 #import "EMManager.h"
 #import "EVUserIdManager.h"
 #import "ChatPageViewController.h"
+#import "DDLogFileWrapper.h"

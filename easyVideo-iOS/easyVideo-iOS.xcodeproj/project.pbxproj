@@ -44,6 +44,7 @@
 		FC5A668823CC0E84002E8CDD /* TermsServiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5A668623CC0E84002E8CDD /* TermsServiceVC.swift */; };
 		FC5A668923CC0E84002E8CDD /* TermsServiceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC5A668723CC0E84002E8CDD /* TermsServiceVC.xib */; };
 		FC5A668B23CC112F002E8CDD /* licenseServer.html in Resources */ = {isa = PBXBuildFile; fileRef = FC5A668A23CC112F002E8CDD /* licenseServer.html */; };
+		FC6A21532421FBD50033F1F8 /* DDLogFileWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6A21522421FBD50033F1F8 /* DDLogFileWrapper.m */; };
 		FC6D0AF523D176850030D55D /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D0AF423D176850030D55D /* VideoView.swift */; };
 		FC6D0AF723D1768F0030D55D /* VideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC6D0AF623D1768F0030D55D /* VideoView.xib */; };
 		FC6D0AF923D186AE0030D55D /* VideoVC+SDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D0AF823D186AE0030D55D /* VideoVC+SDK.swift */; };
@@ -68,6 +69,8 @@
 		FC7908E923D6C9C3006CE448 /* JoinMeetingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC7908EB23D6C9C3006CE448 /* JoinMeetingVC.xib */; };
 		FC7908F023D6D0BA006CE448 /* StatisticalVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC7908F223D6D0BA006CE448 /* StatisticalVC.xib */; };
 		FC7908F723D6D3C4006CE448 /* VideoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC7908F923D6D3C4006CE448 /* VideoVC.xib */; };
+		FC7B1B1D2424C3D9000B09A9 /* emsdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7B1B1B2424C23E000B09A9 /* emsdk.framework */; };
+		FC7B1B1E2424C3D9000B09A9 /* emsdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC7B1B1B2424C23E000B09A9 /* emsdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FC7B5A7C24063C0800CD6479 /* img_videomute2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC7B5A7B24063C0800CD6479 /* img_videomute2.jpg */; };
 		FC7E672823C56AE300B9CAFA /* Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7E672723C56AE300B9CAFA /* Manager.m */; };
 		FC7E674723C5844B00B9CAFA /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E674623C5844B00B9CAFA /* String+Ext.swift */; };
@@ -158,8 +161,6 @@
 		FCC9D846241DD249005A92DD /* NSString+HQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC9D844241DD249005A92DD /* NSString+HQExtension.m */; };
 		FCC9D84C241DD314005A92DD /* EVUserIdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC9D84A241DD314005A92DD /* EVUserIdManager.m */; };
 		FCC9D84F241DD31D005A92DD /* EMMessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC9D84E241DD31D005A92DD /* EMMessageManager.m */; };
-		FCC9D852241DD3B9005A92DD /* emsdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC9D850241DD3B1005A92DD /* emsdk.framework */; };
-		FCC9D853241DD3B9005A92DD /* emsdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FCC9D850241DD3B1005A92DD /* emsdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FCC9D856241DD5D0005A92DD /* UIView+custom.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC9D855241DD5D0005A92DD /* UIView+custom.m */; };
 		FCC9D859241DD60C005A92DD /* UITextField+ExtentRange.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC9D858241DD60C005A92DD /* UITextField+ExtentRange.m */; };
 		FCC9D85C241DD6E5005A92DD /* UIViewController+custom.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC9D85A241DD6E4005A92DD /* UIViewController+custom.m */; };
@@ -182,7 +183,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				FC7FEAE423C430FD00BE940F /* evsdk.framework in Embed Frameworks */,
-				FCC9D853241DD3B9005A92DD /* emsdk.framework in Embed Frameworks */,
+				FC7B1B1E2424C3D9000B09A9 /* emsdk.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,6 +244,8 @@
 		FC5A668623CC0E84002E8CDD /* TermsServiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsServiceVC.swift; sourceTree = "<group>"; };
 		FC5A668723CC0E84002E8CDD /* TermsServiceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsServiceVC.xib; sourceTree = "<group>"; };
 		FC5A668A23CC112F002E8CDD /* licenseServer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = licenseServer.html; sourceTree = "<group>"; };
+		FC6A21512421FBD50033F1F8 /* DDLogFileWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDLogFileWrapper.h; sourceTree = "<group>"; };
+		FC6A21522421FBD50033F1F8 /* DDLogFileWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDLogFileWrapper.m; sourceTree = "<group>"; };
 		FC6D0AF423D176850030D55D /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		FC6D0AF623D1768F0030D55D /* VideoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoView.xib; sourceTree = "<group>"; };
 		FC6D0AF823D186AE0030D55D /* VideoVC+SDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoVC+SDK.swift"; sourceTree = "<group>"; };
@@ -293,6 +296,7 @@
 		FC7908F823D6D3C4006CE448 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/VideoVC.xib; sourceTree = "<group>"; };
 		FC7908FB23D6D3C9006CE448 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/VideoVC.strings; sourceTree = "<group>"; };
 		FC7908FD23D6D3CA006CE448 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/VideoVC.strings"; sourceTree = "<group>"; };
+		FC7B1B1B2424C23E000B09A9 /* emsdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = emsdk.framework; sourceTree = "<group>"; };
 		FC7B5A7B24063C0800CD6479 /* img_videomute2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img_videomute2.jpg; sourceTree = "<group>"; };
 		FC7E672623C56AE300B9CAFA /* Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Manager.h; sourceTree = "<group>"; };
 		FC7E672723C56AE300B9CAFA /* Manager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Manager.m; sourceTree = "<group>"; };
@@ -406,7 +410,6 @@
 		FCC9D84B241DD314005A92DD /* EVUserIdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVUserIdManager.h; sourceTree = "<group>"; };
 		FCC9D84D241DD31D005A92DD /* EMMessageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMMessageManager.h; sourceTree = "<group>"; };
 		FCC9D84E241DD31D005A92DD /* EMMessageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMMessageManager.m; sourceTree = "<group>"; };
-		FCC9D850241DD3B1005A92DD /* emsdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = emsdk.framework; sourceTree = "<group>"; };
 		FCC9D854241DD5D0005A92DD /* UIView+custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+custom.h"; sourceTree = "<group>"; };
 		FCC9D855241DD5D0005A92DD /* UIView+custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+custom.m"; sourceTree = "<group>"; };
 		FCC9D857241DD60C005A92DD /* UITextField+ExtentRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+ExtentRange.h"; sourceTree = "<group>"; };
@@ -436,7 +439,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC7FEAE323C430FD00BE940F /* evsdk.framework in Frameworks */,
-				FCC9D852241DD3B9005A92DD /* emsdk.framework in Frameworks */,
+				FC7B1B1D2424C3D9000B09A9 /* emsdk.framework in Frameworks */,
 				83DB2C0A07F600A142527CC9 /* libPods-easyVideo-iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,7 +459,7 @@
 		E50B9E295A8ECCF4EFD918FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FCC9D850241DD3B1005A92DD /* emsdk.framework */,
+				FC7B1B1B2424C23E000B09A9 /* emsdk.framework */,
 				FC2DAFC823C6D37F00F802D7 /* CoreGraphics.framework */,
 				FC7FEAE123C430F700BE940F /* evsdk.framework */,
 				7C66CB153E2204599DA6CCAB /* libPods-easyVideo-iOS.a */,
@@ -544,6 +547,17 @@
 			path = "Terms of Service";
 			sourceTree = "<group>";
 		};
+		FC6A21462421ECA80033F1F8 /* DDLogWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				FC7FEAE923C4621D00BE940F /* DDLogWrapper.h */,
+				FC7FEAEA23C4621D00BE940F /* DDLogWrapper.m */,
+				FC6A21512421FBD50033F1F8 /* DDLogFileWrapper.h */,
+				FC6A21522421FBD50033F1F8 /* DDLogFileWrapper.m */,
+			);
+			path = DDLogWrapper;
+			sourceTree = "<group>";
+		};
 		FC6D0AF323D176310030D55D /* VideoView */ = {
 			isa = PBXGroup;
 			children = (
@@ -597,8 +611,6 @@
 			children = (
 				FCA8979423BF08E000A0C78E /* BaseTabBarVC.swift */,
 				FCA8979723BF092400A0C78E /* BaseViewController.swift */,
-				FC7FEAE923C4621D00BE940F /* DDLogWrapper.h */,
-				FC7FEAEA23C4621D00BE940F /* DDLogWrapper.m */,
 				FC7FEAF223C479F800BE940F /* PlistAttribute.swift */,
 				FCC096D823CEEDFC006088BC /* enum.swift */,
 				FC79089A23D6A741006CE448 /* Public.swift */,
@@ -929,6 +941,7 @@
 		FCBD28BE23C3009100E1069F /* Widget-View */ = {
 			isa = PBXGroup;
 			children = (
+				FC6A21462421ECA80033F1F8 /* DDLogWrapper */,
 				FCC9D85E241DD7EB005A92DD /* EMManager */,
 				FCC39B2E241B5C0000BBB9AA /* LEEAlert */,
 				FC125171240BB08F00D6CDD3 /* WebLogTool */,
@@ -1380,6 +1393,7 @@
 				FCC3BD4F23D041550018045E /* StatisticalVC.swift in Sources */,
 				FC7E672823C56AE300B9CAFA /* Manager.m in Sources */,
 				FCCE787123D425F60027499B /* Utils.m in Sources */,
+				FC6A21532421FBD50033F1F8 /* DDLogFileWrapper.m in Sources */,
 				FCC9D859241DD60C005A92DD /* UITextField+ExtentRange.m in Sources */,
 				FC0380E323C044D0001953CA /* LoginSettingVC.swift in Sources */,
 				FC125173240BB09E00D6CDD3 /* WebLogTool.swift in Sources */,
@@ -1778,7 +1792,7 @@
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "easyVideo_iOS-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 arm64e";
 				WARNING_CFLAGS = "";
 			};
@@ -1814,7 +1828,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "easyVideo-iOS/easyVideo-iOS-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "easyVideo_iOS-Swift.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 arm64e";
 				WARNING_CFLAGS = "";
 			};

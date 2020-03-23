@@ -6,7 +6,7 @@
 "DKc-Sh-aOQ.text" = "即将进入会议";
 
 /* Class = "UITextField"; placeholder = "会议中显示的用户"; ObjectID = "U3e-0X-5kA"; */
-"U3e-0X-5kA.placeholder" = "会议中显示的用户";
+"U3e-0X-5kA.placeholder" = "会议中显示的用户名";
 
 /* Class = "UIButton"; normalTitle = "关闭摄像头"; ObjectID = "gpe-gN-mXk"; */
 "gpe-gN-mXk.normalTitle" = "关闭摄像头";

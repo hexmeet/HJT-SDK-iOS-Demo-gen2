@@ -165,5 +165,4 @@ class VideoVC: BaseViewController, CAAnimationDelegate {
             setAnimation(messageLb!, timeInteger)
         }
     }
-
 }

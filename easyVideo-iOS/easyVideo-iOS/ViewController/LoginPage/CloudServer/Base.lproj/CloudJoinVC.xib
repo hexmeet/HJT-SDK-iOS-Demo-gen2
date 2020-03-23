@@ -40,7 +40,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwU-2z-oF6">
                     <rect key="frame" x="49.5" y="372" width="315" height="152"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入会议ID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ESu-8c-B9g" customClass="LimitTextField">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入会议号码(加*密码)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ESu-8c-B9g" customClass="LimitTextField">
                             <rect key="frame" x="0.0" y="0.0" width="315" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="Hfn-gk-EeP"/>
@@ -70,7 +70,7 @@
                             </constraints>
                             <state key="normal" image="dropdown_normal"/>
                         </button>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="会议中显示的用户" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QVU-5S-oaG" customClass="LimitTextField">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="会议中显示的用户名" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QVU-5S-oaG" customClass="LimitTextField">
                             <rect key="frame" x="0.0" y="54" width="315" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="WKp-nW-7WQ"/>

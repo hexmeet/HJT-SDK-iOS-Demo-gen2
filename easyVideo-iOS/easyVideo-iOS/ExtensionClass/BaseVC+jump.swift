@@ -19,8 +19,9 @@ extension BaseViewController {
     /// 跳转LoginVC
     func PresentLoginVCPage(animated flag: Bool, presentStyle style: UIModalPresentationStyle) {
         let login = LoginVC()
-        login.modalPresentationStyle = style
-        present(login, animated: flag, completion: nil)
+        let nav = UINavigationController.init(rootViewController: login)
+        nav.modalPresentationStyle = style
+        present(nav, animated: flag, completion: nil)
     }
     
     /// 跳转PrivateVC
@@ -109,8 +110,11 @@ extension BaseViewController {
     
     /// dismissAllModalController
     func disMissAllModelController(animated flag:Bool) {
-//        Utils.backToRootViewcontroller()
-        appDelegate.window?.rootViewController = BaseTabBarVC()
+        let tabbar = BaseTabBarVC()
+        tabbar.needDelayJoin = getTabBarVC().needDelayJoin
+        tabbar.meetingIdStr = getTabBarVC().meetingIdStr
+        tabbar.passwordStr = getTabBarVC().passwordStr
+        appDelegate.window?.rootViewController = tabbar
     }
     
     // MARK: Push, Pop
@@ -162,6 +166,7 @@ extension BaseViewController {
             self.appDelegate.hiddenNetworkWindow()
             
             self.appDelegate.evengine.logout()
+            DDLogWrapper.logInfo("pushUserInformationVC evengine.logout()");
             self.whetherTheLogin()
             
             self.poptoRootPage(animated: true)
@@ -179,6 +184,7 @@ extension BaseViewController {
             PlistUtils.savePlistFile(user as! [AnyHashable : Any], withFileName: userPlist)
             
             self.appDelegate.evengine.logout()
+            DDLogWrapper.logInfo("evengine.logout()");
             self.whetherTheLogin()
             
             self.poptoRootPage(animated: true)

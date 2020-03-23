@@ -6,6 +6,8 @@
 	<string>${APPLE_ID}</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -14,74 +16,10 @@
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
-	<key>CFBundleDisplayName</key>
-	<string>${PRODUCT_NAME}</string>
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
-	<key>CFBundleVersion</key>
-	<string>1</string>
-	<key>CloudLoginServer</key>
-	<string>${CLOUD_LOCATION_SERVER_ADDRESS}</string>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<true/>
-	<key>Jpush_key</key>
-	<string>${JPUSH_KEY}</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>weixin</string>
-		<string>weixinULAPI</string>
-	</array>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
-	<key>NSCameraUsageDescription</key>
-	<string>app use camera for video call</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>app use microphone for video/audio call</string>
-	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>app access to bluetooth for voip call</string>
-	<key>NSCalendarsUsageDescription</key>
-	<string>app access to calendars for schedule meeting </string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>app allow user to select one photo as the icon in app</string>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>audio</string>
-		<string>remote-notification</string>
-	</array>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
-	<key>UIRequiredDeviceCapabilities</key>
-	<array>
-		<string>armv7</string>
-	</array>
-	<key>UISupportedInterfaceOrientations</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UISupportedInterfaceOrientations~ipad</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>Universal_link</key>
-	<string>${UNIVERSAL_LINK}</string>
-	<key>WXapp_Id</key>
-	<string>${WX_APP_ID}</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -97,19 +35,83 @@
 			</array>
 		</dict>
 		<dict>
-			<key>CFBundleURLName</key>
-			<string>${PRODUCT_BUNDLE_IDENTIFIER}</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLIconFile</key>
 			<string>weixinIcon</string>
+			<key>CFBundleURLName</key>
+			<string>weixin</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>${WX_APP_ID}</string>
 			</array>
 		</dict>
 	</array>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>CloudLoginServer</key>
+	<string>${CLOUD_LOCATION_SERVER_ADDRESS}</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>Jpush_key</key>
+	<string>${JPUSH_KEY}</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>weixin</string>
+		<string>weixinULAPI</string>
+	</array>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>app access to bluetooth for voip call</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>app access to calendars for schedule meeting </string>
+	<key>NSCameraUsageDescription</key>
+	<string>app use camera for video call</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>app use microphone for video/audio call</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>app allow user to select one photo as the icon in app</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+		<string>remote-notification</string>
+	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UIRequiresFullScreen</key>
+	<true/>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
+	<key>Universal_link</key>
+	<string>${UNIVERSAL_LINK}</string>
+	<key>WXapp_Id</key>
+	<string>${WX_APP_ID}</string>
 </dict>
 </plist>

@@ -28,7 +28,7 @@ class MeetingVC: BaseViewController, WKScriptMessageHandler, WKNavigationDelegat
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super .viewWillAppear(animated)
+        super.viewWillAppear(animated)
         
         hiddenNav()
         

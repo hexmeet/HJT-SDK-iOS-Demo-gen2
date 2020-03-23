@@ -3,7 +3,7 @@
 "2Bc-Oh-4zu.placeholder" = "服务器";
 
 /* Class = "UITextField"; placeholder = "会议中显示的用户"; ObjectID = "7yS-QB-Z54"; */
-"7yS-QB-Z54.placeholder" = "会议中显示的用户";
+"7yS-QB-Z54.placeholder" = "会议中显示的用户名";
 
 /* Class = "UIButton"; normalTitle = "关闭麦克风"; ObjectID = "ETZ-YG-COV"; */
 "ETZ-YG-COV.normalTitle" = "关闭麦克风";
@@ -12,7 +12,7 @@
 "Vqd-lm-sel.normalTitle" = "高级设置";
 
 /* Class = "UITextField"; placeholder = "输入会议ID"; ObjectID = "dFJ-my-Be8"; */
-"dFJ-my-Be8.placeholder" = "输入会议ID";
+"dFJ-my-Be8.placeholder" = "请输入会议号码(加*密码)";
 
 /* Class = "UIButton"; normalTitle = "加入"; ObjectID = "dIh-Ou-fu4"; */
 "dIh-Ou-fu4.normalTitle" = "加入";

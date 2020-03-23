@@ -25,7 +25,7 @@ static MotionManager *_sharedManger;
     if (_cmmotionManager == nil) {
         _cmmotionManager = [[CMMotionManager alloc] init];
     }
-    _cmmotionManager.deviceMotionUpdateInterval = 2;
+    _cmmotionManager.deviceMotionUpdateInterval = 0.5;
     if (_cmmotionManager.deviceMotionAvailable) {
 
         [_cmmotionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMDeviceMotion * _Nullable motion, NSError * _Nullable error) {

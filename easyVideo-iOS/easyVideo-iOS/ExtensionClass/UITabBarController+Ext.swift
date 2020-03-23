@@ -47,7 +47,8 @@ extension BaseTabBarVC {
         item2.selectedImage = UIImage(named: "nav_join_pre")
         item3.selectedImage = UIImage(named: "nav_contacts_p")
         item4.selectedImage = UIImage(named: "nav_me_pre")
-        
+
+        UITabBar.appearance().barTintColor = UIColor.white
         UITabBar.appearance().tintColor = UIColor.init(formHexString: "0x0079FF")
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Helvetica-Bold", size: 11.0)!] as [NSAttributedString.Key: Any], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Helvetica-Bold", size: 11.0)!] as [NSAttributedString.Key: Any], for: .highlighted)
@@ -92,6 +93,7 @@ extension BaseTabBarVC {
             chat.hidesBottomBarWhenPushed = true
             chat.groupStr = self.appDelegate.evengine.getIMGroupID()
             chat.backBool = false
+            chat.userId = getUserParameter(userId) ?? "0"
             chat.showVideoWindow = {
                 self.appDelegate.emengine.setDelegate(self)
                 self.videoWidow?.isHidden = false
@@ -110,13 +112,11 @@ extension BaseTabBarVC {
                     UIDevice.current.setValue(NSNumber.init(integerLiteral: UIDeviceOrientation.landscapeRight.rawValue), forKey: "orientation")
                 }
                 
-                let vc = UIViewControllerCJHelper.findCurrentShowingViewController()
-                vc?.navigationController?.popToRootViewController(animated: true)
-                
                 self.videoVC?.joinMeetingMode()
             }
-            
-            Utils.currentNC().pushViewController(chat, animated: true)
+           
+            self.appDelegate.window?.makeKey()
+            UIViewControllerCJHelper.findCurrentShowingViewController()?.navigationController!.pushViewController(chat, animated: true)
             
             self.videoWidow?.frame = CGRect(x: 0, y: 100, width: 160, height: 90)
             self.videoWidow?.isHidden = false
@@ -146,32 +146,31 @@ extension BaseTabBarVC {
             }else if motionType.rawValue == 1 {
                 self.theDeviceorientation = .portrait
             }else if motionType.rawValue == 2 {
-                self.theDeviceorientation = .landscapeLeft
-                let device = self.appDelegate.evengine.getDevice(.videoCapture)
-                let currentCamId = device.name
-                if currentCamId.contains("in_video:0") {
-                    self.appDelegate.evengine.setDeviceRotation(180)
-                }else {
-                    self.appDelegate.evengine.setDeviceRotation(0)
+                if self.theDeviceorientation != .landscapeLeft {
+                    self.theDeviceorientation = .landscapeLeft
+                    let device = self.appDelegate.evengine.getDevice(.videoCapture)
+                    let currentCamId = device.name
+                    if currentCamId.contains("in_video:0") {
+                        self.appDelegate.evengine.setDeviceRotation(180)
+                    }else {
+                        self.appDelegate.evengine.setDeviceRotation(0)
+                    }
                 }
             }else if motionType.rawValue == 3 {
-                self.theDeviceorientation = .landscapeRight
-                let device = self.appDelegate.evengine.getDevice(.videoCapture)
-                let currentCamId = device.name
-                if currentCamId.contains("in_video:0") {
-                    self.appDelegate.evengine.setDeviceRotation(0)
-                }else {
-                    self.appDelegate.evengine.setDeviceRotation(180)
+                if self.theDeviceorientation != .landscapeRight {
+                    self.theDeviceorientation = .landscapeRight
+                    let device = self.appDelegate.evengine.getDevice(.videoCapture)
+                    let currentCamId = device.name
+                    if currentCamId.contains("in_video:0") {
+                        self.appDelegate.evengine.setDeviceRotation(0)
+                    }else {
+                        self.appDelegate.evengine.setDeviceRotation(180)
+                    }
                 }
             }
             
             if self.appDelegate.allowRotation == 0 {
-                if self.theDeviceorientation == UIDeviceOrientation.portrait {
-                    UIDevice.current.setValue(NSNumber.init(integerLiteral: UIDeviceOrientation.landscapeLeft.rawValue), forKey: "orientation")
-                    UIDevice.current.setValue(NSNumber.init(integerLiteral: UIDeviceOrientation.portrait.rawValue), forKey: "orientation")
-                }else{
-                    UIDevice.current.setValue(NSNumber.init(integerLiteral: UIDeviceOrientation.portrait.rawValue), forKey: "orientation")
-                }
+                UIDevice.current.setValue(NSNumber.init(integerLiteral: UIDeviceOrientation.portrait.rawValue), forKey: "orientation")
             }
         }
     }
@@ -227,6 +226,7 @@ extension BaseTabBarVC {
     }
     
     @objc func audioSessionInterrupted(notification: NSNotification) {
+        print("audioSessionInterrupted:\(notification.userInfo![AVAudioSessionInterruptionTypeKey] as! Int32)")
         appDelegate.evengine.audioInterruption(notification.userInfo![AVAudioSessionInterruptionTypeKey] as! Int32)
     }
     
@@ -411,8 +411,6 @@ extension BaseTabBarVC {
                     }
                 }, fail: nil)
                 
-                EMManager.sharedInstance().delegates.onCallEnd()
-                
                 EVUserIdManager.sharedInstance().selectEntity(nil, ascending: true, filterString: nil, success: { (results) in
                     for obj in results {
                         EVUserIdManager.sharedInstance().deleteEntity(obj as! NSManagedObject, success: nil, fail: nil)
@@ -432,6 +430,9 @@ extension BaseTabBarVC {
             PlistUtils.savePlistFile(featurePlist as! [AnyHashable : Any], withFileName: featureSupportPlist)
             
             if self.appDelegate.isAnonymousUser {
+                let userInfo = getUserPlist()
+                userInfo.setValue(String(user.userId), forKey: userId)
+                PlistUtils.savePlistFile(userInfo as! [AnyHashable : Any], withFileName: userPlist)
                 return
             }
             
@@ -457,7 +458,9 @@ extension BaseTabBarVC {
             
             self.appDelegate.isLogin = true
             
-            Manager.shared().delegates.onLoginSucceed!(forMg: user)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                Manager.shared().delegates.onLoginSucceed!(forMg: user)
+            }
         }
     }
     
@@ -635,6 +638,10 @@ extension BaseTabBarVC {
                     break
                 case 2001:
                     view.showHud("alert.cloudnotactivat".localized, self.view, .MBProgressHUBPositionBottom, 3)
+                    break
+                case 2003:
+                    view.showHud("error.2003".localized, self.view, .MBProgressHUBPositionBottom, 3)
+                    break
                 case 2005:
                     view.showHud("alert.meetingnotstart".localized, self.view, .MBProgressHUBPositionBottom, 3)
                     break
@@ -889,10 +896,17 @@ extension BaseTabBarVC {
                 groupMemberInfo.name = info.displayName
                 
                 EVUserIdManager.sharedInstance().insertNewEntity(groupMemberInfo, success: nil, fail: nil)
-                EMManager.sharedInstance().delegates.onGroupMemberInfo(groupMemberInfo)
+                DDLogWrapper.logInfo("IM onGroupMemberInfo imageUrl:\(groupMemberInfo.imageUrl) name:\(groupMemberInfo.name)")
+            }else {
+                groupMemberInfo.imageUrl = FileTools.bundleFile("default_user_icon.jpg")
+                groupMemberInfo.name = self.appDelegate.emengine.getGroupMemberName(groupMemberInfo.emuserId, group: groupMemberInfo.groupId)
+                groupMemberInfo.evuserId = "0"
                 
+                EVUserIdManager.sharedInstance().insertNewEntity(groupMemberInfo, success: nil, fail: nil)
                 DDLogWrapper.logInfo("IM onGroupMemberInfo imageUrl:\(groupMemberInfo.imageUrl) name:\(groupMemberInfo.name)")
             }
+            
+            EMManager.sharedInstance().delegates.onGroupMemberInfo(groupMemberInfo)
         }
     }
     

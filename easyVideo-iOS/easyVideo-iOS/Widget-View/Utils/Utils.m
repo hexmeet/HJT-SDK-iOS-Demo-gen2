@@ -557,4 +557,25 @@ static NSDateFormatter *sUserVisibleDateFormatter = nil;
     }
 }
 
++ (BOOL)judgeSpecialCharacter:(NSArray *)arr withStr:(NSString *)str {
+    
+    for (NSInteger i = 0; i < arr.count; i++) {
+        if ([str rangeOfString:arr[i]].location != NSNotFound) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
++ (void)saveImage:(UIImage *)image
+{
+    NSString *filePath = [[FileTools getDocumentsFailePath] stringByAppendingPathComponent:@"header.jpg"];
+    
+    if ([FileTools isExistWithFile:filePath]) {
+        [FileTools deleteTheFileWithFilePath:filePath];
+    }
+    
+    [UIImageJPEGRepresentation(image, 1) writeToFile:filePath atomically:YES];
+}
+
 @end
