@@ -56,7 +56,9 @@
 "alert.changeName" = "Rename";
 "alert.updateName.propt" = "Please input name";
 "alert.cancel" = "Cancel";
+"alert.noallow" = "Don't allow";
 "alert.sure" = "OK";
+"alert.ok" = "OK";
 "alert.pwd.pop.title" = "Verify Original Password";
 "alert.pwd.pop.content" = "For password safety,input the original one before edit:";
 "alert.password" = "Please input password";
@@ -108,8 +110,10 @@
 "alert.callendAlert" = "Meeting ended or terminated by meeting host.";
 "alert.leavemeeting" = "Are you sure to leave the meeting?";
 "alert.specialcharacter" = "The username can not contain\",<,>";
-"alert.open.carmer" = "Video application needs to get camera permissions";
-"alert.open.micphone" = "Video application needs to get microphone permissions";
+"alert.open.camera" = "Application needs to get camera permission.";
+"alert.open.micphone" = "Application needs to get microphone permission.";
+"alert.access.camera" = "Would Like to Access the Camera";
+"alert.access.micphone" = "Would Like to Access the Micphone";
 
 "errorcode.1100" = "Incorrect account or password.";
 "error.1112" = "Administrator is not allowed to arccess app. Please use user account.";

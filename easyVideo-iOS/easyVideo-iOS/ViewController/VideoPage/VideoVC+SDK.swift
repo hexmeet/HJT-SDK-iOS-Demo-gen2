@@ -47,8 +47,13 @@ extension VideoVC {
         meetingMode = .discussionMode
         contentView.isHidden = true
         contentMenuView.isHidden = true
+        recordingView.isHidden = true
         videoModel = .videoMode
         setBottomConstraint(videoModel)
+        
+        let featurePlist = NSMutableDictionary.init(dictionary: PlistUtils.loadPlistFilewithFileName(featureSupportPlist))
+        featurePlist.setValue(false, forKey: imLoginSuccess)
+        PlistUtils.savePlistFile(featurePlist as! [AnyHashable : Any], withFileName: featureSupportPlist)
         
         if timerSecond != nil {
             if timerSecond!.isValid {
@@ -144,20 +149,20 @@ extension VideoVC {
             for video in remoteList {
                 if site.window == Unmanaged.passUnretained(video.videoV).toOpaque() {
                     if video.videoV == one.videoV {
-                        one.nameConstraint.constant = site.mic_muted ? 22:5
-                        one.muteImg.isHidden = site.mic_muted ? false:true
+                        one.nameConstraint.constant = site.mic_muted || site.remote_muted ? 22:5
+                        one.muteImg.isHidden = site.mic_muted || site.remote_muted ? false:true
                         one.nameLb.text = site.name
                     }else if video.videoV == two.videoV {
-                        two.nameConstraint.constant = site.mic_muted ? 22:5
-                        two.muteImg.isHidden = site.mic_muted ? false:true
+                        two.nameConstraint.constant = site.mic_muted || site.remote_muted ? 22:5
+                        two.muteImg.isHidden = site.mic_muted || site.remote_muted ? false:true
                         two.nameLb.text = site.name
                     }else if video.videoV == three.videoV {
-                        three.nameConstraint.constant = site.mic_muted ? 22:5
-                        three.muteImg.isHidden = site.mic_muted ? false:true
+                        three.nameConstraint.constant = site.mic_muted || site.remote_muted ? 22:5
+                        three.muteImg.isHidden = site.mic_muted || site.remote_muted ? false:true
                         three.nameLb.text = site.name
                     }else if video.videoV == four.videoV {
-                        four.nameConstraint.constant = site.mic_muted ? 22:5
-                        four.muteImg.isHidden = site.mic_muted ? false:true
+                        four.nameConstraint.constant = site.mic_muted || site.remote_muted ? 22:5
+                        four.muteImg.isHidden = site.mic_muted || site.remote_muted ? false:true
                         four.nameLb.text = site.name
                     }
                 }
@@ -208,20 +213,20 @@ extension VideoVC {
         for video in remoteList {
             if site.window == Unmanaged.passUnretained(video.videoV).toOpaque() {
                 if video.videoV == one.videoV {
-                    one.muteImg.isHidden = site.mic_muted ? false:true
-                    one.nameConstraint.constant = site.mic_muted ? 22:5
+                    one.muteImg.isHidden = site.mic_muted || site.remote_muted ? false:true
+                    one.nameConstraint.constant = site.mic_muted || site.remote_muted ? 22:5
                     one.nameLb.text = site.name
                 }else if video.videoV == two.videoV {
-                    two.muteImg.isHidden = site.mic_muted ? false:true
-                    two.nameConstraint.constant = site.mic_muted ? 22:5
+                    two.muteImg.isHidden = site.mic_muted || site.remote_muted ? false:true
+                    two.nameConstraint.constant = site.mic_muted || site.remote_muted ? 22:5
                     two.nameLb.text = site.name
                 }else if video.videoV == three.videoV {
-                    three.nameConstraint.constant = site.mic_muted ? 22:5
-                    three.muteImg.isHidden = site.mic_muted ? false:true
+                    three.nameConstraint.constant = site.mic_muted || site.remote_muted ? 22:5
+                    three.muteImg.isHidden = site.mic_muted || site.remote_muted ? false:true
                     three.nameLb.text = site.name
                 }else if video.videoV == four.videoV {
-                    four.nameConstraint.constant = site.mic_muted ? 22:5
-                    four.muteImg.isHidden = site.mic_muted ? false:true
+                    four.nameConstraint.constant = site.mic_muted || site.remote_muted ? 22:5
+                    four.muteImg.isHidden = site.mic_muted || site.remote_muted ? false:true
                     four.nameLb.text = site.name
                 }
             }

@@ -48,16 +48,19 @@
     
     appDelegate = APPDELEGATE;
     
-    self.userId = [NSString stringWithFormat:@"%llu", [appDelegate.evengine getUserInfo].userId];
-    
     [self createUI];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.view endEditing:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    [[IQKeyboardManager sharedManager] setEnable:NO];
     [[IQKeyboardManager sharedManager] setEnableAutoToolbar:NO];
     
     navHidden = self.navigationController.navigationBar.isHidden;
@@ -146,15 +149,19 @@
                     message.name = @"";
                     message.imagUrl = @"";
                     [[EVUserIdManager sharedInstance] selectEntity:nil ascending:YES filterString:nil success:^(NSArray * _Nonnull results) {
-                            for (EMGroupMemberInfo *user in results) {
+                            for (EMGroupMemberInfo *info in results) {
              
-                                if ([user.emuserId isEqualToString:message.from]) {
-                                    message.imagUrl = user.imageUrl;
-                                    message.name = user.name;
-                                    if ([self->_userId isEqualToString:user.evuserId] && ![user.evuserId isEqualToString:@"0"]) {
+                                if ([info.emuserId isEqualToString:message.from]) {
+                                    message.imagUrl = info.imageUrl;
+                                    message.name = info.name;
+                                    if ([self->_userId isEqualToString:info.evuserId] && ![info.evuserId isEqualToString:@"0"]) {
                                         message.type = MessageModelTypeMe;
                                     }else {
-                                        message.type = MessageModelTypeOther;
+                                        if (user.isMe) {
+                                            message.type = MessageModelTypeMe;
+                                        }else {
+                                            message.type = MessageModelTypeOther;
+                                        }
                                     }
                                 }
                             }
@@ -239,7 +246,7 @@
             [str insertString:[NSString stringWithFormat:@"%@", emojiStr] atIndex:indexCursor];
             weakSelf.inputTextField.text = [NSString stringWithFormat:@"%@%@", weakSelf.inputTextField.text, emojiStr];
 
-            indexCursor++;
+            indexCursor = indexCursor + emojiStr.length;
 
             //设置光标位置
             NSRange ra = {indexCursor,0};
@@ -258,10 +265,6 @@
             [weakSelf.inputTextField resignFirstResponder];
         };
     }
-        
-    //注册键盘显示通知
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backVideo) name:@"backVideo" object:nil];
     
@@ -313,6 +316,7 @@
         body.content = content;
         body.from = [appDelegate.emengine getUserInfo].userId;
         body.time = strDate;
+        body.isMe = YES;
         
         [[EMMessageManager sharedInstance] insertNewEntity:body success:^{
             NSLog(@"数据储存成功");
@@ -359,7 +363,11 @@
                 if ([self->_userId isEqualToString:user.evuserId] && ![user.evuserId isEqualToString:@"0"]) {
                     messageModel.type = MessageModelTypeMe;
                 }else {
-                    messageModel.type = MessageModelTypeOther;
+                    if (message.isMe) {
+                        messageModel.type = MessageModelTypeMe;
+                    }else {
+                        messageModel.type = MessageModelTypeOther;
+                    }
                 }
             }
             
@@ -416,43 +424,6 @@
 - (void)onCallEnd
 {
     [self.navigationController popViewControllerAnimated:YES];
-}
-
-#pragma mark - UIKeyboardNotification
-- (void)keyBoardWillShow:(NSNotification *) notification
-{
-    NSDictionary *dict = notification.userInfo ;
-    CGRect beginRect = [[dict objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
-    CGRect keyBoardFrame =  [[dict objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    CGFloat keyboardY = keyBoardFrame.origin.y;
-    CGFloat translationY = keyboardY - kScreenHeight;
-    
-    CGFloat time = [[dict objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    
-    if(beginRect.size.height > 0 && (beginRect.origin.y - keyBoardFrame.origin.y > 0)){
-        [UIView animateWithDuration:time animations:^{
-            self->_tabTopConstraint.constant = translationY;
-            self->_backViewBottomConstraint.constant = translationY;
-            [self.view layoutIfNeeded];
-            
-            if (self.messages.count != 0) {
-                NSIndexPath * path = [NSIndexPath indexPathForRow:self.messages.count - 1 inSection:0];
-                [self.mainTableView scrollToRowAtIndexPath:path atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-            }
-        }];
-    }
-}
-
-- (void)keyBoardWillHide:(NSNotification *) notification
-{
-    NSDictionary *dict = notification.userInfo;
-    CGFloat time = [[dict objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    
-    [UIView animateWithDuration:time animations:^{
-        self->_tabTopConstraint.constant = 0;
-        self->_backViewBottomConstraint.constant = 0;
-        [self.view layoutIfNeeded];
-    }];
 }
 
 - (void)backVideo

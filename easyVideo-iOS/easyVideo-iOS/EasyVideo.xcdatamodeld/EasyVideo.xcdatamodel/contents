@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="EVUserIdTab" representedClassName="EVUserIdTab" syncable="YES" codeGenerationType="class">
         <attribute name="emuserId" optional="YES" attributeType="String"/>
         <attribute name="evuserId" optional="YES" attributeType="String"/>
@@ -11,11 +11,12 @@
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="from" optional="YES" attributeType="String"/>
         <attribute name="groupId" optional="YES" attributeType="String"/>
+        <attribute name="isMe" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="seq" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="time" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="EVUserIdTab" positionX="-63" positionY="-18" width="128" height="118"/>
-        <element name="MessageTab" positionX="-54" positionY="-9" width="128" height="118"/>
+        <element name="MessageTab" positionX="-54" positionY="-9" width="128" height="133"/>
     </elements>
 </model>

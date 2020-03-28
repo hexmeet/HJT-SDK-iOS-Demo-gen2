@@ -73,6 +73,8 @@ typedef void (^AlertBtnActionBlock)(BOOL flag);
 //保存图片
 + (void)saveImage:(UIImage *)image;
 
++ (void)sortingMessage:(MessageBody *)body;
+
 @end
 
 NS_ASSUME_NONNULL_END

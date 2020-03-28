@@ -69,7 +69,7 @@ extension AppDelegate {
         evengine.getDevice(.audioCapture)
         DDLogWrapper.logInfo("evengine.getDevice(.audioCapture)")
         
-        evengine.setUserAgent(Bundle.main.bundleIdentifier ?? "easyVideo", version: getInfoString("CFBundleVersion"))
+        evengine.setUserAgent("HexMeet", version: getInfoString("CFBundleVersion"))
         
         if getSetParameter(enableMicphone) == nil {
             let setInfo = getSetPlist()
@@ -178,6 +178,7 @@ extension AppDelegate {
     }
     
     func getPermissionInAdvance() {
+        
         //MARK: APP启动时候，判断用户是否授权使用相机
         if (AVCaptureDevice.authorizationStatus(for: AVMediaType.video) == .notDetermined) {
             AVCaptureDevice.requestAccess(for: .video, completionHandler: { (statusFirst) in
@@ -190,8 +191,8 @@ extension AppDelegate {
             })
         }
        
-        // MARK: APP启动时候，判断用户是否授权使用相册
-        if (AVCaptureDevice.authorizationStatus(for: AVMediaType.video) == .notDetermined) {
+        // MARK: APP启动时候，判断用户是否授权使用麦克风
+        if (AVCaptureDevice.authorizationStatus(for: AVMediaType.audio) == .notDetermined) {
             AVCaptureDevice.requestAccess(for: .audio, completionHandler: { (statusFirst) in
                 if statusFirst {
                     //用户首次允许
@@ -216,7 +217,13 @@ extension AppDelegate {
     }
     
     func webJoinMeetingAction(_ url:URL) {
+        
         let dict = Utils.getURLParameters(url.absoluteString)
+        
+        if dict["confid"] == nil {
+            return
+        }
+        
         dict.setValue(url.host, forKey: "server")
         
         let userInfo = NSDictionary.init(dictionary: PlistUtils.loadPlistFilewithFileName(userPlist))

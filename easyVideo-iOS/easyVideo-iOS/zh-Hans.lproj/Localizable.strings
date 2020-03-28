@@ -56,7 +56,9 @@
 "alert.changeName" = "改名";
 "alert.updateName.propt" = "请输入名字";
 "alert.cancel" = "取消";
+"alert.noallow" = "不允许";
 "alert.sure" = "确定";
+"alert.ok" = "好";
 "alert.pwd.pop.title" = "验证原密码";
 "alert.pwd.pop.content" = "为保障你的数据安全，修改密码前请填写原密码。";
 "alert.password" = "请输入密码";
@@ -108,8 +110,10 @@
 "alert.callendAlert" = "会议结束或被主持人挂断";
 "alert.leavemeeting" = "您确定离开该会议？";
 "alert.specialcharacter" = "会议中显示的用户名不能包含\"，<，>";
-"alert.open.carmer" = "视频应用需要获取您的相机权限";
-"alert.open.micphone" = "视频应用需要获取您的麦克风权限";
+"alert.open.camera" = "应用需要获取您的相机权限";
+"alert.open.micphone" = "应用需要获取您的麦克风权限";
+"alert.access.camera" = "想访问您的相机";
+"alert.access.micphone" = "想访问您的麦克风";
 
 "errorcode.1100" = "账号或密码错误";
 "error.1112" = "系统管理员无登录应用权限，请使用用户账号登录";

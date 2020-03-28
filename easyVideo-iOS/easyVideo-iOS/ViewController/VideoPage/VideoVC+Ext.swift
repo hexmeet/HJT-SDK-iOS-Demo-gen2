@@ -173,7 +173,7 @@ extension VideoVC {
             moreView.isHidden = false
             layoutChangeView.isHidden = true
             
-            if getFeatureSupportParameter(chatInConference) {
+            if getFeatureSupportParameter(chatInConference) && getFeatureSupportParameter(imLoginSuccess) {
                 let buttonWidth = Float(80)
                 let offset = Float((meanBg.width-320)/5)
                 chatView.isHidden = false
@@ -200,7 +200,7 @@ extension VideoVC {
             layoutChangeView.isHidden = false
             moreView.isHidden = false
             
-            if getFeatureSupportParameter(chatInConference) {
+            if getFeatureSupportParameter(chatInConference) && getFeatureSupportParameter(imLoginSuccess) {
                 let buttonWidth = Float(80)
                 let offset = Float((meanBg.width-480)/7)
                 chatView.isHidden = false

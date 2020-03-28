@@ -208,7 +208,7 @@
     AVAudioSession *session = [AVAudioSession sharedInstance];
     //录音+播放
     if (@available(iOS 10.0, *)) {
-        [session setCategory:AVAudioSessionCategoryPlayAndRecord mode:AVAudioSessionModeVideoChat options:AVAudioSessionCategoryOptionAllowBluetooth error:nil];
+        [session setCategory:AVAudioSessionCategoryPlayAndRecord mode:AVAudioSessionModeVideoChat options:AVAudioSessionCategoryOptionDuckOthers|AVAudioSessionCategoryOptionAllowBluetooth error:nil];
     } else {
         
     }
@@ -576,6 +576,47 @@ static NSDateFormatter *sUserVisibleDateFormatter = nil;
     }
     
     [UIImageJPEGRepresentation(image, 1) writeToFile:filePath atomically:YES];
+}
+
++ (void)sortingMessage:(MessageBody *)body
+{
+    body.time = [Utils userVisibleDateTimeStringForRFC3339DateTimeString:body.time];
+    
+    [[EMMessageManager sharedInstance] selectEntity:nil ascending:true filterString:nil success:^(NSArray * _Nonnull results) {
+        
+        if (results.count == 0) {
+            [[EMMessageManager sharedInstance] insertNewEntity:body success:^{
+                
+            } fail:^(NSError * _Nonnull error) {
+                
+            }];
+            
+            [[EMManager sharedInstance].delegates onMessageReciveData:body];
+        }else {
+            BOOL flag = NO;
+            for (MessageBody *message in results) {
+                if (message.seq == body.seq) {
+                    flag = NO;
+                    break;
+                }else {
+                    flag = YES;
+                }
+            }
+            
+            if (flag) {
+                [[EMMessageManager sharedInstance] insertNewEntity:body success:^{
+                    
+                } fail:^(NSError * _Nonnull error) {
+                    
+                }];
+                
+                [[EMManager sharedInstance].delegates onMessageReciveData:body];
+            }
+        }
+        
+    } fail:^(NSError * _Nonnull error) {
+        
+    }];
 }
 
 @end

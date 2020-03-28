@@ -85,6 +85,74 @@ func getSize(url: URL)->UInt64
     return fileSize
 }
 
+// MARK: 权限检测
+func checkCameraPermission() -> Bool {
+    var permission = true
+    
+    let videoStatus = AVCaptureDevice.authorizationStatus(for: .video)
+    
+    switch videoStatus {
+    case .notDetermined:
+        AVCaptureDevice.requestAccess(for: .video) { (statusFirst) in
+            if statusFirst {
+                //用户首次允许
+                DDLogWrapper.logInfo("camera is permitted by user!")
+            } else {
+                DDLogWrapper.logInfo("camera permission is denied by user, call will not send any audio sample to remote!")
+            }
+        }
+        break
+    case .authorized:
+        DDLogWrapper.logInfo("CameraPermissions -- Authorized")
+        break
+    case .denied:
+        DDLogWrapper.logInfo("CameraPermissions -- Denied")
+        permission = false
+        break
+    case .restricted:
+        DDLogWrapper.logInfo("CameraPermissions -- restricted")
+        permission = false
+        break
+    default:
+        break
+    }
+    
+    return permission
+}
+
+func checkMicphonePermission() -> Bool {
+    var permission = true
+    
+    let audioStatus = AVCaptureDevice.authorizationStatus(for: .audio)
+    switch audioStatus {
+    case .notDetermined:
+        AVCaptureDevice.requestAccess(for: .audio) { (statusFirst) in
+            if statusFirst {
+                //用户首次允许
+                DDLogWrapper.logInfo("micphone is permitted by user!")
+            } else {
+                DDLogWrapper.logInfo("micphone permission is denied by user, call will not send any audio sample to remote!")
+            }
+        }
+        break
+    case .authorized:
+        DDLogWrapper.logInfo("CameraPermissions -- Authorized")
+        break
+    case .denied:
+        DDLogWrapper.logInfo("CameraPermissions -- Denied")
+        permission = false
+        break
+    case .restricted:
+        DDLogWrapper.logInfo("CameraPermissions -- restricted")
+        permission = false
+        break
+    default:
+        break
+    }
+    
+    return permission
+}
+
 extension NSLayoutConstraint {
     /**
      Change multiplier constraint
