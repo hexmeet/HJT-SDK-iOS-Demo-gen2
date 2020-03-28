@@ -237,98 +237,183 @@ extension BaseTabBarVC {
     }
     
     func dialCall(sipNumber sip:String, isVideoMode flag:Bool, disPlayName name:String, withPassword password:String, callType type:EVSvcCallType) {
-        DDLogWrapper.logInfo("dialCall sipNumber:\(sip) sip:\(sip) isVideoMode:\(flag) disPlayName:\(name) password:\(password) callType:\(type)")
         
-        if !isValidNumber(sip) {
-            let view = UIViewControllerCJHelper.findCurrentShowingViewController() as! BaseViewController
-            view.showHud("alert.invalidConfNumber".localized, self.view, .MBProgressHUBPositionBottom, 2)
+        if !checkCameraPermission() {
+            let alert = UIAlertController.init(title: "“\("CFBundleDisplayName".infoPlist)”\("alert.access.camera".localized)", message: "alert.open.camera".localized, preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "alert.noallow".localized, style: .default, handler: { (_) in
+                
+            }))
+            alert.addAction(UIAlertAction(title: "alert.ok".localized, style: .default, handler: { (_) in
+                UIApplication.shared.openURL(URL.init(string: UIApplication.openSettingsURLString)!)
+            }))
+            
+            present(alert, animated: true, completion: nil)
             return
-        }
-        
-        appDelegate.evengine.setUserImage(Bundle.main.path(forResource: "img_videomute", ofType: "jpg")!, filename: "\(FileTools.getDocumentsFailePath())/header.jpg")
-        
-        saveNumberMethod(sip)
-        
-        self.videoVC?.meetingNumberLb.isHidden = sip.first != "1" ? true : false
-        
-        if getSetParameter(enableMicphone) != nil {
-            appDelegate.evengine.enableMic(getSetParameter(enableMicphone)!)
+        }else if !checkMicphonePermission() {
+            let alert = UIAlertController.init(title: "“\(getInfoString("CFBundleDisplayName"))”\("alert.access.micphone".localized)", message: "alert.open.micphone".localized, preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "alert.noallow".localized, style: .default, handler: { (_) in
+                
+            }))
+            alert.addAction(UIAlertAction(title: "alert.ok".localized, style: .default, handler: { (_) in
+                UIApplication.shared.openURL(URL.init(string: UIApplication.openSettingsURLString)!)
+            }))
+            
+            present(alert, animated: true, completion: nil)
+            return
         }else {
-            appDelegate.evengine.enableMic(true)
+            DDLogWrapper.logInfo("dialCall sipNumber:\(sip) sip:\(sip) isVideoMode:\(flag) disPlayName:\(name) password:\(password) callType:\(type)")
+            
+            if !isValidNumber(sip) {
+                let view = UIViewControllerCJHelper.findCurrentShowingViewController() as! BaseViewController
+                view.showHud("alert.invalidConfNumber".localized, self.view, .MBProgressHUBPositionBottom, 2)
+                return
+            }
+            
+            if FileTools.isExist(withFile: "\(FileTools.getDocumentsFailePath())/header.jpg") {
+                appDelegate.evengine.setUserImage(Bundle.main.path(forResource: "img_videomute", ofType: "jpg")!, filename: "\(FileTools.getDocumentsFailePath())/header.jpg")
+            }else {
+                self.appDelegate.evengine.setUserImage(Bundle.main.path(forResource: "img_videomute", ofType: "jpg")!, filename: FileTools.bundleFile("default_user_icon.jpg"))
+            }
+
+            saveNumberMethod(sip)
+            
+            self.videoVC?.meetingNumberLb.isHidden = sip.first != "1" ? true : false
+            
+            if getSetParameter(enableMicphone) != nil {
+                appDelegate.evengine.enableMic(getSetParameter(enableMicphone)!)
+            }else {
+                appDelegate.evengine.enableMic(true)
+            }
+            
+            if getSetParameter(enableCamera) != nil {
+                appDelegate.evengine.enableCamera(getSetParameter(enableCamera)!)
+            }else {
+                appDelegate.evengine.enableMic(true)
+            }
+            
+            meetingIdStr = sip
+            passwordStr = password
+            
+            appDelegate.showConnectWindow()
+            if type == .conf {
+                appDelegate.changeConnectWindowSipNumber(sip)
+            }else {
+                appDelegate.changeConnectWindowSipNumber(p2pName)
+            }
+            appDelegate.evengine.joinConference(sip, display_name: name, password: password, svcCallType: .conf)
         }
-        
-        if getSetParameter(enableCamera) != nil {
-            appDelegate.evengine.enableCamera(getSetParameter(enableCamera)!)
-        }else {
-            appDelegate.evengine.enableMic(true)
-        }
-        
-        meetingIdStr = sip
-        passwordStr = password
-        
-        appDelegate.showConnectWindow()
-        if type == .conf {
-            appDelegate.changeConnectWindowSipNumber(sip)
-        }else {
-            appDelegate.changeConnectWindowSipNumber(p2pName)
-        }
-        appDelegate.evengine.joinConference(sip, display_name: name, password: password, svcCallType: .conf)
     }
     
     func p2pDialCall(_ img: String, _ userId: String, _ name: String) {
-        DDLogWrapper.logInfo("p2pDialCall img:\(img) userId:\(userId) name:\(name)")
         
-        p2pImg = img
-        p2pName = name
-        appDelegate.evengine.enableCamera(true)
-        appDelegate.evengine.joinConference(userId, display_name: name, password: "", svcCallType: .P2P)
+        if !checkCameraPermission() {
+            let alert = UIAlertController.init(title: "“\("CFBundleDisplayName".infoPlist)”\("alert.access.camera".localized)", message: "alert.open.camera".localized, preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "alert.noallow".localized, style: .default, handler: { (_) in
+                
+            }))
+            alert.addAction(UIAlertAction(title: "alert.ok".localized, style: .default, handler: { (_) in
+                UIApplication.shared.openURL(URL.init(string: UIApplication.openSettingsURLString)!)
+            }))
+            
+            present(alert, animated: true, completion: nil)
+            return
+        }else if !checkMicphonePermission() {
+            let alert = UIAlertController.init(title: "“\(getInfoString("CFBundleDisplayName"))”\("alert.access.micphone".localized)", message: "alert.open.micphone".localized, preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "alert.noallow".localized, style: .default, handler: { (_) in
+                
+            }))
+            alert.addAction(UIAlertAction(title: "alert.ok".localized, style: .default, handler: { (_) in
+                UIApplication.shared.openURL(URL.init(string: UIApplication.openSettingsURLString)!)
+            }))
+            
+            present(alert, animated: true, completion: nil)
+            return
+        }else {
+            DDLogWrapper.logInfo("p2pDialCall img:\(img) userId:\(userId) name:\(name)")
+            
+            p2pImg = img
+            p2pName = name
+            appDelegate.evengine.enableCamera(true)
+            appDelegate.evengine.joinConference(userId, display_name: "", password: "", svcCallType: .P2P)
+        }
     }
     
     func anonymousDialCall(_ server:String, _ port:String, _ sip:String, _ isVideo:Bool, _ name:String, _ password:String, _  type:EVSvcCallType) {
-        DDLogWrapper.logInfo("anonymousDialCall server:\(server) port:\(port) sip:\(sip) isVideo:\(isVideo) name:\(name) password:\(password) type:\(type)")
         
-        if !isValidNumber(sip) {
-            let view = UIViewControllerCJHelper.findCurrentShowingViewController() as! BaseViewController
-            view.showHud("alert.invalidConfNumber".localized, self.view, .MBProgressHUBPositionBottom, 2)
+        if !checkCameraPermission() {
+            let alert = UIAlertController.init(title: "“\("CFBundleDisplayName".infoPlist)”\("alert.access.camera".localized)", message: "alert.open.camera".localized, preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "alert.noallow".localized, style: .default, handler: { (_) in
+                
+            }))
+            alert.addAction(UIAlertAction(title: "alert.ok".localized, style: .default, handler: { (_) in
+                UIApplication.shared.openURL(URL.init(string: UIApplication.openSettingsURLString)!)
+            }))
+            
+            UIViewControllerCJHelper.findCurrentShowingViewController()?.present(alert, animated: true, completion: nil)
             return
-        }
-        
-        self.appDelegate.evengine.setUserImage(Bundle.main.path(forResource: "img_videomute", ofType: "jpg")!, filename: FileTools.bundleFile("default_user_icon.jpg"))
-        
-        saveNumberMethod(sip)
-        
-        let name = displayName.count == 0 ? Utils.judge(UIDevice.current.name) : name
-        
-        appDelegate.isAnonymousUser = true
-        
-        self.videoVC?.meetingNumberLb.isHidden = false
-        
-        if getSetParameter(enableMicphone) != nil {
-            appDelegate.evengine.enableMic(getSetParameter(enableMicphone)!)
+        }else if !checkMicphonePermission() {
+            let alert = UIAlertController.init(title: "“\("CFBundleDisplayName".infoPlist)”\("alert.access.micphone".localized)", message: "alert.open.micphone".localized, preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "alert.noallow".localized, style: .default, handler: { (_) in
+                
+            }))
+            alert.addAction(UIAlertAction(title: "alert.ok".localized, style: .default, handler: { (_) in
+                UIApplication.shared.openURL(URL.init(string: UIApplication.openSettingsURLString)!)
+            }))
+            
+            UIViewControllerCJHelper.findCurrentShowingViewController()?.present(alert, animated: true, completion: nil)
+            return
         }else {
-            appDelegate.evengine.enableMic(true)
+            DDLogWrapper.logInfo("anonymousDialCall server:\(server) port:\(port) sip:\(sip) isVideo:\(isVideo) name:\(name) password:\(password) type:\(type)")
+            
+            if !isValidNumber(sip) {
+                let view = UIViewControllerCJHelper.findCurrentShowingViewController() as! BaseViewController
+                view.showHud("alert.invalidConfNumber".localized, self.view, .MBProgressHUBPositionBottom, 2)
+                return
+            }
+            
+            self.appDelegate.evengine.setUserImage(Bundle.main.path(forResource: "img_videomute", ofType: "jpg")!, filename: FileTools.bundleFile("default_user_icon.jpg"))
+            
+            saveNumberMethod(sip)
+            
+            let name = displayName.count == 0 ? Utils.judge(UIDevice.current.name) : name
+            
+            appDelegate.isAnonymousUser = true
+            
+            self.videoVC?.meetingNumberLb.isHidden = false
+            
+            if getSetParameter(enableMicphone) != nil {
+                appDelegate.evengine.enableMic(getSetParameter(enableMicphone)!)
+            }else {
+                appDelegate.evengine.enableMic(true)
+            }
+            
+            let p = port.count == 0 ? "0" : port
+            
+            if getSetParameter(enableCamera) != nil {
+                appDelegate.evengine.enableCamera(getSetParameter(enableCamera)!)
+            }else {
+                appDelegate.evengine.enableMic(true)
+            }
+            
+            meetingIdStr = sip
+            passwordStr = password
+            serverStr = server
+            nameStr = name
+            portStr = p
+            
+            videoVC?.local.nameLb.text = name
+            
+            appDelegate.showConnectWindow()
+            appDelegate.changeConnectWindowSipNumber(sip)
+            
+            appDelegate.evengine.joinConference(withLocation: server, port: UInt32(p)!, conference_number: sip, display_name: name, password: password)
         }
-        
-        let p = port.count == 0 ? "0" : port
-        
-        if getSetParameter(enableCamera) != nil {
-            appDelegate.evengine.enableCamera(getSetParameter(enableCamera)!)
-        }else {
-            appDelegate.evengine.enableMic(true)
-        }
-        
-        meetingIdStr = sip
-        passwordStr = password
-        serverStr = server
-        nameStr = name
-        portStr = p
-        
-        videoVC?.local.nameLb.text = name
-        
-        appDelegate.showConnectWindow()
-        appDelegate.changeConnectWindowSipNumber(sip)
-        
-        appDelegate.evengine.joinConference(withLocation: server, port: UInt32(p)!, conference_number: sip, display_name: name, password: password)
     }
     
     func showVideoWindow() {
@@ -397,6 +482,7 @@ extension BaseTabBarVC {
                     PlistUtils.savePlistFile(userInfo as! [AnyHashable : Any], withFileName: userPlist)
                 }
                 self.appDelegate.hiddenNetworkWindow()
+                NotificationCenter.default.post(name: NSNotification.Name("onRegisterOK"), object: nil)
                 DDLogWrapper.logInfo("onRegister(true)")
             }
         }
@@ -854,15 +940,8 @@ extension BaseTabBarVC {
     func onMessageReciveData_(_ message: MessageBody) {
         DispatchQueue.main.async {
             DDLogWrapper.logInfo("onMessageReciveData content:\(message.content) from:\(message.from)")
-            message.time = Utils.userVisibleDateTimeString(forRFC3339DateTime: message.time)
             
-            EMMessageManager.sharedInstance().insertNewEntity(message, success: {
-                
-            }) { (_) in
-                
-            }
-
-            EMManager.sharedInstance().delegates.onMessageReciveData(message)
+            Utils.sortingMessage(message)
         }
     }
     
@@ -870,6 +949,15 @@ extension BaseTabBarVC {
         DispatchQueue.main.async {
             DDLogWrapper.logInfo("IM onEMError:\(err.reason)")
             EMManager.sharedInstance().delegates.onEMError(err)
+            
+            let url = URL.init(string: self.appDelegate.evengine.getIMAddress())
+            
+            if url != nil {
+                self.appDelegate.emengine.anonymousLogin((url?.host)!, port: UInt32.init("\(url?.port ?? 0)")!, displayname: self.appDelegate.evengine.getDisplayName(), external_info: "\(self.appDelegate.evengine.getUserInfo()?.userId ?? 0)")
+                DDLogWrapper.logInfo("getIMAddress address:\(url!.absoluteString) server:\((url?.host)!) port:\(UInt32.init("\(url?.port ?? 0)")!)")
+            }else {
+                DDLogWrapper.logInfo("getIMAddress error")
+            }
         }
     }
     
@@ -878,6 +966,12 @@ extension BaseTabBarVC {
             DDLogWrapper.logInfo("IM onLoginSucceed")
             DDLogWrapper.logInfo("getIMGroupID:\(self.appDelegate.evengine.getIMGroupID())")
             self.appDelegate.emengine.joinNewGroup(self.appDelegate.evengine.getIMGroupID())
+            
+            let featurePlist = NSMutableDictionary.init(dictionary: PlistUtils.loadPlistFilewithFileName(featureSupportPlist))
+            featurePlist.setValue(true, forKey: imLoginSuccess)
+            PlistUtils.savePlistFile(featurePlist as! [AnyHashable : Any], withFileName: featureSupportPlist)
+            
+            self.videoVC?.setBottomBtnFrame(self.videoVC!.videoModel)
         }
     }
     
@@ -898,9 +992,13 @@ extension BaseTabBarVC {
                 EVUserIdManager.sharedInstance().insertNewEntity(groupMemberInfo, success: nil, fail: nil)
                 DDLogWrapper.logInfo("IM onGroupMemberInfo imageUrl:\(groupMemberInfo.imageUrl) name:\(groupMemberInfo.name)")
             }else {
-                groupMemberInfo.imageUrl = FileTools.bundleFile("default_user_icon.jpg")
+                groupMemberInfo.imageUrl = FileTools.bundleFile("default_image.png")
                 groupMemberInfo.name = self.appDelegate.emengine.getGroupMemberName(groupMemberInfo.emuserId, group: groupMemberInfo.groupId)
                 groupMemberInfo.evuserId = "0"
+                
+                if groupMemberInfo.name.count == 0 {
+                    groupMemberInfo.name = ""
+                }
                 
                 EVUserIdManager.sharedInstance().insertNewEntity(groupMemberInfo, success: nil, fail: nil)
                 DDLogWrapper.logInfo("IM onGroupMemberInfo imageUrl:\(groupMemberInfo.imageUrl) name:\(groupMemberInfo.name)")

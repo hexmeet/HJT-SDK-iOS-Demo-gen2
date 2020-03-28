@@ -40,10 +40,13 @@
 		FC349D7523FCE6D0001B948E /* cycle_top_right.png in Resources */ = {isa = PBXBuildFile; fileRef = FC349D7023FCE6D0001B948E /* cycle_top_right.png */; };
 		FC349D7623FCE6D0001B948E /* ic_rotate_90_degrees_ccw.png in Resources */ = {isa = PBXBuildFile; fileRef = FC349D7123FCE6D0001B948E /* ic_rotate_90_degrees_ccw.png */; };
 		FC349D7723FCE6D0001B948E /* cycle_top_left.png in Resources */ = {isa = PBXBuildFile; fileRef = FC349D7223FCE6D0001B948E /* cycle_top_left.png */; };
+		FC408D60242E2B1F00BB257B /* emsdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC408D5E242E2B0200BB257B /* emsdk.framework */; };
+		FC408D61242E2B1F00BB257B /* emsdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC408D5E242E2B0200BB257B /* emsdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FC5A667E23CC0C1E002E8CDD /* LoginOutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC5A668023CC0C1E002E8CDD /* LoginOutCell.xib */; };
 		FC5A668823CC0E84002E8CDD /* TermsServiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5A668623CC0E84002E8CDD /* TermsServiceVC.swift */; };
 		FC5A668923CC0E84002E8CDD /* TermsServiceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC5A668723CC0E84002E8CDD /* TermsServiceVC.xib */; };
 		FC5A668B23CC112F002E8CDD /* licenseServer.html in Resources */ = {isa = PBXBuildFile; fileRef = FC5A668A23CC112F002E8CDD /* licenseServer.html */; };
+		FC63AC4E24291E0900C73F6C /* default_image.png in Resources */ = {isa = PBXBuildFile; fileRef = FC63AC4C24291E0900C73F6C /* default_image.png */; };
 		FC6A21532421FBD50033F1F8 /* DDLogFileWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6A21522421FBD50033F1F8 /* DDLogFileWrapper.m */; };
 		FC6D0AF523D176850030D55D /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D0AF423D176850030D55D /* VideoView.swift */; };
 		FC6D0AF723D1768F0030D55D /* VideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC6D0AF623D1768F0030D55D /* VideoView.xib */; };
@@ -69,8 +72,6 @@
 		FC7908E923D6C9C3006CE448 /* JoinMeetingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC7908EB23D6C9C3006CE448 /* JoinMeetingVC.xib */; };
 		FC7908F023D6D0BA006CE448 /* StatisticalVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC7908F223D6D0BA006CE448 /* StatisticalVC.xib */; };
 		FC7908F723D6D3C4006CE448 /* VideoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC7908F923D6D3C4006CE448 /* VideoVC.xib */; };
-		FC7B1B1D2424C3D9000B09A9 /* emsdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7B1B1B2424C23E000B09A9 /* emsdk.framework */; };
-		FC7B1B1E2424C3D9000B09A9 /* emsdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC7B1B1B2424C23E000B09A9 /* emsdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FC7B5A7C24063C0800CD6479 /* img_videomute2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC7B5A7B24063C0800CD6479 /* img_videomute2.jpg */; };
 		FC7E672823C56AE300B9CAFA /* Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7E672723C56AE300B9CAFA /* Manager.m */; };
 		FC7E674723C5844B00B9CAFA /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E674623C5844B00B9CAFA /* String+Ext.swift */; };
@@ -183,7 +184,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				FC7FEAE423C430FD00BE940F /* evsdk.framework in Embed Frameworks */,
-				FC7B1B1E2424C3D9000B09A9 /* emsdk.framework in Embed Frameworks */,
+				FC408D61242E2B1F00BB257B /* emsdk.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,12 +239,14 @@
 		FC349D7023FCE6D0001B948E /* cycle_top_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cycle_top_right.png; sourceTree = "<group>"; };
 		FC349D7123FCE6D0001B948E /* ic_rotate_90_degrees_ccw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_rotate_90_degrees_ccw.png; sourceTree = "<group>"; };
 		FC349D7223FCE6D0001B948E /* cycle_top_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cycle_top_left.png; sourceTree = "<group>"; };
+		FC408D5E242E2B0200BB257B /* emsdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = emsdk.framework; sourceTree = "<group>"; };
 		FC5A667F23CC0C1E002E8CDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LoginOutCell.xib; sourceTree = "<group>"; };
 		FC5A668223CC0C1F002E8CDD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LoginOutCell.strings; sourceTree = "<group>"; };
 		FC5A668423CC0C20002E8CDD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LoginOutCell.strings"; sourceTree = "<group>"; };
 		FC5A668623CC0E84002E8CDD /* TermsServiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsServiceVC.swift; sourceTree = "<group>"; };
 		FC5A668723CC0E84002E8CDD /* TermsServiceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsServiceVC.xib; sourceTree = "<group>"; };
 		FC5A668A23CC112F002E8CDD /* licenseServer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = licenseServer.html; sourceTree = "<group>"; };
+		FC63AC4C24291E0900C73F6C /* default_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_image.png; sourceTree = "<group>"; };
 		FC6A21512421FBD50033F1F8 /* DDLogFileWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDLogFileWrapper.h; sourceTree = "<group>"; };
 		FC6A21522421FBD50033F1F8 /* DDLogFileWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDLogFileWrapper.m; sourceTree = "<group>"; };
 		FC6D0AF423D176850030D55D /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
@@ -296,7 +299,6 @@
 		FC7908F823D6D3C4006CE448 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/VideoVC.xib; sourceTree = "<group>"; };
 		FC7908FB23D6D3C9006CE448 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/VideoVC.strings; sourceTree = "<group>"; };
 		FC7908FD23D6D3CA006CE448 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/VideoVC.strings"; sourceTree = "<group>"; };
-		FC7B1B1B2424C23E000B09A9 /* emsdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = emsdk.framework; sourceTree = "<group>"; };
 		FC7B5A7B24063C0800CD6479 /* img_videomute2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img_videomute2.jpg; sourceTree = "<group>"; };
 		FC7E672623C56AE300B9CAFA /* Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Manager.h; sourceTree = "<group>"; };
 		FC7E672723C56AE300B9CAFA /* Manager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Manager.m; sourceTree = "<group>"; };
@@ -439,7 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC7FEAE323C430FD00BE940F /* evsdk.framework in Frameworks */,
-				FC7B1B1D2424C3D9000B09A9 /* emsdk.framework in Frameworks */,
+				FC408D60242E2B1F00BB257B /* emsdk.framework in Frameworks */,
 				83DB2C0A07F600A142527CC9 /* libPods-easyVideo-iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,7 +461,7 @@
 		E50B9E295A8ECCF4EFD918FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FC7B1B1B2424C23E000B09A9 /* emsdk.framework */,
+				FC408D5E242E2B0200BB257B /* emsdk.framework */,
 				FC2DAFC823C6D37F00F802D7 /* CoreGraphics.framework */,
 				FC7FEAE123C430F700BE940F /* evsdk.framework */,
 				7C66CB153E2204599DA6CCAB /* libPods-easyVideo-iOS.a */,
@@ -673,6 +675,7 @@
 		FC7FEAE623C452A700BE940F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				FC63AC4C24291E0900C73F6C /* default_image.png */,
 				FC7B5A7B24063C0800CD6479 /* img_videomute2.jpg */,
 				FCC3BD4523CFF9C50018045E /* default_user_icon.jpg */,
 				FCC3BD4323CFF9A80018045E /* img_videomute.jpg */,
@@ -1249,6 +1252,7 @@
 				FC349D7523FCE6D0001B948E /* cycle_top_right.png in Resources */,
 				FC7908DB23D6BBCB006CE448 /* CloudJoinVC.xib in Resources */,
 				FCD3543023F6E3E80045A02C /* InfoPlist.strings in Resources */,
+				FC63AC4E24291E0900C73F6C /* default_image.png in Resources */,
 				FC2DAFE023C70D5A00F802D7 /* ModifyPasswordVC.xib in Resources */,
 				FCC9D80E241DCED8005A92DD /* Chat.storyboard in Resources */,
 				FCC9D837241DD231005A92DD /* ChatPageViewController.xib in Resources */,

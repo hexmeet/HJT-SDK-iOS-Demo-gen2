@@ -97,6 +97,7 @@ __attribute__((visibility("default"))) @interface MessageBody : NSObject
 @property (copy, nonatomic) NSString *_Nonnull content;
 @property (copy, nonatomic) NSString *_Nonnull from;
 @property (copy, nonatomic) NSString *_Nonnull time;
+@property (assign, nonatomic) BOOL isMe;
 @end
 
 __attribute__((visibility("default"))) @interface MessageReceived : NSObject

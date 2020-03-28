@@ -34,7 +34,7 @@ class LoginSettingVC: BaseViewController, UITableViewDataSource, UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        indexPath.row == 0 ? PresentSettingVC(animated: true, presentStyle: .pageSheet) : PresentAboutVC(animated: true, presentStyle: .pageSheet)
+        indexPath.row == 0 ? PresentSettingVC(animated: true, presentStyle: .fullScreen) : PresentAboutVC(animated: true, presentStyle: .fullScreen)
     }
 
 }

@@ -155,14 +155,12 @@ static EMMessageManager *coreDataManager = nil;
     NSURL * storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:sqliteName];
     NSError * error = nil;
     
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error])
-    {
-        if (error) {
-            NSLog(@"添加数据库失败:%@",error);
-        } else {
-            NSLog(@"添加数据库成功");
-        }
-        NSLog(@"错误信息: %@, %@", error, [error userInfo]);
+    NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
+                                                 [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
+                                                 [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
+    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: [self managedObjectModel]];
+    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:options error:&error]) {
+        // Handle error
     }
     return _persistentStoreCoordinator;
 }

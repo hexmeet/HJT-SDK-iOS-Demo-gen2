@@ -162,7 +162,7 @@ extension BaseViewController {
             picker.setMessageBody("conf.questionDiagnose.detail".localized, isHTML: true)
             picker.addAttachmentData(try! NSData(contentsOfFile:zipFile) as Data, mimeType: "application/zip", fileName:"\("CFBundleDisplayName".infoPlist) version:\(getInfoString("CFBundleShortVersionString"))_log.zip")
             picker.navigationBar.isTranslucent = false
-            picker.modalPresentationStyle = .pageSheet
+            picker.modalPresentationStyle = .fullScreen
             picker.navigationBar.tintColor = UIColor.black
             picker.navigationBar.barStyle = .default
             UIBarButtonItem.appearance().tintColor = UIColor.black
@@ -887,6 +887,8 @@ extension MeetingVC {
         self.view.addSubview(webKit)
         
         createMaskView()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(onRegisterOK), name: NSNotification.Name(rawValue: "onRegisterOK"), object: nil)
     }
     
     func userContentController_(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
@@ -926,6 +928,9 @@ extension MeetingVC {
                 didFailProvisionalNavigation()
                 return
             }
+            // var testUrl = "http://192.168.1.2:4013"
+            // var url = "\(testUrl)/#/conferences?token=\(token)"
+            
             var url = "\(getUserParameter(customizedH5UrlPrefix) ?? "")/mobile/#/conferences?token=\(token)"
             
             let languages = NSLocale.preferredLanguages
@@ -1084,6 +1089,11 @@ extension MeetingVC {
         req.scene = Int32(WXSceneSession.rawValue)
         
         WXApi.send(req, completion: nil)
+    }
+    
+    @objc func onRegisterOK() {
+        
+        loadMeetingVCWeb()
     }
 }
 
@@ -2248,6 +2258,32 @@ extension AnonymousLinkVC {
                 appDelegate.evengine.enableSecure(true)
             }else {
                 appDelegate.evengine.enableSecure(false)
+            }
+            
+            if !checkCameraPermission() {
+                let alert = UIAlertController.init(title: "“\("CFBundleDisplayName".infoPlist)”\("alert.access.camera".localized)", message: "alert.open.camera".localized, preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "alert.noallow".localized, style: .default, handler: { (_) in
+                    
+                }))
+                alert.addAction(UIAlertAction(title: "alert.ok".localized, style: .default, handler: { (_) in
+                    UIApplication.shared.openURL(URL.init(string: UIApplication.openSettingsURLString)!)
+                }))
+                
+                UIViewControllerCJHelper.findCurrentShowingViewController()?.present(alert, animated: true, completion: nil)
+                return
+            }else if !checkMicphonePermission() {
+                let alert = UIAlertController.init(title: "“\("CFBundleDisplayName".infoPlist)”\("alert.access.micphone".localized)", message: "alert.open.micphone".localized, preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "alert.noallow".localized, style: .default, handler: { (_) in
+                    
+                }))
+                alert.addAction(UIAlertAction(title: "alert.ok".localized, style: .default, handler: { (_) in
+                    UIApplication.shared.openURL(URL.init(string: UIApplication.openSettingsURLString)!)
+                }))
+                
+                UIViewControllerCJHelper.findCurrentShowingViewController()?.present(alert, animated: true, completion: nil)
+                return
             }
             
             getTabBarVC().anonymousDialCall("\(dict["server"] ?? "")", "\(dict["port"] ?? "")", "\(dict["confid"] ?? "")", true, disPlayNameLb.text ?? "", "\(dict["password"] ?? "")", .conf)

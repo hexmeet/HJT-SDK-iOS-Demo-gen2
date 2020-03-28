@@ -51,6 +51,7 @@ let p2pCall = "p2pCall"
 let chatInConference = "chatInConference"
 let switchingToAudioConference = "switchingToAudioConference"
 let sitenameIsChangeable = "sitenameIsChangeable"
+let imLoginSuccess = "imLoginSuccess"
 
 let histroyCall = "histroyCall"
 

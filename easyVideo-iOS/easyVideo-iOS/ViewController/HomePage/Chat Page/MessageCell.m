@@ -129,9 +129,9 @@
     [[EVUserIdManager sharedInstance] selectEntity:nil ascending:YES filterString:nil success:^(NSArray * _Nonnull results) {
         for (EMGroupMemberInfo *user in results) {
             if ([user.emuserId isEqualToString:message.from]) {
-                [self.iconView sd_setImageWithURL:[NSURL URLWithString:user.imageUrl] placeholderImage:[UIImage imageNamed:@"default_user_icon"] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+                [self.iconView sd_setImageWithURL:[NSURL URLWithString:user.imageUrl] placeholderImage:[UIImage imageNamed:@"default_image"] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
                     if (error != nil) {
-                        self.iconView.image = [UIImage imageNamed:@"default_user_icon.jpg"];
+                        self.iconView.image = [UIImage imageNamed:@"default_image.png"];
                     }
                 }];
                 
