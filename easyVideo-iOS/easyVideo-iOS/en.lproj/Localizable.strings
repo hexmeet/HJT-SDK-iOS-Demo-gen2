@@ -20,6 +20,7 @@
 "me.email" = "Email";
 "me.company" = "Company";
 "me.dep" = "Department";
+"me.feedback.placeholder" = "Please fill in the problem description of more than 10 words, so that we can help you solve the problem more precisely.";
 
 "set.senddiagnostics" = "Send Diagnostics Data";
 "set.feedback" = "Feedback";
@@ -114,6 +115,9 @@
 "alert.open.micphone" = "Application needs to get microphone permission.";
 "alert.access.camera" = "Would Like to Access the Camera";
 "alert.access.micphone" = "Would Like to Access the Micphone";
+"alert.uploaded.successfully" = "Uploaded successfully";
+"alert.upload" = "Upload...";
+"alert.uploaded.failed" = "Upload failed";
 
 "errorcode.1100" = "Incorrect account or password.";
 "error.1112" = "Administrator is not allowed to arccess app. Please use user account.";
@@ -142,6 +146,8 @@
 "title.about" = "About";
 "title.termsservice" = "Terms of Service";
 "title.joinmeeting" = "Join a Meeting";
+
+"chat.textview.placeholder" = "Say something...";
 
 "tabbar.meetings" = "Meetings";
 "tabbar.chat" = "Chat";

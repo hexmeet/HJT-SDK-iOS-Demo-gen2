@@ -7,15 +7,14 @@
 //
 
 #import "ChatPageViewController.h"
+#import <Masonry.h>
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 #define Font(a) [UIFont fontWithName:@"PingFangSC-Regular" size:a]
-@interface ChatPageViewController ()<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, EMEngineDelegate, EMDelegate>
+@interface ChatPageViewController ()<UITableViewDataSource, UITableViewDelegate, EMEngineDelegate, EMDelegate, HQHChatKeyBoardViewDelegate>
 {
 @private
-    EmojiKeyboard *emojiKeyboard;
-    Extentionkeyboard *extentionkeyboard;
     AppDelegate *appDelegate;
     BOOL navHidden;
 }
@@ -23,11 +22,8 @@
  消息数组
  */
 @property (nonatomic, strong) NSMutableArray *messages;
-
-/**
- 自动回复数组
- */
-@property (nonatomic, strong) NSDictionary *autoResentDic;
+@property (nonatomic, strong) HQHChatKeyBoardView *keyBoardView;
+@property (nonatomic, strong) UITableView *mainTableView;
 
 @end
 
@@ -38,6 +34,8 @@
     
     [self createBackItem];
     
+    self.navigationController.navigationBar.translucent = NO;
+    
     if (_backBool) {
         [self createRightItemWithImage:[UIImage imageNamed:@"icon_edit"] action:@selector(rightAction:)];
     }
@@ -45,6 +43,8 @@
     [[EMManager sharedInstance] addEMDelegate:self];
     
     self.title = NSLocalizedString(@"tabbar.chat", @"消息");
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     appDelegate = APPDELEGATE;
     
@@ -55,6 +55,11 @@
 {
     [super viewDidAppear:animated];
     [self.view endEditing:YES];
+    
+    if (self.messages.count != 0) {
+        NSIndexPath * path = [NSIndexPath indexPathForRow:self.messages.count-1 inSection:0];
+        [self.mainTableView scrollToRowAtIndexPath:path atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -74,7 +79,7 @@
     [[IQKeyboardManager sharedManager] setEnable:YES];
     [[IQKeyboardManager sharedManager] setEnableAutoToolbar:YES];
     
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"backVideo" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     
     self.navigationController.navigationBarHidden = navHidden;
     self.tabBarController.tabBar.hidden = navHidden;
@@ -125,6 +130,33 @@
     
 }
 
+- (UITableView *)mainTableView {
+    if (!_mainTableView) {
+        _mainTableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _mainTableView.dataSource = self;
+        _mainTableView.delegate = self;
+        _mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _mainTableView.backgroundColor = [UIColor whiteColor];
+        [_mainTableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
+        [_mainTableView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)]];
+    }
+    return _mainTableView;
+}
+
+- (void)tap:(UITapGestureRecognizer *)tap {
+    [self.keyBoardView hideBottomView];
+}
+
+- (HQHChatKeyBoardView *)keyBoardView {
+    if (!_keyBoardView) {
+        _keyBoardView = [[HQHChatKeyBoardView alloc] initWithNavigationBarTranslucent:NO];
+        _keyBoardView.delegate = self;
+        _keyBoardView.showMore = NO;
+        _keyBoardView.showVoice = NO;
+    }
+    return _keyBoardView;
+}
+
 - (NSMutableArray *)messages
 {
     if (_messages == nil) {
@@ -156,9 +188,13 @@
                                     message.name = info.name;
                                     if ([self->_userId isEqualToString:info.evuserId] && ![info.evuserId isEqualToString:@"0"]) {
                                         message.type = MessageModelTypeMe;
+                                        //刷新新名字
+                                        message.name = self->_meName;
                                     }else {
                                         if (user.isMe) {
                                             message.type = MessageModelTypeMe;
+                                            //刷新新名字
+                                            message.name = self->_meName;
                                         }else {
                                             message.type = MessageModelTypeOther;
                                         }
@@ -186,37 +222,18 @@
     return _messages;
 }
 
-- (NSDictionary *)autoResentDic
-{
-    if (_autoResentDic == nil) {
-        NSString *strUrl = [[NSBundle mainBundle] pathForResource:@"autoResent.plist" ofType:nil];
-        _autoResentDic = [NSDictionary dictionaryWithContentsOfFile:strUrl];
-        
-    }
-    return _autoResentDic;
-}
-
-
 - (void)createUI
 {
-    self.mainTableView.backgroundColor = [UIColor colorWithRed:247/255.0 green:247/255.0 blue:247/255.0 alpha:1];
-    self.mainTableView.dataSource = self;
-    self.mainTableView.delegate = self;
-    self.mainTableView.estimatedRowHeight = 0;
-    self.mainTableView.estimatedSectionHeaderHeight = 0;
-    self.mainTableView.estimatedSectionFooterHeight = 0;
-    self.mainTableView.separatorStyle = NO;
+    [self.view addSubview:self.mainTableView];
+    [self.view addSubview:self.keyBoardView];
     
-    self.inputTextField.delegate = self;
-    self.inputTextField.inputAssistantItem.leadingBarButtonGroups = @[];
-    self.inputTextField.inputAssistantItem.trailingBarButtonGroups = @[];
+    [self.mainTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.equalTo(self.view);
+        make.bottom.equalTo(self.keyBoardView.mas_top);
+    }];
     
-    if (_backBool) {
-        _inputRightConstraint.constant = 44;
-        _extentionBtn.hidden = NO;
-    }else {
-        _inputRightConstraint.constant = 10;
-        _extentionBtn.hidden = YES;
+    if (@available(iOS 11.0, *)) {
+        self.mainTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
     
     __weak typeof(self)  weakSelf = self;
@@ -235,54 +252,7 @@
         });
     }];
     
-    //表情键盘
-    if (!emojiKeyboard) {
-        emojiKeyboard = [[NSBundle mainBundle] loadNibNamed:@"EmojiKeyboard" owner:self options:nil][0];
-        emojiKeyboard.frame = CGRectMake(0, 0, kScreenWidth, 200);
-        emojiKeyboard.emojiBlock = ^(NSString * _Nonnull emojiStr) {
-            NSRange range = weakSelf.inputTextField.selectedRange;
-            NSUInteger indexCursor = range.location;
-            NSMutableString *str = [NSMutableString stringWithString:weakSelf.inputTextField.text];
-            [str insertString:[NSString stringWithFormat:@"%@", emojiStr] atIndex:indexCursor];
-            weakSelf.inputTextField.text = [NSString stringWithFormat:@"%@%@", weakSelf.inputTextField.text, emojiStr];
-
-            indexCursor = indexCursor + emojiStr.length;
-
-            //设置光标位置
-            NSRange ra = {indexCursor,0};
-            [weakSelf.inputTextField setSelectedRange:ra];
-        };
-    }
-    
-    //扩展功能键盘
-    if (!extentionkeyboard) {
-        extentionkeyboard = [[NSBundle mainBundle] loadNibNamed:@"Extentionkeyboard" owner:self options:nil][0];
-        extentionkeyboard.frame = CGRectMake(0, 0, kScreenWidth, 200);
-        extentionkeyboard.extentionAudioBlock = ^{
-            [weakSelf.inputTextField resignFirstResponder];
-        };
-        extentionkeyboard.extentionVideoBlock = ^{
-            [weakSelf.inputTextField resignFirstResponder];
-        };
-    }
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backVideo) name:@"backVideo" object:nil];
-    
-}
-
-#pragma mark - UITextFieldDelegate
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    if (textField.text.length == 0) {
-        return YES;
-    }
-    [self addMessage:textField.text type:MessageModelTypeMe];
-    if (self.messages.count != 0) {
-        NSIndexPath * path = [NSIndexPath indexPathForRow:self.messages.count - 1 inSection:0];
-        [self.mainTableView scrollToRowAtIndexPath:path atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-    }
-    self.inputTextField.text = @"";
-    return YES;
 }
 
 - (void)addMessage:(NSString *)content type:(MessageModelType) type
@@ -307,7 +277,7 @@
         message.content = content;
         message.time = strDate;
         message.from = [appDelegate.emengine getUserInfo].userId;
-        message.name = [appDelegate.evengine getDisplayName];
+        message.name = _meName;
         message.hiddenTime = [message.time isEqualToString:compareM.time];
 
         MessageBody *body = [[MessageBody alloc] init];
@@ -317,6 +287,7 @@
         body.from = [appDelegate.emengine getUserInfo].userId;
         body.time = strDate;
         body.isMe = YES;
+        body.seq = [message.content intValue];
         
         [[EMMessageManager sharedInstance] insertNewEntity:body success:^{
             NSLog(@"数据储存成功");
@@ -326,8 +297,6 @@
         
         MessageFrameModel *mf = [[MessageFrameModel alloc] init];
         mf.message = message;
-        
-        [self.view endEditing:YES];
         
         [self.messages addObject:mf];
         //刷新表格
@@ -362,9 +331,11 @@
                 
                 if ([self->_userId isEqualToString:user.evuserId] && ![user.evuserId isEqualToString:@"0"]) {
                     messageModel.type = MessageModelTypeMe;
+                    messageModel.name = self->_meName;
                 }else {
                     if (message.isMe) {
                         messageModel.type = MessageModelTypeMe;
+                        messageModel.name = self->_meName;
                     }else {
                         messageModel.type = MessageModelTypeOther;
                     }
@@ -440,11 +411,6 @@
     }
 }
 
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
-{
-    [self.view endEditing:YES];
-}
-
 #pragma mark - UITableViewDelegate
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -465,46 +431,36 @@
     return fm.cellHeight;
 }
 
-#pragma mark ButtonMethod
-- (IBAction)buttonAction:(id)sender
+#pragma mark - HQHChatKeyBoardViewDelegate
+//发送文本，考虑到表情（🙂&[微笑]）上传时需要将原文传给服务器，展示的时候才是显示转换后的文字
+- (void)chatKeyBoardViewSendTextMessage:(NSMutableAttributedString *)text originText:(NSString *)originText
 {
-    if (sender == _emojiBtn) {
-///表情按钮
-        if (!_emojiBtn.selected) {
-            [self.inputTextField resignFirstResponder];
-            self.inputTextField.inputView = emojiKeyboard;
-            [self.inputTextField reloadInputViews];
-            [self.inputTextField becomeFirstResponder];
-        }else {
-            [self inputViewTapHandle];
-        }
-        _emojiBtn.selected = !_emojiBtn.selected;
-        
-    }else if (sender == _extentionBtn) {
-///扩展功能按钮
-        [self.inputTextField resignFirstResponder];
-        self.inputTextField.inputView = extentionkeyboard;
-        [self.inputTextField reloadInputViews];
-        [self.inputTextField becomeFirstResponder];
-    }else {
-        
+    if (originText.length == 0) {
+        return;
+    }
+    [self addMessage:originText type:MessageModelTypeMe];
+    if (self.messages.count != 0) {
+        NSIndexPath * path = [NSIndexPath indexPathForRow:self.messages.count - 1 inSection:0];
+        [self.mainTableView scrollToRowAtIndexPath:path atScrollPosition:UITableViewScrollPositionBottom animated:YES];
     }
 }
 
-- (void)inputViewTapHandle
+//发送大表情图片
+- (void)chatKeyBoardViewSendPhotoMessage:(NSString *)photo
 {
-    [self.inputTextField becomeFirstResponder];
-    self.inputTextField.inputView = nil;
-    [self.inputTextField reloadInputViews];
+    
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+//发送录音，这里是完整的音频路径
+- (void)chatKeyBoardViewSendVoiceMessage:(NSString *)voicePath
+{
+    
 }
-*/
+
+//点击更多
+- (void)chatKeyBoardViewSelectMoreImteTitle:(NSString *)title index:(NSInteger)index
+{
+    
+}
 
 @end

@@ -58,6 +58,25 @@ extension BaseTabBarVC {
         }
         
         selectedIndex = 0
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
+    }
+    
+    @objc func didBecomeActive() {
+        if !videoWidow!.isHidden {
+            if videoVC!.isEnableCamera {
+                appDelegate.evengine.enableCamera(true)
+            }
+            DDLogWrapper.logInfo("didBecomeActive")
+        }
+    }
+    
+    @objc func didEnterBackground() {
+        if !videoWidow!.isHidden {
+            appDelegate.evengine.enableCamera(false)
+            DDLogWrapper.logInfo("didEnterBackground")
+        }
     }
     
     func addAVAudioSessionInterruptionNotification() {
@@ -93,6 +112,7 @@ extension BaseTabBarVC {
             chat.hidesBottomBarWhenPushed = true
             chat.groupStr = self.appDelegate.evengine.getIMGroupID()
             chat.backBool = false
+            chat.meName = (self.videoVC?.local.nameLb.text!)!;
             chat.userId = getUserParameter(userId) ?? "0"
             chat.showVideoWindow = {
                 self.appDelegate.emengine.setDelegate(self)
@@ -119,7 +139,11 @@ extension BaseTabBarVC {
             UIViewControllerCJHelper.findCurrentShowingViewController()?.navigationController!.pushViewController(chat, animated: true)
             
             self.videoWidow?.frame = CGRect(x: 0, y: 100, width: 160, height: 90)
-            self.videoWidow?.isHidden = false
+            self.videoWidow?.isHidden = true
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+               self.videoWidow?.isHidden = false
+            }
         }
         videoVC?.hiddenWindowblock = {
             self.appDelegate.allowRotation = 0
@@ -226,7 +250,6 @@ extension BaseTabBarVC {
     }
     
     @objc func audioSessionInterrupted(notification: NSNotification) {
-        print("audioSessionInterrupted:\(notification.userInfo![AVAudioSessionInterruptionTypeKey] as! Int32)")
         appDelegate.evengine.audioInterruption(notification.userInfo![AVAudioSessionInterruptionTypeKey] as! Int32)
     }
     
@@ -473,8 +496,6 @@ extension BaseTabBarVC {
                 if getUserParameter(loginState) != nil && getUserParameter(loginState) == "YES" {
                     self.appDelegate.showNetworkWindow()
                 }
-                userInfo.setValue("NO", forKey: loginState)
-                PlistUtils.savePlistFile(userInfo as! [AnyHashable : Any], withFileName: userPlist)
                 DDLogWrapper.logInfo("onRegister(false)")
             }else {
                 if !self.appDelegate.isAnonymousUser {
@@ -502,8 +523,6 @@ extension BaseTabBarVC {
                         EVUserIdManager.sharedInstance().deleteEntity(obj as! NSManagedObject, success: nil, fail: nil)
                     }
                 }, fail: nil)
-                
-                self.appDelegate.emengine.logout()
             }
             
             let featurePlist = NSMutableDictionary.init(dictionary: PlistUtils.loadPlistFilewithFileName(featureSupportPlist))
@@ -517,7 +536,11 @@ extension BaseTabBarVC {
             
             if self.appDelegate.isAnonymousUser {
                 let userInfo = getUserPlist()
+                userInfo.setValue(user.token, forKey: token)
                 userInfo.setValue(String(user.userId), forKey: userId)
+                userInfo.setValue(String(user.deviceId), forKey: deviceId)
+                userInfo.setValue(user.doradoVersion, forKey: doradoVersion)
+                userInfo.setValue(user.customizedH5UrlPrefix, forKey: customizedH5UrlPrefix)
                 PlistUtils.savePlistFile(userInfo as! [AnyHashable : Any], withFileName: userPlist)
                 return
             }
@@ -550,7 +573,6 @@ extension BaseTabBarVC {
         }
     }
     
-    // MARK: SDK
     func onError_(_ err: EVError) {
         DispatchQueue.main.async {
             Manager.shared().delegates.onError!(forMg: err)
@@ -584,8 +606,12 @@ extension BaseTabBarVC {
                 let url = URL.init(string: self.appDelegate.evengine.getIMAddress())
                 
                 if url != nil {
-                    self.appDelegate.emengine.anonymousLogin((url?.host)!, port: UInt32.init("\(url?.port ?? 0)")!, displayname: self.appDelegate.evengine.getDisplayName(), external_info: "\(self.appDelegate.evengine.getUserInfo()?.userId ?? 0)")
+                    self.appDelegate.emengine.anonymousLogin((url?.host)!, port: UInt32.init("\(url?.port ?? 0)")!, displayname: self.appDelegate.evengine.getDisplayName(), external_info: "\(getUserParameter(userId) ?? "0")")
                     DDLogWrapper.logInfo("getIMAddress address:\(url!.absoluteString) server:\((url?.host)!) port:\(UInt32.init("\(url?.port ?? 0)")!)")
+                    
+                    //启动IM定时器
+                    self.imTimer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.refreshIMLogin), userInfo: nil, repeats: true)
+                    
                 }else {
                     DDLogWrapper.logInfo("getIMAddress error")
                 }
@@ -670,28 +696,29 @@ extension BaseTabBarVC {
         DispatchQueue.main.async {
             UIApplication.shared.isIdleTimerDisabled = false
             
-            if getFeatureSupportParameter(chatInConference) {
-                EMMessageManager.sharedInstance().selectEntity(nil, ascending: true, filterString: nil, success: { (results) in
-                    for obj in results {
-                        EMMessageManager.sharedInstance().deleteEntity(obj as! NSManagedObject, success: nil, fail: nil)
-                    }
-                }, fail: nil)
-                
-                EMManager.sharedInstance().delegates.onCallEnd()
-                
-                EVUserIdManager.sharedInstance().selectEntity(nil, ascending: true, filterString: nil, success: { (results) in
-                    for obj in results {
-                        EVUserIdManager.sharedInstance().deleteEntity(obj as! NSManagedObject, success: nil, fail: nil)
-                    }
-                }, fail: nil)
-                
-                self.appDelegate.emengine.logout()
-            }
-            
             if !self.videoWidow!.isHidden {
                 DDLogWrapper.logInfo("sdk onCallEnd conference_number:\(info.conference_number) peer:\(info.peer)")
                 
                 self.videoVC?.onCallEnd(info)
+                
+                if getFeatureSupportParameter(chatInConference) {
+                    EMMessageManager.sharedInstance().selectEntity(nil, ascending: true, filterString: nil, success: { (results) in
+                        for obj in results {
+                            EMMessageManager.sharedInstance().deleteEntity(obj as! NSManagedObject, success: nil, fail: nil)
+                        }
+                    }, fail: nil)
+                    
+                    EMManager.sharedInstance().delegates.onCallEnd!()
+                    
+                    EVUserIdManager.sharedInstance().selectEntity(nil, ascending: true, filterString: nil, success: { (results) in
+                        for obj in results {
+                            EVUserIdManager.sharedInstance().deleteEntity(obj as! NSManagedObject, success: nil, fail: nil)
+                        }
+                    }, fail: nil)
+                    
+                    self.appDelegate.emengine.logout()
+                }
+                
                 if info.err.code == 100 || info.err.code == 101 {
                     if info.svcCallType == .conf {
                         let alert = UIAlertController().creatAlertController(info.conference_number, "alert.callendAlert".localized, .alert)
@@ -935,8 +962,29 @@ extension BaseTabBarVC {
             self.videoVC?.onMicMutedShow(mic_muted)
         }
     }
+    
+    func onUploadFeedback_(_ number: Int32) {
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(name: NSNotification.Name("uploadProgress"), object: nil, userInfo: ["Progress":number])
+        }
+    }
 
     // MARK: EMSDK
+    @objc func refreshIMLogin() {
+        if getFeatureSupportParameter(imLoginSuccess) {
+            if imTimer != nil {
+                if imTimer!.isValid {
+                    imTimer?.invalidate()
+                    imTimer = nil
+                }
+            }
+        }else {
+            DDLogWrapper.logInfo("IM reconnect")
+            
+            appDelegate.emengine.reconnect()
+        }
+    }
+    
     func onMessageReciveData_(_ message: MessageBody) {
         DispatchQueue.main.async {
             DDLogWrapper.logInfo("onMessageReciveData content:\(message.content) from:\(message.from)")
@@ -948,16 +996,8 @@ extension BaseTabBarVC {
     func onEMError_(_ err: EMError) {
         DispatchQueue.main.async {
             DDLogWrapper.logInfo("IM onEMError:\(err.reason)")
-            EMManager.sharedInstance().delegates.onEMError(err)
-            
-            let url = URL.init(string: self.appDelegate.evengine.getIMAddress())
-            
-            if url != nil {
-                self.appDelegate.emengine.anonymousLogin((url?.host)!, port: UInt32.init("\(url?.port ?? 0)")!, displayname: self.appDelegate.evengine.getDisplayName(), external_info: "\(self.appDelegate.evengine.getUserInfo()?.userId ?? 0)")
-                DDLogWrapper.logInfo("getIMAddress address:\(url!.absoluteString) server:\((url?.host)!) port:\(UInt32.init("\(url?.port ?? 0)")!)")
-            }else {
-                DDLogWrapper.logInfo("getIMAddress error")
-            }
+            self.appDelegate.emengine.reconnect()
+            EMManager.sharedInstance().delegates.onEMError!(err)
         }
     }
     
@@ -978,35 +1018,19 @@ extension BaseTabBarVC {
     func onMessageSendSucceed_(_ messageState: MessageState) {
         DispatchQueue.main.async {
             DDLogWrapper.logInfo("IM onMessageSendSucceed")
-            EMManager.sharedInstance().delegates.onMessageSendSucceed(messageState)
+            EMManager.sharedInstance().delegates.onMessageSendSucceed!(messageState)
         }
     }
     
     func onGroupMemberInfo_(_ groupMemberInfo: EMGroupMemberInfo) {
         DispatchQueue.main.async {
-            let info = Utils.getContactInfo(groupMemberInfo.evuserId)
-            if info.evstatus == 0 {
-                groupMemberInfo.imageUrl = info.imageUrl
-                groupMemberInfo.name = info.displayName
-                
-                EVUserIdManager.sharedInstance().insertNewEntity(groupMemberInfo, success: nil, fail: nil)
-                DDLogWrapper.logInfo("IM onGroupMemberInfo imageUrl:\(groupMemberInfo.imageUrl) name:\(groupMemberInfo.name)")
-            }else {
-                groupMemberInfo.imageUrl = FileTools.bundleFile("default_image.png")
-                groupMemberInfo.name = self.appDelegate.emengine.getGroupMemberName(groupMemberInfo.emuserId, group: groupMemberInfo.groupId)
-                groupMemberInfo.evuserId = "0"
-                
-                if groupMemberInfo.name.count == 0 {
-                    groupMemberInfo.name = ""
-                }
-                
-                EVUserIdManager.sharedInstance().insertNewEntity(groupMemberInfo, success: nil, fail: nil)
-                DDLogWrapper.logInfo("IM onGroupMemberInfo imageUrl:\(groupMemberInfo.imageUrl) name:\(groupMemberInfo.name)")
-            }
+            groupMemberInfo.imageUrl = FileTools.bundleFile("default_image.png")
+            groupMemberInfo.name = self.appDelegate.emengine.getGroupMemberName(groupMemberInfo.emuserId, group: groupMemberInfo.groupId)
+            EVUserIdManager.sharedInstance().insertNewEntity(groupMemberInfo, success: nil, fail: nil)
+            DDLogWrapper.logInfo("IM onGroupMemberInfo imageUrl:\(groupMemberInfo.imageUrl) name:\(groupMemberInfo.name)")
             
-            EMManager.sharedInstance().delegates.onGroupMemberInfo(groupMemberInfo)
+            EMManager.sharedInstance().delegates.onGroupMemberInfo!(groupMemberInfo)
         }
     }
-    
 }
 

@@ -1,0 +1,15 @@
+
+/* Class = "UIButton"; normalTitle = "提交"; ObjectID = "I9F-pb-PGV"; */
+"I9F-pb-PGV.normalTitle" = "提交";
+
+/* Class = "UILabel"; text = "联系方式（选填）"; ObjectID = "iFa-s1-uOA"; */
+"iFa-s1-uOA.text" = "联系方式（选填）";
+
+/* Class = "UITextField"; placeholder = "填写您的手机号码或邮箱，方便我们与您联系"; ObjectID = "imE-Gr-mi7"; */
+"imE-Gr-mi7.placeholder" = "填写您的手机号码或邮箱，方便我们与您联系";
+
+/* Class = "UILabel"; text = "问题/意见描述"; ObjectID = "obm-fi-ryb"; */
+"obm-fi-ryb.text" = "问题/意见描述";
+
+/* Class = "UILabel"; text = "0/200"; ObjectID = "vzV-zd-RCr"; */
+"vzV-zd-RCr.text" = "0/200";

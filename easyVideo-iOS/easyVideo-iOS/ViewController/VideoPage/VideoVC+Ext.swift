@@ -18,9 +18,6 @@ extension VideoVC {
             btn.addTarget(self, action: #selector(buttonMethod(sender:)), for: .touchUpInside)
         }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(didEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
-        
         remoteList = [one, two, three, four]
         
         one.videoStateView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
@@ -239,20 +236,6 @@ extension VideoVC {
         alertView.isHidden = true
     }
     
-    @objc func didBecomeActive() {
-        if isEnableCamera {
-            appDelegate.evengine.enableCamera(true)
-            DDLogWrapper.logInfo("evengine.enableCamera(true)")
-        }
-        
-        appDelegate.evengine.audioInterruption(0)
-    }
-    
-    @objc func didEnterBackground() {
-        appDelegate.evengine.enableCamera(false)
-        DDLogWrapper.logInfo("evengine.enableCamera(false)")
-    }
-    
     @objc func hiddenTool() {
         UIView.animate(withDuration: 0.5, animations: {
             self.topConstraint.constant = -49
@@ -271,10 +254,14 @@ extension VideoVC {
         local.isHidden = true
         operateLocalVideoBtn.isSelected = local.isHidden
         
-        one.nameLb.font = UIFont.systemFont(ofSize: 9)
-        two.nameLb.font = UIFont.systemFont(ofSize: 9)
-        three.nameLb.font = UIFont.systemFont(ofSize: 9)
-        four.nameLb.font = UIFont.systemFont(ofSize: 9)
+        one.videoStateView.isHidden = true
+        two.videoStateView.isHidden = true
+        three.videoStateView.isHidden = true
+        four.videoStateView.isHidden = true
+        
+        exitVoiceModeBtn.titleLabel?.font = UIFont.systemFont(ofSize: 7)
+        exitVoiceWidthConstraint.constant = 60
+        exitVoiceHeightConstraint.constant = 60
         
         UIView.animate(withDuration: 0.5, animations: {
             self.topConstraint.constant = -49
@@ -289,16 +276,15 @@ extension VideoVC {
     
     func joinMeetingMode() {
         userModel = .meetingMode
-        
-        one.nameLb.font = UIFont.systemFont(ofSize: 13)
-        two.nameLb.font = UIFont.systemFont(ofSize: 13)
-        three.nameLb.font = UIFont.systemFont(ofSize: 13)
-        four.nameLb.font = UIFont.systemFont(ofSize: 13)
-        
+
         one.videoStateView.isHidden = false
         two.videoStateView.isHidden = false
         three.videoStateView.isHidden = false
         four.videoStateView.isHidden = false
+        
+        exitVoiceModeBtn.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        exitVoiceWidthConstraint.constant = 150
+        exitVoiceHeightConstraint.constant = 150
         
         self.changeLayout(layoutType)
     }
@@ -331,9 +317,13 @@ extension VideoVC {
         gestures.delaysTouchesBegan = true
         videoBg.addGestureRecognizer(gestures)
         
-        let gestures2 = UITapGestureRecognizer.init(target: self, action: #selector(videoBghandleSingleTap))
-        gestures2.numberOfTouchesRequired = 1
-        videoBg.addGestureRecognizer(gestures2)
+        let gestures2 = UIPanGestureRecognizer.init(target: self, action: #selector(handlePanGesture(_:)))
+        gestures2.delaysTouchesBegan = true
+        audioBg.addGestureRecognizer(gestures2)
+        
+        let gestures3 = UITapGestureRecognizer.init(target: self, action: #selector(videoBghandleSingleTap))
+        gestures3.numberOfTouchesRequired = 1
+        videoBg.addGestureRecognizer(gestures3)
     }
     
     @objc func handleSingleTap() {
@@ -425,6 +415,8 @@ extension VideoVC {
             local.nameLb.text = appDelegate.evengine.getDisplayName()
             DDLogWrapper.logInfo("getDisplayName name:\(local.nameLb.text ?? "")")
         }
+        
+        encryptedImg.isHidden = appDelegate.evengine.getStats()[0].is_encrypted ? false : true
         
         if appDelegate.evengine.micEnabled() {
             muteBtn.setImage(UIImage.init(named: "icon_unmute"), for: .normal)
@@ -596,6 +588,7 @@ extension VideoVC {
                     return
                 }
                 self?.appDelegate.evengine.setInConfDisplayName((textField?.text)!)
+//                self?.appDelegate.emengine.changeUserFnName((textField?.text)!)
                 
                 DDLogWrapper.logInfo("setInConfDisplayName name:\(textField!.text!)")
                 self?.local.nameLb.text = textField?.text!

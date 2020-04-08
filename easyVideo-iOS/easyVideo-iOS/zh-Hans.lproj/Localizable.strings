@@ -20,6 +20,7 @@
 "me.email" = "邮箱";
 "me.company" = "公司";
 "me.dep" = "部门";
+"me.feedback.placeholder" = "请填写10字以上的问题描述，以便我们更好的帮助您解决问题。";
 
 "set.senddiagnostics" = "发送诊断信息";
 "set.feedback" = "意见反馈";
@@ -114,6 +115,9 @@
 "alert.open.micphone" = "应用需要获取您的麦克风权限";
 "alert.access.camera" = "想访问您的相机";
 "alert.access.micphone" = "想访问您的麦克风";
+"alert.uploaded.successfully" = "上传成功";
+"alert.upload" = "上传中...";
+"alert.uploaded.failed" = "上传失败";
 
 "errorcode.1100" = "账号或密码错误";
 "error.1112" = "系统管理员无登录应用权限，请使用用户账号登录";
@@ -142,6 +146,8 @@
 "title.about" = "关于";
 "title.termsservice" = "软件许可及服务协议";
 "title.joinmeeting" = "加入会议";
+
+"chat.textview.placeholder" = "说点什么吧...";
 
 "tabbar.meetings" = "会议";
 "tabbar.chat" = "消息";

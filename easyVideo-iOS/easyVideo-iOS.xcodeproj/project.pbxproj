@@ -21,8 +21,6 @@
 		FC076D8023CDB8FC0089E0C4 /* MotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC076D7F23CDB8FC0089E0C4 /* MotionManager.m */; };
 		FC125173240BB09E00D6CDD3 /* WebLogTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC125172240BB09E00D6CDD3 /* WebLogTool.swift */; };
 		FC125175240CA06100D6CDD3 /* UIAlertController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC125174240CA06100D6CDD3 /* UIAlertController+Ext.swift */; };
-		FC17162C23FA9B52007861FE /* FeedbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC17162A23FA9B52007861FE /* FeedbackVC.swift */; };
-		FC17162D23FA9B52007861FE /* FeedbackVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC17162B23FA9B52007861FE /* FeedbackVC.xib */; };
 		FC17162F23FB841B007861FE /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC17162E23FB841B007861FE /* UIButton+Ext.swift */; };
 		FC21416C23C844EB00E20D9D /* Icon-1041.png in Resources */ = {isa = PBXBuildFile; fileRef = FC21416B23C844EB00E20D9D /* Icon-1041.png */; };
 		FC2DAFCA23C6FEB300F802D7 /* MeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC2DAFCC23C6FEB300F802D7 /* MeVC.xib */; };
@@ -46,6 +44,30 @@
 		FC5A668823CC0E84002E8CDD /* TermsServiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5A668623CC0E84002E8CDD /* TermsServiceVC.swift */; };
 		FC5A668923CC0E84002E8CDD /* TermsServiceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC5A668723CC0E84002E8CDD /* TermsServiceVC.xib */; };
 		FC5A668B23CC112F002E8CDD /* licenseServer.html in Resources */ = {isa = PBXBuildFile; fileRef = FC5A668A23CC112F002E8CDD /* licenseServer.html */; };
+		FC635F7B243C57AF0050DC9B /* FeedBackVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC635F7D243C57AF0050DC9B /* FeedBackVC.xib */; };
+		FC635FBE243C683C0050DC9B /* emotion_icons.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC635F87243C683C0050DC9B /* emotion_icons.plist */; };
+		FC635FBF243C683C0050DC9B /* chatEmojis.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC635F88243C683C0050DC9B /* chatEmojis.plist */; };
+		FC635FC0243C683C0050DC9B /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC635F8A243C683C0050DC9B /* libmp3lame.a */; };
+		FC635FC1243C683C0050DC9B /* UIButton+HQHKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = FC635F8D243C683C0050DC9B /* UIButton+HQHKeyBoard.m */; };
+		FC635FC2243C683C0050DC9B /* UIColor+HQHKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = FC635F92243C683C0050DC9B /* UIColor+HQHKeyBoard.m */; };
+		FC635FC3243C683C0050DC9B /* UIImage+HQHKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = FC635F93243C683C0050DC9B /* UIImage+HQHKeyBoard.m */; };
+		FC635FC4243C683C0050DC9B /* UIView+HQHKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = FC635F94243C683C0050DC9B /* UIView+HQHKeyBoard.m */; };
+		FC635FC5243C683C0050DC9B /* UITextView+ExtentRange.m in Sources */ = {isa = PBXBuildFile; fileRef = FC635F96243C683C0050DC9B /* UITextView+ExtentRange.m */; };
+		FC635FC6243C683C0050DC9B /* UIScrollView+HQHKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = FC635F97243C683C0050DC9B /* UIScrollView+HQHKeyBoard.m */; };
+		FC635FC7243C683C0050DC9B /* NSString+HQHKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = FC635F98243C683C0050DC9B /* NSString+HQHKeyBoard.m */; };
+		FC635FC8243C683C0050DC9B /* HQHChatKeyBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC635F9B243C683C0050DC9B /* HQHChatKeyBoardView.m */; };
+		FC635FC9243C683C0050DC9B /* HQHChatKeyBoardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC635F9D243C683C0050DC9B /* HQHChatKeyBoardManager.m */; };
+		FC635FCA243C683C0050DC9B /* HQHEmojiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC635FA0243C683C0050DC9B /* HQHEmojiModel.m */; };
+		FC635FCB243C683C0050DC9B /* HQHChatMoreItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FC635FA3243C683C0050DC9B /* HQHChatMoreItem.m */; };
+		FC635FCC243C683C0050DC9B /* HQHKeyBoardTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC635FA7243C683C0050DC9B /* HQHKeyBoardTextView.m */; };
+		FC635FCD243C683C0050DC9B /* HQHAudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = FC635FAA243C683C0050DC9B /* HQHAudioRecorder.m */; };
+		FC635FCE243C683C0050DC9B /* HQHVoiceAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC635FAB243C683C0050DC9B /* HQHVoiceAnimationView.m */; };
+		FC635FCF243C683C0050DC9B /* HQHChatEmojiView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC635FAF243C683C0050DC9B /* HQHChatEmojiView.m */; };
+		FC635FD0243C683C0050DC9B /* HQHChatMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC635FB2243C683C0050DC9B /* HQHChatMoreView.m */; };
+		FC635FD1243C683C0050DC9B /* HQHEmojiCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC635FB4243C683C0050DC9B /* HQHEmojiCollectionViewCell.m */; };
+		FC635FD2243C683C0050DC9B /* HQHChatMoreCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC635FB5243C683C0050DC9B /* HQHChatMoreCollectionViewCell.m */; };
+		FC635FD3243C683C0050DC9B /* HQHEmojiFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FC635FB6243C683C0050DC9B /* HQHEmojiFlowLayout.m */; };
+		FC635FD4243C683C0050DC9B /* resource.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC635FBB243C683C0050DC9B /* resource.xcassets */; };
 		FC63AC4E24291E0900C73F6C /* default_image.png in Resources */ = {isa = PBXBuildFile; fileRef = FC63AC4C24291E0900C73F6C /* default_image.png */; };
 		FC6A21532421FBD50033F1F8 /* DDLogFileWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6A21522421FBD50033F1F8 /* DDLogFileWrapper.m */; };
 		FC6D0AF523D176850030D55D /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6D0AF423D176850030D55D /* VideoView.swift */; };
@@ -83,8 +105,6 @@
 		FC7FEADA23C4255100BE940F /* NormalWithImgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7FEAD823C4255100BE940F /* NormalWithImgCell.swift */; };
 		FC7FEADB23C4255100BE940F /* NormalWithImgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC7FEAD923C4255100BE940F /* NormalWithImgCell.xib */; };
 		FC7FEADE23C42DB000BE940F /* LoginOutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7FEADC23C42DB000BE940F /* LoginOutCell.swift */; };
-		FC7FEAE323C430FD00BE940F /* evsdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7FEAE123C430F700BE940F /* evsdk.framework */; };
-		FC7FEAE423C430FD00BE940F /* evsdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC7FEAE123C430F700BE940F /* evsdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FC7FEAE823C452B600BE940F /* rootca.pem in Resources */ = {isa = PBXBuildFile; fileRef = FC7FEAE723C452B600BE940F /* rootca.pem */; };
 		FC7FEAEB23C4621D00BE940F /* DDLogWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7FEAEA23C4621D00BE940F /* DDLogWrapper.m */; };
 		FC7FEAF323C479F800BE940F /* PlistAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7FEAF223C479F800BE940F /* PlistAttribute.swift */; };
@@ -145,12 +165,6 @@
 		FCC9D81C241DD0DB005A92DD /* ChatListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9D818241DD0DA005A92DD /* ChatListCell.swift */; };
 		FCC9D81D241DD0DB005A92DD /* ChatListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC9D819241DD0DA005A92DD /* ChatListCell.xib */; };
 		FCC9D81E241DD0DB005A92DD /* ChatListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC9D81A241DD0DA005A92DD /* ChatListVC.m */; };
-		FCC9D825241DD187005A92DD /* EmojiKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC9D821241DD187005A92DD /* EmojiKeyboard.xib */; };
-		FCC9D826241DD187005A92DD /* EmojiCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC9D822241DD187005A92DD /* EmojiCollectionCell.xib */; };
-		FCC9D827241DD187005A92DD /* EmojiCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9D823241DD187005A92DD /* EmojiCollectionCell.swift */; };
-		FCC9D828241DD187005A92DD /* EmojiKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9D824241DD187005A92DD /* EmojiKeyboard.swift */; };
-		FCC9D82C241DD200005A92DD /* Extentionkeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCC9D82A241DD200005A92DD /* Extentionkeyboard.xib */; };
-		FCC9D82D241DD200005A92DD /* Extentionkeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC9D82B241DD200005A92DD /* Extentionkeyboard.swift */; };
 		FCC9D831241DD220005A92DD /* autoResent.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCC9D82F241DD220005A92DD /* autoResent.plist */; };
 		FCC9D832241DD220005A92DD /* messages.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCC9D830241DD220005A92DD /* messages.plist */; };
 		FCC9D836241DD231005A92DD /* ChatPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC9D834241DD231005A92DD /* ChatPageViewController.m */; };
@@ -171,6 +185,13 @@
 		FCCE787623D451020027499B /* PasswordReminderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCCE787523D451020027499B /* PasswordReminderView.xib */; };
 		FCCE787923D45CEB0027499B /* InvitationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE787823D45CEB0027499B /* InvitationView.swift */; };
 		FCCE787B23D45CF20027499B /* InvitationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCCE787A23D45CF20027499B /* InvitationView.xib */; };
+		FCCEE04524370ABB002B7491 /* KeepBGRunManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCEE04324370ABB002B7491 /* KeepBGRunManager.m */; };
+		FCCEE08E24370C62002B7491 /* GSCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCEE08624370C60002B7491 /* GSCollectionViewFlowLayout.m */; };
+		FCCEE08F24370C62002B7491 /* FeedBackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCEE08724370C60002B7491 /* FeedBackCell.m */; };
+		FCCEE09024370C62002B7491 /* FeedBackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCEE08824370C60002B7491 /* FeedBackVC.m */; };
+		FCCEE09124370C62002B7491 /* FeedBackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCCEE08A24370C61002B7491 /* FeedBackCell.xib */; };
+		FCCEE0952437354D002B7491 /* evsdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCCEE09324373546002B7491 /* evsdk.framework */; };
+		FCCEE0962437354D002B7491 /* evsdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FCCEE09324373546002B7491 /* evsdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FCD3543023F6E3E80045A02C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FCD3543223F6E3E80045A02C /* InfoPlist.strings */; };
 		FCF3EAAB240D1D36003A0C46 /* HLogingViewLandscape.m in Sources */ = {isa = PBXBuildFile; fileRef = FCF3EAAA240D1D36003A0C46 /* HLogingViewLandscape.m */; };
 		FCF3EAAD240D1D91003A0C46 /* HLogingViewLandscape.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCF3EAAC240D1D91003A0C46 /* HLogingViewLandscape.xib */; };
@@ -183,7 +204,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FC7FEAE423C430FD00BE940F /* evsdk.framework in Embed Frameworks */,
+				FCCEE0962437354D002B7491 /* evsdk.framework in Embed Frameworks */,
 				FC408D61242E2B1F00BB257B /* emsdk.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -209,8 +230,6 @@
 		FC076D7F23CDB8FC0089E0C4 /* MotionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MotionManager.m; sourceTree = "<group>"; };
 		FC125172240BB09E00D6CDD3 /* WebLogTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebLogTool.swift; sourceTree = "<group>"; };
 		FC125174240CA06100D6CDD3 /* UIAlertController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Ext.swift"; sourceTree = "<group>"; };
-		FC17162A23FA9B52007861FE /* FeedbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackVC.swift; sourceTree = "<group>"; };
-		FC17162B23FA9B52007861FE /* FeedbackVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedbackVC.xib; sourceTree = "<group>"; };
 		FC17162E23FB841B007861FE /* UIButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
 		FC21416823C841BD00E20D9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InvitaVC.strings; sourceTree = "<group>"; };
 		FC21416A23C841BE00E20D9D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InvitaVC.strings"; sourceTree = "<group>"; };
@@ -246,6 +265,53 @@
 		FC5A668623CC0E84002E8CDD /* TermsServiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsServiceVC.swift; sourceTree = "<group>"; };
 		FC5A668723CC0E84002E8CDD /* TermsServiceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsServiceVC.xib; sourceTree = "<group>"; };
 		FC5A668A23CC112F002E8CDD /* licenseServer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = licenseServer.html; sourceTree = "<group>"; };
+		FC635F7C243C57AF0050DC9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FeedBackVC.xib; sourceTree = "<group>"; };
+		FC635F7F243C57B50050DC9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/FeedBackVC.strings; sourceTree = "<group>"; };
+		FC635F81243C57B70050DC9B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/FeedBackVC.strings"; sourceTree = "<group>"; };
+		FC635F87243C683C0050DC9B /* emotion_icons.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emotion_icons.plist; sourceTree = "<group>"; };
+		FC635F88243C683C0050DC9B /* chatEmojis.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = chatEmojis.plist; sourceTree = "<group>"; };
+		FC635F8A243C683C0050DC9B /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
+		FC635F8B243C683C0050DC9B /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
+		FC635F8D243C683C0050DC9B /* UIButton+HQHKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+HQHKeyBoard.m"; sourceTree = "<group>"; };
+		FC635F8E243C683C0050DC9B /* UIView+HQHKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HQHKeyBoard.h"; sourceTree = "<group>"; };
+		FC635F8F243C683C0050DC9B /* UITextView+ExtentRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+ExtentRange.h"; sourceTree = "<group>"; };
+		FC635F90243C683C0050DC9B /* NSString+HQHKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HQHKeyBoard.h"; sourceTree = "<group>"; };
+		FC635F91243C683C0050DC9B /* UIScrollView+HQHKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+HQHKeyBoard.h"; sourceTree = "<group>"; };
+		FC635F92243C683C0050DC9B /* UIColor+HQHKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HQHKeyBoard.m"; sourceTree = "<group>"; };
+		FC635F93243C683C0050DC9B /* UIImage+HQHKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HQHKeyBoard.m"; sourceTree = "<group>"; };
+		FC635F94243C683C0050DC9B /* UIView+HQHKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HQHKeyBoard.m"; sourceTree = "<group>"; };
+		FC635F95243C683C0050DC9B /* UIButton+HQHKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+HQHKeyBoard.h"; sourceTree = "<group>"; };
+		FC635F96243C683C0050DC9B /* UITextView+ExtentRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+ExtentRange.m"; sourceTree = "<group>"; };
+		FC635F97243C683C0050DC9B /* UIScrollView+HQHKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+HQHKeyBoard.m"; sourceTree = "<group>"; };
+		FC635F98243C683C0050DC9B /* NSString+HQHKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HQHKeyBoard.m"; sourceTree = "<group>"; };
+		FC635F99243C683C0050DC9B /* UIImage+HQHKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+HQHKeyBoard.h"; sourceTree = "<group>"; };
+		FC635F9A243C683C0050DC9B /* UIColor+HQHKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HQHKeyBoard.h"; sourceTree = "<group>"; };
+		FC635F9B243C683C0050DC9B /* HQHChatKeyBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQHChatKeyBoardView.m; sourceTree = "<group>"; };
+		FC635F9D243C683C0050DC9B /* HQHChatKeyBoardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQHChatKeyBoardManager.m; sourceTree = "<group>"; };
+		FC635F9E243C683C0050DC9B /* HQHChatKeyBoardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQHChatKeyBoardManager.h; sourceTree = "<group>"; };
+		FC635FA0243C683C0050DC9B /* HQHEmojiModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQHEmojiModel.m; sourceTree = "<group>"; };
+		FC635FA1243C683C0050DC9B /* HQHChatMoreItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQHChatMoreItem.h; sourceTree = "<group>"; };
+		FC635FA2243C683C0050DC9B /* HQHEmojiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQHEmojiModel.h; sourceTree = "<group>"; };
+		FC635FA3243C683C0050DC9B /* HQHChatMoreItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQHChatMoreItem.m; sourceTree = "<group>"; };
+		FC635FA6243C683C0050DC9B /* HQHKeyBoardTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQHKeyBoardTextView.h; sourceTree = "<group>"; };
+		FC635FA7243C683C0050DC9B /* HQHKeyBoardTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQHKeyBoardTextView.m; sourceTree = "<group>"; };
+		FC635FA9243C683C0050DC9B /* HQHVoiceAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQHVoiceAnimationView.h; sourceTree = "<group>"; };
+		FC635FAA243C683C0050DC9B /* HQHAudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQHAudioRecorder.m; sourceTree = "<group>"; };
+		FC635FAB243C683C0050DC9B /* HQHVoiceAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQHVoiceAnimationView.m; sourceTree = "<group>"; };
+		FC635FAC243C683C0050DC9B /* HQHAudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQHAudioRecorder.h; sourceTree = "<group>"; };
+		FC635FAE243C683C0050DC9B /* HQHChatEmojiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQHChatEmojiView.h; sourceTree = "<group>"; };
+		FC635FAF243C683C0050DC9B /* HQHChatEmojiView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQHChatEmojiView.m; sourceTree = "<group>"; };
+		FC635FB1243C683C0050DC9B /* HQHChatMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQHChatMoreView.h; sourceTree = "<group>"; };
+		FC635FB2243C683C0050DC9B /* HQHChatMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQHChatMoreView.m; sourceTree = "<group>"; };
+		FC635FB4243C683C0050DC9B /* HQHEmojiCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQHEmojiCollectionViewCell.m; sourceTree = "<group>"; };
+		FC635FB5243C683C0050DC9B /* HQHChatMoreCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQHChatMoreCollectionViewCell.m; sourceTree = "<group>"; };
+		FC635FB6243C683C0050DC9B /* HQHEmojiFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HQHEmojiFlowLayout.m; sourceTree = "<group>"; };
+		FC635FB7243C683C0050DC9B /* HQHChatMoreCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQHChatMoreCollectionViewCell.h; sourceTree = "<group>"; };
+		FC635FB8243C683C0050DC9B /* HQHEmojiCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQHEmojiCollectionViewCell.h; sourceTree = "<group>"; };
+		FC635FB9243C683C0050DC9B /* HQHEmojiFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQHEmojiFlowLayout.h; sourceTree = "<group>"; };
+		FC635FBB243C683C0050DC9B /* resource.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = resource.xcassets; sourceTree = "<group>"; };
+		FC635FBC243C683C0050DC9B /* HQHChatKeyBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQHChatKeyBoardView.h; sourceTree = "<group>"; };
+		FC635FBD243C683C0050DC9B /* HQHKeyBoardDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HQHKeyBoardDefine.h; sourceTree = "<group>"; };
 		FC63AC4C24291E0900C73F6C /* default_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_image.png; sourceTree = "<group>"; };
 		FC6A21512421FBD50033F1F8 /* DDLogFileWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDLogFileWrapper.h; sourceTree = "<group>"; };
 		FC6A21522421FBD50033F1F8 /* DDLogFileWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDLogFileWrapper.m; sourceTree = "<group>"; };
@@ -315,7 +381,6 @@
 		FC7FEAD823C4255100BE940F /* NormalWithImgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalWithImgCell.swift; sourceTree = "<group>"; };
 		FC7FEAD923C4255100BE940F /* NormalWithImgCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NormalWithImgCell.xib; sourceTree = "<group>"; };
 		FC7FEADC23C42DB000BE940F /* LoginOutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOutCell.swift; sourceTree = "<group>"; };
-		FC7FEAE123C430F700BE940F /* evsdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = evsdk.framework; sourceTree = "<group>"; };
 		FC7FEAE723C452B600BE940F /* rootca.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rootca.pem; sourceTree = "<group>"; };
 		FC7FEAE923C4621D00BE940F /* DDLogWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDLogWrapper.h; sourceTree = "<group>"; };
 		FC7FEAEA23C4621D00BE940F /* DDLogWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDLogWrapper.m; sourceTree = "<group>"; };
@@ -386,12 +451,6 @@
 		FCC9D819241DD0DA005A92DD /* ChatListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatListCell.xib; sourceTree = "<group>"; };
 		FCC9D81A241DD0DA005A92DD /* ChatListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatListVC.m; sourceTree = "<group>"; };
 		FCC9D81B241DD0DB005A92DD /* ChatListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatListVC.h; sourceTree = "<group>"; };
-		FCC9D821241DD187005A92DD /* EmojiKeyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmojiKeyboard.xib; sourceTree = "<group>"; };
-		FCC9D822241DD187005A92DD /* EmojiCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmojiCollectionCell.xib; sourceTree = "<group>"; };
-		FCC9D823241DD187005A92DD /* EmojiCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiCollectionCell.swift; sourceTree = "<group>"; };
-		FCC9D824241DD187005A92DD /* EmojiKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiKeyboard.swift; sourceTree = "<group>"; };
-		FCC9D82A241DD200005A92DD /* Extentionkeyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Extentionkeyboard.xib; sourceTree = "<group>"; };
-		FCC9D82B241DD200005A92DD /* Extentionkeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extentionkeyboard.swift; sourceTree = "<group>"; };
 		FCC9D82E241DD220005A92DD /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		FCC9D82F241DD220005A92DD /* autoResent.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = autoResent.plist; sourceTree = "<group>"; };
 		FCC9D830241DD220005A92DD /* messages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = messages.plist; sourceTree = "<group>"; };
@@ -428,6 +487,16 @@
 		FCCE787523D451020027499B /* PasswordReminderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordReminderView.xib; sourceTree = "<group>"; };
 		FCCE787823D45CEB0027499B /* InvitationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationView.swift; sourceTree = "<group>"; };
 		FCCE787A23D45CF20027499B /* InvitationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvitationView.xib; sourceTree = "<group>"; };
+		FCCEE04324370ABB002B7491 /* KeepBGRunManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeepBGRunManager.m; sourceTree = "<group>"; };
+		FCCEE04424370ABB002B7491 /* KeepBGRunManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeepBGRunManager.h; sourceTree = "<group>"; };
+		FCCEE08624370C60002B7491 /* GSCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		FCCEE08724370C60002B7491 /* FeedBackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBackCell.m; sourceTree = "<group>"; };
+		FCCEE08824370C60002B7491 /* FeedBackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBackVC.m; sourceTree = "<group>"; };
+		FCCEE08924370C61002B7491 /* GSCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		FCCEE08A24370C61002B7491 /* FeedBackCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedBackCell.xib; sourceTree = "<group>"; };
+		FCCEE08B24370C62002B7491 /* FeedBackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBackVC.h; sourceTree = "<group>"; };
+		FCCEE08D24370C62002B7491 /* FeedBackCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBackCell.h; sourceTree = "<group>"; };
+		FCCEE09324373546002B7491 /* evsdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = evsdk.framework; sourceTree = "<group>"; };
 		FCD3543123F6E3E80045A02C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FCD3543323F6E3E90045A02C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		FCF3EAA9240D1D36003A0C46 /* HLogingViewLandscape.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLogingViewLandscape.h; sourceTree = "<group>"; };
@@ -440,9 +509,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC7FEAE323C430FD00BE940F /* evsdk.framework in Frameworks */,
 				FC408D60242E2B1F00BB257B /* emsdk.framework in Frameworks */,
+				FC635FC0243C683C0050DC9B /* libmp3lame.a in Frameworks */,
 				83DB2C0A07F600A142527CC9 /* libPods-easyVideo-iOS.a in Frameworks */,
+				FCCEE0952437354D002B7491 /* evsdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,9 +531,9 @@
 		E50B9E295A8ECCF4EFD918FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FCCEE09324373546002B7491 /* evsdk.framework */,
 				FC408D5E242E2B0200BB257B /* emsdk.framework */,
 				FC2DAFC823C6D37F00F802D7 /* CoreGraphics.framework */,
-				FC7FEAE123C430F700BE940F /* evsdk.framework */,
 				7C66CB153E2204599DA6CCAB /* libPods-easyVideo-iOS.a */,
 			);
 			name = Frameworks;
@@ -484,15 +554,6 @@
 				FC125172240BB09E00D6CDD3 /* WebLogTool.swift */,
 			);
 			path = WebLogTool;
-			sourceTree = "<group>";
-		};
-		FC17162923FA9B27007861FE /* Feedback */ = {
-			isa = PBXGroup;
-			children = (
-				FC17162A23FA9B52007861FE /* FeedbackVC.swift */,
-				FC17162B23FA9B52007861FE /* FeedbackVC.xib */,
-			);
-			path = Feedback;
 			sourceTree = "<group>";
 		};
 		FC2DAFD723C70CDE00F802D7 /* ModifyPasswordVC */ = {
@@ -547,6 +608,153 @@
 				FC5A668723CC0E84002E8CDD /* TermsServiceVC.xib */,
 			);
 			path = "Terms of Service";
+			sourceTree = "<group>";
+		};
+		FC635F85243C683C0050DC9B /* HQHChatKeyBoard */ = {
+			isa = PBXGroup;
+			children = (
+				FC635F86243C683C0050DC9B /* Plist */,
+				FC635F89243C683C0050DC9B /* Lame */,
+				FC635F8C243C683C0050DC9B /* Catgoriy */,
+				FC635F9B243C683C0050DC9B /* HQHChatKeyBoardView.m */,
+				FC635F9C243C683C0050DC9B /* Manager */,
+				FC635F9F243C683C0050DC9B /* Model */,
+				FC635FA4243C683C0050DC9B /* View */,
+				FC635FBA243C683C0050DC9B /* Resource */,
+				FC635FBC243C683C0050DC9B /* HQHChatKeyBoardView.h */,
+				FC635FBD243C683C0050DC9B /* HQHKeyBoardDefine.h */,
+			);
+			path = HQHChatKeyBoard;
+			sourceTree = "<group>";
+		};
+		FC635F86243C683C0050DC9B /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				FC635F87243C683C0050DC9B /* emotion_icons.plist */,
+				FC635F88243C683C0050DC9B /* chatEmojis.plist */,
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
+		FC635F89243C683C0050DC9B /* Lame */ = {
+			isa = PBXGroup;
+			children = (
+				FC635F8A243C683C0050DC9B /* libmp3lame.a */,
+				FC635F8B243C683C0050DC9B /* lame.h */,
+			);
+			path = Lame;
+			sourceTree = "<group>";
+		};
+		FC635F8C243C683C0050DC9B /* Catgoriy */ = {
+			isa = PBXGroup;
+			children = (
+				FC635F95243C683C0050DC9B /* UIButton+HQHKeyBoard.h */,
+				FC635F8D243C683C0050DC9B /* UIButton+HQHKeyBoard.m */,
+				FC635F8E243C683C0050DC9B /* UIView+HQHKeyBoard.h */,
+				FC635F94243C683C0050DC9B /* UIView+HQHKeyBoard.m */,
+				FC635F8F243C683C0050DC9B /* UITextView+ExtentRange.h */,
+				FC635F96243C683C0050DC9B /* UITextView+ExtentRange.m */,
+				FC635F90243C683C0050DC9B /* NSString+HQHKeyBoard.h */,
+				FC635F98243C683C0050DC9B /* NSString+HQHKeyBoard.m */,
+				FC635F91243C683C0050DC9B /* UIScrollView+HQHKeyBoard.h */,
+				FC635F97243C683C0050DC9B /* UIScrollView+HQHKeyBoard.m */,
+				FC635F9A243C683C0050DC9B /* UIColor+HQHKeyBoard.h */,
+				FC635F92243C683C0050DC9B /* UIColor+HQHKeyBoard.m */,
+				FC635F93243C683C0050DC9B /* UIImage+HQHKeyBoard.m */,
+				FC635F99243C683C0050DC9B /* UIImage+HQHKeyBoard.h */,
+			);
+			path = Catgoriy;
+			sourceTree = "<group>";
+		};
+		FC635F9C243C683C0050DC9B /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				FC635F9D243C683C0050DC9B /* HQHChatKeyBoardManager.m */,
+				FC635F9E243C683C0050DC9B /* HQHChatKeyBoardManager.h */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		FC635F9F243C683C0050DC9B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FC635FA0243C683C0050DC9B /* HQHEmojiModel.m */,
+				FC635FA1243C683C0050DC9B /* HQHChatMoreItem.h */,
+				FC635FA2243C683C0050DC9B /* HQHEmojiModel.h */,
+				FC635FA3243C683C0050DC9B /* HQHChatMoreItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FC635FA4243C683C0050DC9B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FC635FA5243C683C0050DC9B /* TextView */,
+				FC635FA8243C683C0050DC9B /* Record */,
+				FC635FAD243C683C0050DC9B /* Face */,
+				FC635FB0243C683C0050DC9B /* More */,
+				FC635FB3243C683C0050DC9B /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FC635FA5243C683C0050DC9B /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				FC635FA6243C683C0050DC9B /* HQHKeyBoardTextView.h */,
+				FC635FA7243C683C0050DC9B /* HQHKeyBoardTextView.m */,
+			);
+			path = TextView;
+			sourceTree = "<group>";
+		};
+		FC635FA8243C683C0050DC9B /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				FC635FA9243C683C0050DC9B /* HQHVoiceAnimationView.h */,
+				FC635FAA243C683C0050DC9B /* HQHAudioRecorder.m */,
+				FC635FAB243C683C0050DC9B /* HQHVoiceAnimationView.m */,
+				FC635FAC243C683C0050DC9B /* HQHAudioRecorder.h */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		FC635FAD243C683C0050DC9B /* Face */ = {
+			isa = PBXGroup;
+			children = (
+				FC635FAE243C683C0050DC9B /* HQHChatEmojiView.h */,
+				FC635FAF243C683C0050DC9B /* HQHChatEmojiView.m */,
+			);
+			path = Face;
+			sourceTree = "<group>";
+		};
+		FC635FB0243C683C0050DC9B /* More */ = {
+			isa = PBXGroup;
+			children = (
+				FC635FB1243C683C0050DC9B /* HQHChatMoreView.h */,
+				FC635FB2243C683C0050DC9B /* HQHChatMoreView.m */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		FC635FB3243C683C0050DC9B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FC635FB4243C683C0050DC9B /* HQHEmojiCollectionViewCell.m */,
+				FC635FB5243C683C0050DC9B /* HQHChatMoreCollectionViewCell.m */,
+				FC635FB6243C683C0050DC9B /* HQHEmojiFlowLayout.m */,
+				FC635FB7243C683C0050DC9B /* HQHChatMoreCollectionViewCell.h */,
+				FC635FB8243C683C0050DC9B /* HQHEmojiCollectionViewCell.h */,
+				FC635FB9243C683C0050DC9B /* HQHEmojiFlowLayout.h */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FC635FBA243C683C0050DC9B /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				FC635FBB243C683C0050DC9B /* resource.xcassets */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		FC6A21462421ECA80033F1F8 /* DDLogWrapper */ = {
@@ -915,7 +1123,7 @@
 		FCBD28AE23C2F5A500E1069F /* SettingVC */ = {
 			isa = PBXGroup;
 			children = (
-				FC17162923FA9B27007861FE /* Feedback */,
+				FCCEE08524370C46002B7491 /* Feedback */,
 				FCBD28B223C2F60200E1069F /* SettingVC.swift */,
 				FCBD28B323C2F60200E1069F /* SettingVC.xib */,
 			);
@@ -944,6 +1152,7 @@
 		FCBD28BE23C3009100E1069F /* Widget-View */ = {
 			isa = PBXGroup;
 			children = (
+				FCCEE04224370ABB002B7491 /* KeepBGRunManager */,
 				FC6A21462421ECA80033F1F8 /* DDLogWrapper */,
 				FCC9D85E241DD7EB005A92DD /* EMManager */,
 				FCC39B2E241B5C0000BBB9AA /* LEEAlert */,
@@ -1036,8 +1245,7 @@
 		FCC9D81F241DD169005A92DD /* Chat Page */ = {
 			isa = PBXGroup;
 			children = (
-				FCC9D820241DD17E005A92DD /* emojiKeyboard */,
-				FCC9D829241DD1EC005A92DD /* extentionkeyboard */,
+				FC635F85243C683C0050DC9B /* HQHChatKeyBoard */,
 				FCC9D82E241DD220005A92DD /* Global.h */,
 				FCC9D82F241DD220005A92DD /* autoResent.plist */,
 				FCC9D830241DD220005A92DD /* messages.plist */,
@@ -1065,26 +1273,6 @@
 			name = "Chat Page";
 			path = "easyVideo-iOS/ViewController/HomePage/Chat Page";
 			sourceTree = SOURCE_ROOT;
-		};
-		FCC9D820241DD17E005A92DD /* emojiKeyboard */ = {
-			isa = PBXGroup;
-			children = (
-				FCC9D824241DD187005A92DD /* EmojiKeyboard.swift */,
-				FCC9D821241DD187005A92DD /* EmojiKeyboard.xib */,
-				FCC9D823241DD187005A92DD /* EmojiCollectionCell.swift */,
-				FCC9D822241DD187005A92DD /* EmojiCollectionCell.xib */,
-			);
-			path = emojiKeyboard;
-			sourceTree = "<group>";
-		};
-		FCC9D829241DD1EC005A92DD /* extentionkeyboard */ = {
-			isa = PBXGroup;
-			children = (
-				FCC9D82B241DD200005A92DD /* Extentionkeyboard.swift */,
-				FCC9D82A241DD200005A92DD /* Extentionkeyboard.xib */,
-			);
-			path = extentionkeyboard;
-			sourceTree = "<group>";
 		};
 		FCC9D847241DD2EE005A92DD /* CoreDataManager */ = {
 			isa = PBXGroup;
@@ -1149,6 +1337,30 @@
 				FCCE787A23D45CF20027499B /* InvitationView.xib */,
 			);
 			path = InvitationView;
+			sourceTree = "<group>";
+		};
+		FCCEE04224370ABB002B7491 /* KeepBGRunManager */ = {
+			isa = PBXGroup;
+			children = (
+				FCCEE04424370ABB002B7491 /* KeepBGRunManager.h */,
+				FCCEE04324370ABB002B7491 /* KeepBGRunManager.m */,
+			);
+			path = KeepBGRunManager;
+			sourceTree = "<group>";
+		};
+		FCCEE08524370C46002B7491 /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				FCCEE08B24370C62002B7491 /* FeedBackVC.h */,
+				FCCEE08824370C60002B7491 /* FeedBackVC.m */,
+				FC635F7D243C57AF0050DC9B /* FeedBackVC.xib */,
+				FCCEE08D24370C62002B7491 /* FeedBackCell.h */,
+				FCCEE08724370C60002B7491 /* FeedBackCell.m */,
+				FCCEE08A24370C61002B7491 /* FeedBackCell.xib */,
+				FCCEE08924370C61002B7491 /* GSCollectionViewFlowLayout.h */,
+				FCCEE08624370C60002B7491 /* GSCollectionViewFlowLayout.m */,
+			);
+			path = Feedback;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1217,20 +1429,19 @@
 			files = (
 				FC7908B223D6B831006CE448 /* PrivateJoinVC.xib in Resources */,
 				FCC3BD4B23D00C280018045E /* ConferenceVC.xib in Resources */,
-				FCC9D825241DD187005A92DD /* EmojiKeyboard.xib in Resources */,
 				FC7908A423D6B673006CE448 /* PrivateVC.xib in Resources */,
 				FCBD28B523C2F60200E1069F /* SettingVC.xib in Resources */,
 				FCC3BD4423CFF9A80018045E /* img_videomute.jpg in Resources */,
 				FCA897A823BF0A4B00A0C78E /* ContactVC.xib in Resources */,
 				FC2DAFE823C7142600F802D7 /* NormalWithTFCell.xib in Resources */,
-				FCC9D826241DD187005A92DD /* EmojiCollectionCell.xib in Resources */,
+				FCCEE09124370C62002B7491 /* FeedBackCell.xib in Resources */,
 				FC7FEAD323C4242C00BE940F /* UserInformationVC.xib in Resources */,
 				FCA8979C23BF0A0F00A0C78E /* MeetingVC.xib in Resources */,
-				FCC9D82C241DD200005A92DD /* Extentionkeyboard.xib in Resources */,
 				FC7908B923D6B8DC006CE448 /* AdvancedSettingVC.xib in Resources */,
 				FC5A667E23CC0C1E002E8CDD /* LoginOutCell.xib in Resources */,
 				FC5A668B23CC112F002E8CDD /* licenseServer.html in Resources */,
 				FCCE787623D451020027499B /* PasswordReminderView.xib in Resources */,
+				FC635FBF243C683C0050DC9B /* chatEmojis.plist in Resources */,
 				FCC9D81D241DD0DB005A92DD /* ChatListCell.xib in Resources */,
 				FC349D7423FCE6D0001B948E /* cycle_bottom_right.png in Resources */,
 				FC79089923D689E8006CE448 /* HistoryCallCell.xib in Resources */,
@@ -1251,9 +1462,11 @@
 				FC79089D23D6B60E006CE448 /* LoginVC.xib in Resources */,
 				FC349D7523FCE6D0001B948E /* cycle_top_right.png in Resources */,
 				FC7908DB23D6BBCB006CE448 /* CloudJoinVC.xib in Resources */,
+				FC635FBE243C683C0050DC9B /* emotion_icons.plist in Resources */,
 				FCD3543023F6E3E80045A02C /* InfoPlist.strings in Resources */,
 				FC63AC4E24291E0900C73F6C /* default_image.png in Resources */,
 				FC2DAFE023C70D5A00F802D7 /* ModifyPasswordVC.xib in Resources */,
+				FC635FD4243C683C0050DC9B /* resource.xcassets in Resources */,
 				FCC9D80E241DCED8005A92DD /* Chat.storyboard in Resources */,
 				FCC9D837241DD231005A92DD /* ChatPageViewController.xib in Resources */,
 				FCBD28C223C3012400E1069F /* SwitchCell.xib in Resources */,
@@ -1273,7 +1486,6 @@
 				FC6D0AF723D1768F0030D55D /* VideoView.xib in Resources */,
 				FC7B5A7C24063C0800CD6479 /* img_videomute2.jpg in Resources */,
 				FCC096DE23CF1D21006088BC /* ConnectingVC.xib in Resources */,
-				FC17162D23FA9B52007861FE /* FeedbackVC.xib in Resources */,
 				FC21416C23C844EB00E20D9D /* Icon-1041.png in Resources */,
 				FCC096E423CF22EC006088BC /* ringtone.wav in Resources */,
 				FC349D7323FCE6D0001B948E /* cycle_bottom_left.png in Resources */,
@@ -1282,6 +1494,7 @@
 				FC7908C023D6BA3F006CE448 /* AnonymousLinkVC.xib in Resources */,
 				FCA8977423BEF1B300A0C78E /* Main.storyboard in Resources */,
 				FC7908F723D6D3C4006CE448 /* VideoVC.xib in Resources */,
+				FC635F7B243C57AF0050DC9B /* FeedBackVC.xib in Resources */,
 				FC349D7623FCE6D0001B948E /* ic_rotate_90_degrees_ccw.png in Resources */,
 				FC7908D423D6BB82006CE448 /* CloudLoginVC.xib in Resources */,
 			);
@@ -1357,8 +1570,10 @@
 				FCC096B523CEAACB006088BC /* VideoVC+Ext.swift in Sources */,
 				FCA897B623BF1F0700A0C78E /* LoginVC.swift in Sources */,
 				FC125175240CA06100D6CDD3 /* UIAlertController+Ext.swift in Sources */,
+				FC635FC2243C683C0050DC9B /* UIColor+HQHKeyBoard.m in Sources */,
 				FC17162F23FB841B007861FE /* UIButton+Ext.swift in Sources */,
 				FC906C2523D5452E0098C844 /* AnonymousLinkVC.swift in Sources */,
+				FC635FD3243C683C0050DC9B /* HQHEmojiFlowLayout.m in Sources */,
 				FCC9D83F241DD241005A92DD /* MessageFrameModel.m in Sources */,
 				FCC9D845241DD249005A92DD /* UIImage+HQExtension.m in Sources */,
 				FCBD28B423C2F60200E1069F /* SettingVC.swift in Sources */,
@@ -1366,18 +1581,24 @@
 				FC349D6B23FCE655001B948E /* HQEditImageEditView.m in Sources */,
 				FCA897AB23BF0A5600A0C78E /* MeVC.swift in Sources */,
 				FCC9D84F241DD31D005A92DD /* EMMessageManager.m in Sources */,
+				FC635FCC243C683C0050DC9B /* HQHKeyBoardTextView.m in Sources */,
 				FCA84060240585C900531901 /* SwiftCrashTool.swift in Sources */,
+				FC635FCD243C683C0050DC9B /* HQHAudioRecorder.m in Sources */,
+				FCCEE08F24370C62002B7491 /* FeedBackCell.m in Sources */,
 				FCA897D423BF3D3600A0C78E /* PrivateJoinVC.swift in Sources */,
 				FC76C896240A18A6003DC79E /* SwiftUtils.swift in Sources */,
-				FCC9D828241DD187005A92DD /* EmojiKeyboard.swift in Sources */,
 				FC6D0AF923D186AE0030D55D /* VideoVC+SDK.swift in Sources */,
 				FC5A668823CC0E84002E8CDD /* TermsServiceVC.swift in Sources */,
 				FCC096D923CEEDFC006088BC /* enum.swift in Sources */,
+				FC635FCA243C683C0050DC9B /* HQHEmojiModel.m in Sources */,
 				FCC9D83A241DD23A005A92DD /* MessageCell.m in Sources */,
 				FCC9D836241DD231005A92DD /* ChatPageViewController.m in Sources */,
+				FC635FC5243C683C0050DC9B /* UITextView+ExtentRange.m in Sources */,
 				FCBD28B823C2F62900E1069F /* InvitaVC.swift in Sources */,
 				FCC9D846241DD249005A92DD /* NSString+HQExtension.m in Sources */,
 				FCC9D81C241DD0DB005A92DD /* ChatListCell.swift in Sources */,
+				FCCEE08E24370C62002B7491 /* GSCollectionViewFlowLayout.m in Sources */,
+				FC635FC8243C683C0050DC9B /* HQHChatKeyBoardView.m in Sources */,
 				FC7FEAEB23C4621D00BE940F /* DDLogWrapper.m in Sources */,
 				FC93990523C037BC00C057B8 /* UIViewController+Ext.swift in Sources */,
 				FCBD5A5C241FAE1000BE1288 /* EasyVideo.xcdatamodeld in Sources */,
@@ -1385,63 +1606,74 @@
 				FC7E674923C5B50F00B9CAFA /* DispatchQueue+Ext.swift in Sources */,
 				FCC3BD4A23D00C280018045E /* ConferenceVC.swift in Sources */,
 				FCA8979B23BF0A0F00A0C78E /* MeetingVC.swift in Sources */,
+				FC635FC3243C683C0050DC9B /* UIImage+HQHKeyBoard.m in Sources */,
 				FCC096DD23CF1D21006088BC /* ConnectingVC.swift in Sources */,
+				FC635FC4243C683C0050DC9B /* UIView+HQHKeyBoard.m in Sources */,
 				FC76C89F240A7ACF003DC79E /* NetworkVC.swift in Sources */,
 				FC79089B23D6A741006CE448 /* Public.swift in Sources */,
 				FC0380EB23C062FD001953CA /* CloudLoginVC.swift in Sources */,
 				FC349D6A23FCE655001B948E /* HQEditImageActionView.m in Sources */,
 				FC7FEADA23C4255100BE940F /* NormalWithImgCell.swift in Sources */,
 				FC7FEAF323C479F800BE940F /* PlistAttribute.swift in Sources */,
+				FCCEE04524370ABB002B7491 /* KeepBGRunManager.m in Sources */,
 				FC076D5D23CDADF00089E0C4 /* VideoVC.swift in Sources */,
 				FCA897D923BF45F600A0C78E /* AppDelegate+Ext.swift in Sources */,
 				FCC3BD4F23D041550018045E /* StatisticalVC.swift in Sources */,
 				FC7E672823C56AE300B9CAFA /* Manager.m in Sources */,
 				FCCE787123D425F60027499B /* Utils.m in Sources */,
 				FC6A21532421FBD50033F1F8 /* DDLogFileWrapper.m in Sources */,
+				FC635FCF243C683C0050DC9B /* HQHChatEmojiView.m in Sources */,
 				FCC9D859241DD60C005A92DD /* UITextField+ExtentRange.m in Sources */,
 				FC0380E323C044D0001953CA /* LoginSettingVC.swift in Sources */,
 				FC125173240BB09E00D6CDD3 /* WebLogTool.swift in Sources */,
 				FCC39B32241B5C0000BBB9AA /* LEEAlert.m in Sources */,
+				FC635FCE243C683C0050DC9B /* HQHVoiceAnimationView.m in Sources */,
 				FCCE787423D450F60027499B /* PasswordReminderView.swift in Sources */,
 				FCCE787923D45CEB0027499B /* InvitationView.swift in Sources */,
 				FC2DAFE723C7142600F802D7 /* NormalWithTFCell.swift in Sources */,
-				FCC9D82D241DD200005A92DD /* Extentionkeyboard.swift in Sources */,
 				FCBD28C123C3012400E1069F /* SwitchCell.swift in Sources */,
 				FCC9D840241DD241005A92DD /* MessageModel.m in Sources */,
 				FCA8976D23BEF1B300A0C78E /* AppDelegate.swift in Sources */,
 				FC6D0AF523D176850030D55D /* VideoView.swift in Sources */,
+				FC635FC1243C683C0050DC9B /* UIButton+HQHKeyBoard.m in Sources */,
+				FC635FD2243C683C0050DC9B /* HQHChatMoreCollectionViewCell.m in Sources */,
 				FCA897D023BF3D2700A0C78E /* PrivateLoginVC.swift in Sources */,
 				FC75EAA123CD5B2000E9C1B3 /* HLogingView.m in Sources */,
 				FC7E674723C5844B00B9CAFA /* String+Ext.swift in Sources */,
 				FCA8979523BF08E000A0C78E /* BaseTabBarVC.swift in Sources */,
+				FC635FD0243C683C0050DC9B /* HQHChatMoreView.m in Sources */,
+				FC635FC7243C683C0050DC9B /* NSString+HQHKeyBoard.m in Sources */,
 				FCA8979F23BF0A2200A0C78E /* JoinMeetingVC.swift in Sources */,
 				FCBD28C523C3013D00E1069F /* NormalCell.swift in Sources */,
+				FC635FCB243C683C0050DC9B /* HQHChatMoreItem.m in Sources */,
 				FC79089823D689E8006CE448 /* HistoryCallCell.swift in Sources */,
 				FCA897B923BF1F8A00A0C78E /* BaseVC+jump.swift in Sources */,
 				FC0380E723C04779001953CA /* SettingCell.swift in Sources */,
-				FCC9D827241DD187005A92DD /* EmojiCollectionCell.swift in Sources */,
 				FC7FEAD223C4242C00BE940F /* UserInformationVC.swift in Sources */,
 				FCA897B123BF0EDE00A0C78E /* UIView+Ext.swift in Sources */,
 				FCBD28BC23C2F63800E1069F /* AboutVC.swift in Sources */,
-				FC17162C23FA9B52007861FE /* FeedbackVC.swift in Sources */,
 				FC349D6C23FCE655001B948E /* HQEditImageCaptureView.m in Sources */,
 				FC0380D723C04096001953CA /* AdvancedSettingVC.swift in Sources */,
 				FCC9D862241DD812005A92DD /* EMManager.m in Sources */,
 				FCA897BC23BF1FD200A0C78E /* PrivateVC.swift in Sources */,
+				FCCEE09024370C62002B7491 /* FeedBackVC.m in Sources */,
 				FCF3EAAB240D1D36003A0C46 /* HLogingViewLandscape.m in Sources */,
 				FCA897C023BF1FE800A0C78E /* CloudVC.swift in Sources */,
 				FC98853F2400ECD5007463FA /* UIImage+Ext.swift in Sources */,
 				FC076D8023CDB8FC0089E0C4 /* MotionManager.m in Sources */,
 				FCC3BD5323D042870018045E /* StatisticalCell.swift in Sources */,
+				FC635FC9243C683C0050DC9B /* HQHChatKeyBoardManager.m in Sources */,
 				FC0380EF23C0630E001953CA /* CloudJoinVC.swift in Sources */,
 				FCA897B323BF0F0000A0C78E /* UITabBarController+Ext.swift in Sources */,
 				FCA897A723BF0A4B00A0C78E /* ContactVC.swift in Sources */,
 				FC349D6223FCE61D001B948E /* HQImageEditViewController.m in Sources */,
+				FC635FC6243C683C0050DC9B /* UIScrollView+HQHKeyBoard.m in Sources */,
 				FC906C2923D571DD0098C844 /* P2pCallView.swift in Sources */,
 				FCC9D81E241DD0DB005A92DD /* ChatListVC.m in Sources */,
 				FC7FEAD623C424EB00BE940F /* NormalWithLbCell.swift in Sources */,
 				FC2DAFDF23C70D5A00F802D7 /* ModifyPasswordVC.swift in Sources */,
 				FC7FEADE23C42DB000BE940F /* LoginOutCell.swift in Sources */,
+				FC635FD1243C683C0050DC9B /* HQHEmojiCollectionViewCell.m in Sources */,
 				FCC096E223CF2240006088BC /* SoundManager.m in Sources */,
 				FCA8979823BF092400A0C78E /* BaseViewController.swift in Sources */,
 				FC75EAA523CD5B4700E9C1B3 /* GifView.m in Sources */,
@@ -1479,6 +1711,16 @@
 				FC5A668423CC0C20002E8CDD /* zh-Hans */,
 			);
 			name = LoginOutCell.xib;
+			sourceTree = "<group>";
+		};
+		FC635F7D243C57AF0050DC9B /* FeedBackVC.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC635F7C243C57AF0050DC9B /* Base */,
+				FC635F7F243C57B50050DC9B /* en */,
+				FC635F81243C57B70050DC9B /* zh-Hans */,
+			);
+			name = FeedBackVC.xib;
 			sourceTree = "<group>";
 		};
 		FC79089F23D6B60E006CE448 /* LoginVC.xib */ = {
@@ -1789,6 +2031,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/easyVideo-iOS/ViewController/HomePage/Chat\\ Page/HQHChatKeyBoard/Lame",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "${PRODUCT_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "${PROVISIONING_PROFILE_SPECIFIER}";
@@ -1825,6 +2071,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/easyVideo-iOS/ViewController/HomePage/Chat\\ Page/HQHChatKeyBoard/Lame",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "${PRODUCT_NAME}";

@@ -11,6 +11,8 @@ import CoreTelephony
 
 class BaseTabBarVC: UITabBarController, UITabBarControllerDelegate, EVEngineDelegate, EMEngineDelegate {
     
+    var imTimer: Timer?
+    
     let center = CTCallCenter()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var videoWidow: UIWindow?
@@ -41,6 +43,12 @@ class BaseTabBarVC: UITabBarController, UITabBarControllerDelegate, EVEngineDele
         setMotionManager()
         
         setCTCallCenter()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self)
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -135,6 +143,10 @@ class BaseTabBarVC: UITabBarController, UITabBarControllerDelegate, EVEngineDele
     
     func onMicMutedShow(_ mic_muted: Int32) {
         onMicMutedShow_(mic_muted)
+    }
+    
+    func onUploadFeedback(_ number: Int32) {
+        onUploadFeedback_(number)
     }
     
     // MARK: EMEngineDelegate

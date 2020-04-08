@@ -21,5 +21,7 @@
 #import "emsdk/EMEngineObj.h"
 #import <MJRefresh.h>
 #import "EMManager.h"
+#import <MBProgressHUD.h>
+#import "HQHKeyBoardDefine.h"
 
 #endif /* easyVideo_pch */

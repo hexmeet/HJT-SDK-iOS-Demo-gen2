@@ -201,9 +201,16 @@ extension BaseViewController {
         navigationController?.pushViewController(termsServiceVC, animated: flag)
     }
     
+    /// 跳转FeedbackVC
+    func pushFeedbackVC(animated flag:Bool) {
+        let feedback = FeedBackVC()
+        feedback.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(feedback, animated: flag)
+    }
+    
     // MARK: EVSDKMETHOD
     func userLogin(withServer server: String, withPort port: Int, withAccout accout: String, withPassword password :String) {
         appDelegate.isAnonymousUser = false
-        appDelegate.evengine.login(withLocation: server, port: 0, name: accout, password: appDelegate.evengine .encryptPassword(password))
+        appDelegate.evengine.login(withLocation: server, port: UInt32(port), name: accout, password: appDelegate.evengine .encryptPassword(password))
     }
 }

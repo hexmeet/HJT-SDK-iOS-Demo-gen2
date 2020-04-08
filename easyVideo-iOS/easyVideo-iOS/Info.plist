@@ -73,6 +73,8 @@
 	<string>app access to calendars for schedule meeting </string>
 	<key>NSCameraUsageDescription</key>
 	<string>app use camera for video call</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>app user location</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>app use microphone for video/audio call</string>
 	<key>NSPhotoLibraryUsageDescription</key>
@@ -80,7 +82,9 @@
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
+		<string>fetch</string>
 		<string>remote-notification</string>
+		<string>voip</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

@@ -43,6 +43,8 @@ class VideoVC: BaseViewController, CAAnimationDelegate {
     // MARK: VideoBg
     @IBOutlet weak var audioBg: UIView!
     @IBOutlet weak var exitVoiceModeBtn: UIButton!
+    @IBOutlet weak var exitVoiceHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var exitVoiceWidthConstraint: NSLayoutConstraint!
     
     // MARK: MeanBg
     @IBOutlet weak var meanBg: UIView!
@@ -50,6 +52,7 @@ class VideoVC: BaseViewController, CAAnimationDelegate {
     @IBOutlet weak var topNavBar: UIView!
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var signalBtn: UIButton!
+    @IBOutlet weak var encryptedImg: UIImageView!
     @IBOutlet weak var durationTimeLb: UILabel!
     @IBOutlet weak var meetingNumberLb: UILabel!
     @IBOutlet weak var switchCameraBtn: UIButton!

@@ -48,6 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WXApiDelegate {
         return true
     }
     
+    // MARK: UIApplicationDelegate
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
         if allowRotation == 1 {
             return .landscape
@@ -56,7 +57,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WXApiDelegate {
         }
     }
     
-    // MARK: UIApplicationDelegate
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        DDLogWrapper.logInfo("applicationDidBecomeActive")
+        KeepBGRunManager.share().stopBGRun()
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        DDLogWrapper.logInfo("applicationDidEnterBackground")
+        KeepBGRunManager.share().startBGRun()
+    }
+
     func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
         return WXApi.handleOpen(url, delegate: self)
     }

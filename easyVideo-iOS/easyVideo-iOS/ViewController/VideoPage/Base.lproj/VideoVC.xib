@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +24,10 @@
                 <outlet property="contentMenuView" destination="paK-aV-KZE" id="WZV-m4-QK5"/>
                 <outlet property="contentView" destination="gvQ-oP-Hym" id="2w5-jk-SzV"/>
                 <outlet property="durationTimeLb" destination="sZh-O0-gtm" id="uHm-Gh-ye4"/>
+                <outlet property="encryptedImg" destination="F1Z-OT-LTM" id="fC3-Fw-2EX"/>
+                <outlet property="exitVoiceHeightConstraint" destination="qJ8-Kd-oVR" id="N3h-fO-PUQ"/>
                 <outlet property="exitVoiceModeBtn" destination="Mrr-oR-8De" id="Wo3-UI-y6A"/>
+                <outlet property="exitVoiceWidthConstraint" destination="5Zg-zX-eF4" id="UW0-gB-9md"/>
                 <outlet property="four" destination="oSs-N7-4OX" id="GnI-m5-F2e"/>
                 <outlet property="fourBg" destination="F1G-Pb-0H7" id="m9E-WE-atl"/>
                 <outlet property="fourheight" destination="xK3-BG-ldT" id="fyd-cb-x9l"/>
@@ -401,8 +404,15 @@
                                     <rect key="frame" x="20" y="10.5" width="28" height="28"/>
                                     <state key="normal" image="image_5"/>
                                 </button>
+                                <imageView hidden="YES" clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_encrypted" translatesAutoresizingMaskIntoConstraints="NO" id="F1Z-OT-LTM">
+                                    <rect key="frame" x="53" y="13.5" width="22" height="22"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="22" id="MKz-o7-rad"/>
+                                        <constraint firstAttribute="height" constant="22" id="ubX-d4-c0T"/>
+                                    </constraints>
+                                </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZh-O0-gtm">
-                                    <rect key="frame" x="68" y="14.5" width="67.5" height="20"/>
+                                    <rect key="frame" x="80" y="14.5" width="67.5" height="20"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -445,11 +455,13 @@
                                 <constraint firstAttribute="trailing" secondItem="6q9-Ka-v7l" secondAttribute="trailing" constant="60" id="OJW-tM-5wQ"/>
                                 <constraint firstItem="sZh-O0-gtm" firstAttribute="centerY" secondItem="8PW-Iy-tcV" secondAttribute="centerY" id="R8N-KP-BqQ"/>
                                 <constraint firstItem="Nbe-Ma-Z3O" firstAttribute="centerX" secondItem="6q9-Ka-v7l" secondAttribute="centerX" id="ReK-lw-qfH"/>
+                                <constraint firstItem="F1Z-OT-LTM" firstAttribute="leading" secondItem="8PW-Iy-tcV" secondAttribute="trailing" constant="5" id="TDb-pf-Xwi"/>
                                 <constraint firstItem="Jfu-eJ-UUr" firstAttribute="centerX" secondItem="gb2-JK-ceL" secondAttribute="centerX" id="X6p-sV-goC"/>
                                 <constraint firstItem="8PW-Iy-tcV" firstAttribute="leading" secondItem="4Va-wZ-ALZ" secondAttribute="leading" constant="20" id="Z8X-JO-awg"/>
                                 <constraint firstItem="exf-Gz-Zaj" firstAttribute="centerX" secondItem="4Va-wZ-ALZ" secondAttribute="centerX" id="ZT0-kA-2p9"/>
                                 <constraint firstItem="gb2-JK-ceL" firstAttribute="centerY" secondItem="6q9-Ka-v7l" secondAttribute="centerY" id="ZsY-9T-SyG"/>
-                                <constraint firstItem="sZh-O0-gtm" firstAttribute="leading" secondItem="8PW-Iy-tcV" secondAttribute="trailing" constant="20" id="eLv-dt-qjP"/>
+                                <constraint firstItem="sZh-O0-gtm" firstAttribute="leading" secondItem="8PW-Iy-tcV" secondAttribute="trailing" constant="32" id="eLv-dt-qjP"/>
+                                <constraint firstItem="F1Z-OT-LTM" firstAttribute="centerY" secondItem="8PW-Iy-tcV" secondAttribute="centerY" id="oqi-ru-B9j"/>
                                 <constraint firstItem="8PW-Iy-tcV" firstAttribute="centerY" secondItem="4Va-wZ-ALZ" secondAttribute="centerY" id="qwy-LN-ru3"/>
                                 <constraint firstItem="exf-Gz-Zaj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sZh-O0-gtm" secondAttribute="trailing" constant="8" symbolic="YES" id="sz6-mL-fRl"/>
                             </constraints>
@@ -470,7 +482,7 @@
                                             <rect key="frame" x="0.0" y="5" width="80" height="44"/>
                                             <size key="titleShadowOffset" width="5" height="0.0"/>
                                             <state key="normal" image="button:2Ti-rt-3rr:image"/>
-                                            <state key="selected" image="C31C0AA0-A9F8-4F63-BD25-BB1ED3C6AADA"/>
+                                            <state key="selected" image="46866512-2B65-4454-8744-8A00BE76B958"/>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -675,7 +687,7 @@
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mrr-oR-8De">
                     <rect key="frame" x="373" y="132" width="150" height="150"/>
                     <constraints>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="5Zg-zX-eF4"/>
+                        <constraint firstAttribute="width" constant="150" id="5Zg-zX-eF4"/>
                         <constraint firstAttribute="height" constant="150" id="qJ8-Kd-oVR"/>
                     </constraints>
                     <state key="normal" title="退出语音模式" backgroundImage="btn_exit">
@@ -771,7 +783,7 @@
         </view>
     </objects>
     <resources>
-        <image name="C31C0AA0-A9F8-4F63-BD25-BB1ED3C6AADA" width="12" height="12">
+        <image name="46866512-2B65-4454-8744-8A00BE76B958" width="12" height="12">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05T
 S2V5ZWRBcmNoaXZlctEICVRyb290gAGvEBcLDBkaIRQmKisyNTo9PkNGR0pUXF1hZFUkbnVsbNYNDg8Q
@@ -2168,6 +2180,7 @@ AAAAAAAAAAAAAOcmA
         <image name="conferen_cecontrol_back" width="18" height="18"/>
         <image name="icon_chat" width="28" height="28"/>
         <image name="icon_detail_" width="28" height="28"/>
+        <image name="icon_encrypted" width="22" height="22"/>
         <image name="icon_hang-up_" width="28" height="28"/>
         <image name="icon_lecture_" width="28" height="28"/>
         <image name="icon_more_" width="28" height="28"/>

@@ -16,4 +16,5 @@ pod 'ZipArchive'
 pod 'Masonry'
 pod 'MJRefresh'
 pod 'KSCrash'
+pod 'TZImagePickerController'
 end

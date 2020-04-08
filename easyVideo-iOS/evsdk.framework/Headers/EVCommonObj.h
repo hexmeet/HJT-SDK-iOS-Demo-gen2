@@ -291,7 +291,8 @@ __attribute__((visibility("default"))) @interface EVContentInfo : NSObject
 - (void)onMuteSpeakingDetected;
 - (void)onCallLogUpdated:(EVCallLog * _Nonnull)call_log;
 - (void)onMicMutedShow:(int)mic_muted;
-- (void)onAudioData:(int)sample_rate data:(const unsigned char *)data len:(int)len;
+- (void)onAudioData:(int)sample_rate data:(const unsigned char * _Nonnull)data len:(int)len;
+- (void)onUploadFeedback:(int)number;
 @end
 
 //////////////////////////////
@@ -332,6 +333,9 @@ __attribute__((visibility("default"))) @interface EVContentInfo : NSObject
 - (void) setDevice:(EVDeviceType)type withId:(unsigned int)id;
 - (int) enableMicMeter:(BOOL)enable;
 - (float) getMicVolume;
+- (int) enableAudioTest:(BOOL)enable file:(NSString * _Nonnull)play_file;
+- (int) startAudioPlay;
+- (int) stopAudioPlay;
 - (int) setDeviceRotation:(int)rotation;
 - (int) audioInterruption:(int)type;
 

@@ -70,7 +70,7 @@
     }];
 }
 
-#pragma mrak - event response
+#pragma mark - event response
 - (void)buttonAction:(UIButton *)button {
     if ([self.delegate respondsToSelector:@selector(action:didClickButton:atIndex:)]) {
         [self.delegate action:self didClickButton:button atIndex:button.tag];

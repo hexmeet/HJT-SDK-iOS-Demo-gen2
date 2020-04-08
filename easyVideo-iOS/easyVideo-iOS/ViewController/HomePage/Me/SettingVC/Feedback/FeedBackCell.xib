@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gTV-IL-0wX" customClass="FeedBackCell">
+            <rect key="frame" x="0.0" y="0.0" width="75" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="75" height="80"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h4T-mM-u2J">
+                        <rect key="frame" x="10" y="12.5" width="55" height="55"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="55" id="chi-ay-EQB"/>
+                            <constraint firstAttribute="height" constant="55" id="pRN-yq-e2R"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQx-40-2bF">
+                        <rect key="frame" x="53" y="2" width="20" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="LG4-AK-Ymk"/>
+                            <constraint firstAttribute="height" constant="22" id="heJ-IY-HEb"/>
+                        </constraints>
+                        <state key="normal" image="icon_del"/>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="h4T-mM-u2J" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Iez-bk-oLQ"/>
+                <constraint firstItem="mQx-40-2bF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="2" id="Nzj-95-1lf"/>
+                <constraint firstAttribute="trailing" secondItem="mQx-40-2bF" secondAttribute="trailing" constant="2" id="mAd-GT-XcJ"/>
+                <constraint firstItem="h4T-mM-u2J" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="q1v-0a-IsA"/>
+            </constraints>
+            <connections>
+                <outlet property="img" destination="h4T-mM-u2J" id="wTb-K2-690"/>
+                <outlet property="removeBtn" destination="mQx-40-2bF" id="laT-dv-JAP"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="111"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="icon_del" width="20" height="20"/>
+    </resources>
+</document>
