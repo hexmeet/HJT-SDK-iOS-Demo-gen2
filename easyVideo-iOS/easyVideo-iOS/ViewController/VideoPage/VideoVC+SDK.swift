@@ -128,6 +128,7 @@ extension VideoVC {
         }
         
         if layout.speaker_index == -1 {
+            speakerView.isHidden = layout.speaker_name.count != 0 ? false : true
             for video in remoteList {
                 video.setNormolSpeaker()
             }
@@ -347,6 +348,9 @@ extension VideoVC {
             showAlert("alert.unmuteAudioNotAllowed".localized)
             break
         case .unmuteAudioIndication:
+            if userModel == .chatMode {
+                return
+            }
             let alert = UIAlertController.init(title: "", message: "alert.unmuteAudioIndication".localized, preferredStyle: .alert)
             alert.addAction(UIAlertAction.init(title: "alert.cancel".localized, style: .cancel, handler: { (_) in
                 
@@ -375,11 +379,13 @@ extension VideoVC {
         DDLogWrapper.logInfo("sdk onLayoutSpeakerIndication speaker:\(speaker)")
         
         if speaker.speaker_name.count != 0 {
+            speakerView.isHidden = false
             speakerNameLb.text = speaker.speaker_name
             speakerView.isHidden = !audioBg.isHidden ? false : true
         }
         
         if speaker.speaker_index == -1 {
+            speakerView.isHidden = speaker.speaker_name.count != 0 ? false : true
             for video in remoteList {
                 video.setNormolSpeaker()
             }

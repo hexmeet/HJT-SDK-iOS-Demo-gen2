@@ -49,11 +49,11 @@
     CGFloat nameW = [message.name sizeWithFont:[UIFont systemFontOfSize:11] maxSize:maxSize].width;
     CGFloat nameX = 0;
     if (MessageModelTypeMe == _message.type) {
-        nameX = screenWidth - padding - iconW - 20 - nameW;
+        nameX = screenWidth - padding - nameW;
     }
     else
     {
-        nameX = padding + iconW + 20;
+        nameX = padding;
     }
     
     _nameF = CGRectMake(nameX, iconY, nameW, nameH);
@@ -67,12 +67,12 @@
     if (MessageModelTypeMe == _message.type) {
         // 自己发的
         // x = 头像x - 间隙 - 文本的宽度
-        textX = iconX - padding - textW;
+        textX = screenWidth - textW;
     }
     else
     {
         //别人发的
-        textX = CGRectGetMaxX(_iconF) + padding;
+        textX = padding-10;
     }
     
     self.textF = CGRectMake(textX, textY+8, textW, textH);

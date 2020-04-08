@@ -30,6 +30,8 @@
 - (int) login:(NSString *_Nonnull)host port:(unsigned int)port sechme:(NSString *_Nonnull)sechme username:(NSString *_Nonnull)username secret:(NSString *_Nonnull)secret;
 - (int) anonymousLogin:(NSString *_Nonnull)host port:(unsigned int)port displayname:(NSString *_Nonnull)displayname external_info:(NSString *_Nonnull)external_info;
 - (void) logout;
+- (int) connect:(NSString *_Nonnull)host path:(NSString *_Nonnull)path port:(unsigned int)port;
+- (void) reconnect;
 
 //IM
 - (EMGroupInfo *_Nullable) getGroupSpecificationWithId:(NSString *_Nonnull)groupId;
@@ -38,6 +40,7 @@
 - (NSString * _Nonnull) getGroupMemberName:(NSString *_Nonnull)userId group:(NSString *_Nonnull)groupId;
 - (void) joinNewGroup:(NSString *_Nonnull)groupId;
 - (NSMutableArray *_Nullable) getAllGroupSpecification;
+- (void) changeUserFnName:(NSString *_Nonnull)displayName;
 
 //Private
 - (void) iterate;

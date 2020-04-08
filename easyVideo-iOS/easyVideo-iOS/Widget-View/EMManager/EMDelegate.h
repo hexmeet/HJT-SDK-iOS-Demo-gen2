@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol EMDelegate <NSObject>
 
+@optional
+
 - (void)onMessageReciveData:(MessageBody *)message;
 
 - (void)onEMError:(EMError *)err;

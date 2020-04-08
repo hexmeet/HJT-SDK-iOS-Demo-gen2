@@ -23,7 +23,7 @@
 /**
  头像
  */
-@property (nonatomic, weak) UIImageView *iconView;
+//@property (nonatomic, weak) UIImageView *iconView;
 
 /**
  姓名
@@ -53,9 +53,9 @@
         [contentBtn setTitleColor:HEXCOLOR(0x313131) forState:UIControlStateNormal];
         self.contentBtn = contentBtn;
         
-        UIImageView *iconView = [[UIImageView alloc] init];
-        [self.contentView addSubview:iconView];
-        self.iconView = iconView;
+//        UIImageView *iconView = [[UIImageView alloc] init];
+//        [self.contentView addSubview:iconView];
+//        self.iconView = iconView;
         
         UILabel *nameLabel = [[UILabel alloc] init];
         [self.contentView addSubview:nameLabel];
@@ -63,9 +63,9 @@
         
         //清空cell的背景颜色
         self.backgroundColor = [UIColor clearColor];
-        
-        self.iconView.layer.masksToBounds = YES;
-        self.iconView.layer.cornerRadius = 20;
+//
+//        self.iconView.layer.masksToBounds = YES;
+//        self.iconView.layer.cornerRadius = 20;
        
         /*
         CGFloat top =
@@ -102,42 +102,42 @@
     self.timeLabel.textColor = HEXCOLOR(0x919191);
     //2,设置头像
     if (MessageModelTypeMe == message.type) {
-        self.iconView.image = [UIImage imageNamed:@"me"];
+//        self.iconView.image = [UIImage imageNamed:@"me"];
         [self.contentBtn setBackgroundImage:[UIImage resizableImageWith:@"chat_send_nor"] forState:UIControlStateNormal];
-        [self.contentBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    }
-    else
+        [self.contentBtn setTitleColor:HEXCOLOR(0x313131) forState:UIControlStateNormal];
+        self.nameLabel.textColor = HEXCOLOR(0x919191);
+    }else
     {
         [self.contentBtn setBackgroundImage:[UIImage resizableImageWith:@"chat_recive_nor"]  forState:UIControlStateNormal];
-        self.iconView.image = [UIImage imageNamed:@"other"];
-        [self.contentBtn setTitleColor:HEXCOLOR(0x313131) forState:UIControlStateNormal];
+//        self.iconView.image = [UIImage imageNamed:@"other"];
+        [self.contentBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        self.nameLabel.textColor = HEXCOLOR(0x4381ff);
     }
-    self.iconView.frame = _messageFrame.iconF;
-    [self.iconView sd_setImageWithURL:[NSURL URLWithString:message.imagUrl]];
+//    self.iconView.frame = _messageFrame.iconF;
+//    [self.iconView sd_setImageWithURL:[NSURL URLWithString:message.imagUrl]];
     
     //3,设置名字
     self.nameLabel.text = message.name;
     self.nameLabel.font = [UIFont systemFontOfSize:11];
-    self.nameLabel.textColor = HEXCOLOR(0x919191);
+//    self.nameLabel.textColor = HEXCOLOR(0x919191);
     self.nameLabel.frame = _messageFrame.nameF;
-    NSLog(@"self.nameLabel.text+++%@", message.name);
     
     //4,设置正文
     [self.contentBtn setTitle:message.content forState:UIControlStateNormal];
     self.contentBtn.frame = _messageFrame.textF;
     
-    [[EVUserIdManager sharedInstance] selectEntity:nil ascending:YES filterString:nil success:^(NSArray * _Nonnull results) {
-        for (EMGroupMemberInfo *user in results) {
-            if ([user.emuserId isEqualToString:message.from]) {
-                [self.iconView sd_setImageWithURL:[NSURL URLWithString:user.imageUrl] placeholderImage:[UIImage imageNamed:@"default_image"] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-                    if (error != nil) {
-                        self.iconView.image = [UIImage imageNamed:@"default_image.png"];
-                    }
-                }];
-                
-            }
-        }
-    } fail:nil];
+//    [[EVUserIdManager sharedInstance] selectEntity:nil ascending:YES filterString:nil success:^(NSArray * _Nonnull results) {
+//        for (EMGroupMemberInfo *user in results) {
+//            if ([user.emuserId isEqualToString:message.from]) {
+//                [self.iconView sd_setImageWithURL:[NSURL URLWithString:user.imageUrl] placeholderImage:[UIImage imageNamed:@"default_image"] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+//                    if (error != nil) {
+//                        self.iconView.image = [UIImage imageNamed:@"default_image.png"];
+//                    }
+//                }];
+//
+//            }
+//        }
+//    } fail:nil];
     
 }
 

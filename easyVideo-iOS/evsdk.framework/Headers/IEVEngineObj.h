@@ -368,6 +368,7 @@ __attribute__((visibility("default"))) @interface EVContactInfo : NSObject
 - (int) setVideoActive:(int)active;
 - (int) videoActive;
 - (int) setInConfDisplayName:(NSString *_Nonnull)display_name;
+- (int) uploadFeedbackFiles:(NSString *_Nonnull)filePath contact:(NSString *_Nonnull)contact description:(NSString *_Nonnull)description;
 
 //IM
 - (NSString * _Nonnull) getIMAddress;
