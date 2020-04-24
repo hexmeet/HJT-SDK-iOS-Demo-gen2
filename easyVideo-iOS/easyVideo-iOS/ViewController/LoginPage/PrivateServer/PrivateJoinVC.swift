@@ -42,6 +42,7 @@ class PrivateJoinVC: BaseViewController, UITableViewDelegate, UITableViewDataSou
         super.viewWillAppear(animated)
         
         gethistroyCallNumber()
+        serverTF.layoutIfNeeded()
     }
     
     override func viewDidDisappear(_ animated: Bool) {

@@ -148,6 +148,7 @@
 "title.joinmeeting" = "Join a Meeting";
 
 "chat.textview.placeholder" = "Say something...";
+"chat.copy" = "Copy";
 
 "tabbar.meetings" = "Meetings";
 "tabbar.chat" = "Chat";

@@ -17,7 +17,7 @@ class InvitationView: UIView {
     public var btnblock : ((_ flag:Bool)->())?
     
     override func draw(_ rect: CGRect) {
-        headImg.setLayer(true, 50, nil, nil)
+        headImg.setCornerRadius(50, .allCorners)
         playSound()
     }
 

@@ -168,4 +168,12 @@ class VideoVC: BaseViewController, CAAnimationDelegate {
             setAnimation(messageLb!, timeInteger)
         }
     }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        return true;
+    }
 }

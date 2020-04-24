@@ -17,4 +17,5 @@ pod 'Masonry'
 pod 'MJRefresh'
 pod 'KSCrash'
 pod 'TZImagePickerController'
+pod 'GMenuController'
 end

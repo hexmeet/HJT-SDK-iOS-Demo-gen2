@@ -245,6 +245,7 @@ __attribute__((visibility("default"))) @interface EVUserInfo : NSObject
 @property (copy, nonatomic) NSString *_Nonnull appServerType;
 @property (copy, nonatomic) NSString *_Nonnull urlSuffixForMobile;
 @property (copy, nonatomic) NSString *_Nonnull urlSuffixForPC;
+@property (copy, nonatomic) NSString *_Nonnull vmr;
 @property (strong, nonatomic) EVFeatureSupport *_Nonnull featureSupport;
 
 @end

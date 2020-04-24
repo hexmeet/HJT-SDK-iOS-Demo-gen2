@@ -94,16 +94,43 @@ extension UIView {
         }
     }
     
-    func setLayer(_ masksToBounds_: Bool, _ cornerRadius_: CGFloat, _ borderColor_: UIColor?, _ borderWidth_: CGFloat?){
-        self.layer.masksToBounds = masksToBounds_
-        self.layer.cornerRadius = cornerRadius_
-        if borderColor_ != nil {
-            self.layer.borderColor = borderColor_?.cgColor
-        }
-        if borderWidth_ != nil {
-            self.layer.borderWidth = borderWidth_!
-        }
+    func setCornerRadius(_ cornerRadius: CGFloat, _ clipType: CornerClipType) {
+        self.openClip = true
+        self.radius = cornerRadius
+        self.clipType = clipType
     }
+    
+    func setBorder(_ borderRadius: CGFloat?, _ borderType: CornerBorderType,  _ borderColor: UIColor, _ borderWidth: CGFloat) {
+        self.openBorder = true
+        self.borderType = borderType
+        if borderRadius != nil {
+            self.borderRadius = borderRadius!
+        }
+        self.borderColor = borderColor
+        self.borderWidth = borderWidth
+    }
+    
+//    func setLayer(_ masksToBounds_: Bool, _ cornerRadius_: CGFloat, _ borderColor_: UIColor?, _ borderWidth_: CGFloat?){
+////        if #available(iOS 11.0, *) {
+////            self.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner, .layerMinXMinYCorner];
+////        }
+//        self.layer.mask = nil
+//        let path = UIBezierPath.init(roundedRect: self.bounds, byRoundingCorners: .allCorners, cornerRadii: CGSize(width: cornerRadius_, height: cornerRadius_))
+//        let maskLayer = CAShapeLayer()
+//        maskLayer.frame = self.bounds
+//        maskLayer.path = path.cgPath
+//
+//        if borderColor_ != nil && borderWidth_ != nil {
+//            let borderLayer = CAShapeLayer()
+//            borderLayer.frame = self.bounds
+//            borderLayer.lineWidth = borderWidth_!
+//            borderLayer.strokeColor = borderColor_?.cgColor
+//            borderLayer.fillColor = UIColor.clear.cgColor
+//            borderLayer.path = path.cgPath;
+//            self.layer.insertSublayer(borderLayer, at: 0)
+//        }
+//        self.layer.mask = maskLayer
+//    }
     
     func setAddshadow(_ color: UIColor, _ size: CGSize, _ shadowOpacity_: Float) {
         self.layer.shadowColor = color.cgColor

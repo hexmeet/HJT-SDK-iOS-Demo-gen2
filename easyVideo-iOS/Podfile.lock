@@ -4,6 +4,7 @@ PODS:
     - CocoaLumberjack/Core (= 3.6.0)
   - CocoaLumberjack/Core (3.6.0)
   - GCDMulticastDelegate (1.0.0)
+  - GMenuController (0.0.6)
   - HQHUtils (1.0.10)
   - IQKeyboardManager (6.5.4)
   - JCore (2.1.8)
@@ -86,6 +87,7 @@ DEPENDENCIES:
   - CJBaseHelper/UIViewControllerCJHelper
   - CocoaLumberjack
   - GCDMulticastDelegate
+  - GMenuController
   - HQHUtils (= 1.0.10)
   - IQKeyboardManager
   - JPush
@@ -103,6 +105,7 @@ SPEC REPOS:
     - CJBaseHelper
     - CocoaLumberjack
     - GCDMulticastDelegate
+    - GMenuController
     - HQHUtils
     - IQKeyboardManager
     - JCore
@@ -120,6 +123,7 @@ SPEC CHECKSUMS:
   CJBaseHelper: dd715e18591da9df5d06364098300591220f0535
   CocoaLumberjack: 78b0c238666f4f58db069738ec176f4519557516
   GCDMulticastDelegate: 3c0ae43d8998623db0876c77d7ae2c3844afeba8
+  GMenuController: c7712947635f972cd00e62a52b6276bfab24bfc6
   HQHUtils: 6f3ee069edf7c89cf1069f2b429ced28c8e26424
   IQKeyboardManager: 72b359cd7e777e3a984cedbe05f8da45320cbb63
   JCore: a7f1dead960d77a97717c73ea8b0aa5b33706491
@@ -133,6 +137,6 @@ SPEC CHECKSUMS:
   WechatOpenSDK: 8b3ba4239193d1112205c139c94e21934e8f369a
   ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
 
-PODFILE CHECKSUM: 921ade25e3aa64641180df58c8e63c714a47b31f
+PODFILE CHECKSUM: 914c3a65c432418f2b6d59b5d528f3784b7543c4
 
 COCOAPODS: 1.9.1

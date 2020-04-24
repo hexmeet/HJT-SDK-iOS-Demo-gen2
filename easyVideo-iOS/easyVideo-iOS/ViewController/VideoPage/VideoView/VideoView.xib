@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -79,19 +78,18 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="o6D-zh-aFx" secondAttribute="bottom" constant="5" id="3IL-Vj-QMw"/>
+                <constraint firstAttribute="bottom" secondItem="o6D-zh-aFx" secondAttribute="bottom" constant="5" id="3IL-Vj-QMw"/>
                 <constraint firstItem="JhY-5c-yfu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3jg-Jc-FLc"/>
                 <constraint firstItem="hqE-vr-n3G" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5Ni-1R-r0q"/>
                 <constraint firstAttribute="trailing" secondItem="JhY-5c-yfu" secondAttribute="trailing" id="7Rf-Yr-tMx"/>
                 <constraint firstAttribute="trailing" secondItem="hqE-vr-n3G" secondAttribute="trailing" id="FE0-Qt-dDd"/>
                 <constraint firstItem="JhY-5c-yfu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="G2A-pJ-f73"/>
                 <constraint firstAttribute="bottom" secondItem="JhY-5c-yfu" secondAttribute="bottom" id="ISl-ct-vLn"/>
-                <constraint firstItem="o6D-zh-aFx" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="ibI-V0-wLZ"/>
+                <constraint firstItem="o6D-zh-aFx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="ibI-V0-wLZ"/>
                 <constraint firstAttribute="bottom" secondItem="hqE-vr-n3G" secondAttribute="bottom" id="lOp-PO-Ul0"/>
                 <constraint firstItem="hqE-vr-n3G" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yQW-ck-VMK"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="139" y="90"/>
         </view>
     </objects>

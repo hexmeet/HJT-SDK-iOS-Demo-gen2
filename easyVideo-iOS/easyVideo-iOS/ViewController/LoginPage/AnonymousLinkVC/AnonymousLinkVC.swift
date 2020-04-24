@@ -30,8 +30,8 @@ class AnonymousLinkVC: BaseViewController, UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField == disPlayNameLb {
             if !Utils.judgeSpecialCharacter(["\"", "<", ">"], withStr: string) {
-                self.view.endEditing(true)
-                showHud("alert.specialcharacter".localized, self.view, .MBProgressHUBPositionBottom, 2)
+                view.endEditing(true)
+                showHud("alert.specialcharacter".localized, view, .MBProgressHUBPositionBottom, 2)
             }
             return Utils.judgeSpecialCharacter(["\"", "<", ">"], withStr: string)
         }

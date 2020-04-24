@@ -13,7 +13,7 @@ extension BaseTabBarVC {
     
     /// 加载当前VC
     func loadTabBarVC() -> Void {
-        self.delegate = self
+        delegate = self
         
         appDelegate.evengine.setDelegate(self)
         
@@ -28,10 +28,10 @@ extension BaseTabBarVC {
         
         viewControllers = [meetingNav, joinMeetingNav, contactNav, meNav]
         
-        let item1 = self.tabBar.items![0]
-        let item2 = self.tabBar.items![1]
-        let item3 = self.tabBar.items![2]
-        let item4 = self.tabBar.items![3]
+        let item1 = tabBar.items![0]
+        let item2 = tabBar.items![1]
+        let item3 = tabBar.items![2]
+        let item4 = tabBar.items![3]
         
         item1.image = UIImage(named: "nav_meeting_nor")
         item2.image = UIImage(named: "nav_join_nor")
@@ -232,7 +232,11 @@ extension BaseTabBarVC {
         
         if getUserParameter(loginState) != nil && getUserParameter(loginState) == "YES" {
             let headImgPath = "\(FileTools.getDocumentsFailePath())/header.jpg"
-            self.appDelegate.evengine.setUserImage(Bundle.main.path(forResource: "img_videomute", ofType: "jpg")!, filename: headImgPath)
+            if try! Data.init(contentsOf: URL.init(fileURLWithPath: headImgPath)).count != 0 {
+                self.appDelegate.evengine.setUserImage(Bundle.main.path(forResource: "img_videomute", ofType: "jpg")!, filename: headImgPath)
+            }else {
+                self.appDelegate.evengine.setUserImage(Bundle.main.path(forResource: "img_videomute", ofType: "jpg")!, filename: FileTools.bundleFile("default_user_icon.jpg"))
+            }
         }else {
             self.appDelegate.evengine.setUserImage(Bundle.main.path(forResource: "img_videomute", ofType: "jpg")!, filename: FileTools.bundleFile("default_user_icon.jpg"))
         }
@@ -243,7 +247,11 @@ extension BaseTabBarVC {
         DDLogWrapper.logInfo("evengine.enableCamera(false)")
         if getUserParameter(loginState) != nil && getUserParameter(loginState) == "YES" {
             let headImgPath = "\(FileTools.getDocumentsFailePath())/header.jpg"
-            self.appDelegate.evengine.setUserImage(Bundle.main.path(forResource: "img_videomute2", ofType: "jpg")!, filename: headImgPath)
+            if try! Data.init(contentsOf: URL.init(fileURLWithPath: headImgPath)).count != 0 {
+                self.appDelegate.evengine.setUserImage(Bundle.main.path(forResource: "img_videomute2", ofType: "jpg")!, filename: headImgPath)
+            }else {
+                self.appDelegate.evengine.setUserImage(Bundle.main.path(forResource: "img_videomute2", ofType: "jpg")!, filename: FileTools.bundleFile("default_user_icon.jpg"))
+            }
         }else {
             self.appDelegate.evengine.setUserImage(Bundle.main.path(forResource: "img_videomute2", ofType: "jpg")!, filename: FileTools.bundleFile("default_user_icon.jpg"))
         }
@@ -294,8 +302,10 @@ extension BaseTabBarVC {
                 return
             }
             
-            if FileTools.isExist(withFile: "\(FileTools.getDocumentsFailePath())/header.jpg") {
-                appDelegate.evengine.setUserImage(Bundle.main.path(forResource: "img_videomute", ofType: "jpg")!, filename: "\(FileTools.getDocumentsFailePath())/header.jpg")
+            let headImgPath = "\(FileTools.getDocumentsFailePath())/header.jpg"
+            
+            if FileTools.getFileSize(headImgPath) != 0 {
+                self.appDelegate.evengine.setUserImage(Bundle.main.path(forResource: "img_videomute", ofType: "jpg")!, filename: headImgPath)
             }else {
                 self.appDelegate.evengine.setUserImage(Bundle.main.path(forResource: "img_videomute", ofType: "jpg")!, filename: FileTools.bundleFile("default_user_icon.jpg"))
             }
@@ -313,7 +323,7 @@ extension BaseTabBarVC {
             if getSetParameter(enableCamera) != nil {
                 appDelegate.evengine.enableCamera(getSetParameter(enableCamera)!)
             }else {
-                appDelegate.evengine.enableMic(true)
+                appDelegate.evengine.enableCamera(true)
             }
             
             meetingIdStr = sip
@@ -421,7 +431,7 @@ extension BaseTabBarVC {
             if getSetParameter(enableCamera) != nil {
                 appDelegate.evengine.enableCamera(getSetParameter(enableCamera)!)
             }else {
-                appDelegate.evengine.enableMic(true)
+                appDelegate.evengine.enableCamera(true)
             }
             
             meetingIdStr = sip
@@ -449,20 +459,19 @@ extension BaseTabBarVC {
     
     func showMeetingWindow(_ sip:String) {
         appDelegate.allowRotation = 1
-        UIApplication.shared.isIdleTimerDisabled = true
         
         self.showVideoWindow()
         if theDeviceorientation == UIDeviceOrientation.landscapeRight {
-            UIDevice.current.setValue(NSNumber.init(integerLiteral: UIDeviceOrientation.portrait.rawValue), forKey: "orientation")
             UIDevice.current.setValue(NSNumber.init(integerLiteral: UIDeviceOrientation.landscapeLeft.rawValue), forKey: "orientation")
-            self.perform(#selector(setCamera), with: nil, afterDelay: 1)
         }else if theDeviceorientation == UIDeviceOrientation.landscapeLeft {
-            UIDevice.current.setValue(NSNumber.init(integerLiteral: UIDeviceOrientation.portrait.rawValue), forKey: "orientation")
             UIDevice.current.setValue(NSNumber.init(integerLiteral: UIDeviceOrientation.landscapeRight.rawValue), forKey: "orientation")
         }else {
-            UIDevice.current.setValue(NSNumber.init(integerLiteral: UIDeviceOrientation.portrait.rawValue), forKey: "orientation")
             UIDevice.current.setValue(NSNumber.init(integerLiteral: UIDeviceOrientation.landscapeRight.rawValue), forKey: "orientation")
         }
+        
+        videoWidow?.frame = UIScreen.main.bounds
+        
+        DDLogWrapper.logInfo("videoWidow frame: \(videoWidow?.frame ?? CGRect.zero)")
         
         videoVC?.startTimer()
         videoVC?.meetingNumberLb.text = sip
@@ -606,6 +615,12 @@ extension BaseTabBarVC {
                 let url = URL.init(string: self.appDelegate.evengine.getIMAddress())
                 
                 if url != nil {
+                    if url?.scheme == "ws" {
+                        self.appDelegate.emengine.enableSecure(false)
+                    }else {
+                        self.appDelegate.emengine.enableSecure(true)
+                        self.appDelegate.emengine.setRootCA(FileTools.bundleFile("rootca.pem"))
+                    }
                     self.appDelegate.emengine.anonymousLogin((url?.host)!, port: UInt32.init("\(url?.port ?? 0)")!, displayname: self.appDelegate.evengine.getDisplayName(), external_info: "\(getUserParameter(userId) ?? "0")")
                     DDLogWrapper.logInfo("getIMAddress address:\(url!.absoluteString) server:\((url?.host)!) port:\(UInt32.init("\(url?.port ?? 0)")!)")
                     
@@ -617,22 +632,19 @@ extension BaseTabBarVC {
                 }
             }
             
+            UIApplication.shared.isIdleTimerDisabled = true
+            
             if info.svcCallType == .conf {
                 self.appDelegate.hiddenConnectWindow()
                 self.showMeetingWindow(info.conference_number)
             }else if info.svcCallType == .P2P {
                 self.appDelegate.allowRotation = 1
-                UIApplication.shared.isIdleTimerDisabled = true
                 
                 if self.theDeviceorientation == UIDeviceOrientation.landscapeRight {
-                    UIDevice.current.setValue(NSNumber.init(integerLiteral: UIDeviceOrientation.portrait.rawValue), forKey: "orientation")
                     UIDevice.current.setValue(NSNumber.init(integerLiteral: UIDeviceOrientation.landscapeLeft.rawValue), forKey: "orientation")
-                    self.perform(#selector(self.setCamera), with: nil, afterDelay: 1)
                 }else if self.theDeviceorientation == UIDeviceOrientation.landscapeLeft {
-                    UIDevice.current.setValue(NSNumber.init(integerLiteral: UIDeviceOrientation.portrait.rawValue), forKey: "orientation")
                     UIDevice.current.setValue(NSNumber.init(integerLiteral: UIDeviceOrientation.landscapeRight.rawValue), forKey: "orientation")
                 }else {
-                    UIDevice.current.setValue(NSNumber.init(integerLiteral: UIDeviceOrientation.portrait.rawValue), forKey: "orientation")
                     UIDevice.current.setValue(NSNumber.init(integerLiteral: UIDeviceOrientation.landscapeRight.rawValue), forKey: "orientation")
                 }
                 

@@ -23,5 +23,6 @@
 #import "EMManager.h"
 #import <MBProgressHUD.h>
 #import "HQHKeyBoardDefine.h"
+#import <GMenuController.h>
 
 #endif /* easyVideo_pch */
