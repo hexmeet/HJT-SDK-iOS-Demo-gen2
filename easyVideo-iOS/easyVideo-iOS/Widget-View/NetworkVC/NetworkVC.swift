@@ -15,7 +15,7 @@ class NetworkVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.clear
+        view.backgroundColor = UIColor.clear
         alertTitleLb.text = "alert.networkunavailable".localized
     }
     

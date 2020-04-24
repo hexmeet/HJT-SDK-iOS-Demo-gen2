@@ -52,6 +52,7 @@
         contentBtn.titleLabel.numberOfLines = 0;
         [contentBtn setTitleColor:HEXCOLOR(0x313131) forState:UIControlStateNormal];
         self.contentBtn = contentBtn;
+        [self.contentBtn addTarget:self action:@selector(addMenuItem:) forControlEvents:UIControlEventTouchUpInside];
         
 //        UIImageView *iconView = [[UIImageView alloc] init];
 //        [self.contentView addSubview:iconView];
@@ -78,6 +79,22 @@
         
     }
     return self;
+}
+
+- (void)addMenuItem:(UIButton *)sender
+{
+    GMenuItem *item = [[GMenuItem alloc] initWithTitle:NSLocalizedString(@"chat.copy", @"复制") target:self action:@selector(copyContent)];
+    
+    [[GMenuController sharedMenuController] setMenuItems:@[item]];
+    [[GMenuController sharedMenuController] setTargetRect:sender.frame inView:self];
+    [[GMenuController sharedMenuController] setMenuVisible:YES];
+}
+
+- (void)copyContent {
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    pasteboard.string = self.contentBtn.titleLabel.text;
+    
+    [[GMenuController sharedMenuController] setMenuVisible:NO];
 }
 
 + (instancetype)cellWithTableView:(UITableView *)tableview

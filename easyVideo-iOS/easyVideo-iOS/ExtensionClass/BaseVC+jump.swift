@@ -211,6 +211,8 @@ extension BaseViewController {
     // MARK: EVSDKMETHOD
     func userLogin(withServer server: String, withPort port: Int, withAccout accout: String, withPassword password :String) {
         appDelegate.isAnonymousUser = false
+        //判断https
+        appDelegate.evengine.enableSecure(getSetParameter(enableHttps) != nil ? getSetParameter(enableHttps)! : false)
         appDelegate.evengine.login(withLocation: server, port: UInt32(port), name: accout, password: appDelegate.evengine .encryptPassword(password))
     }
 }

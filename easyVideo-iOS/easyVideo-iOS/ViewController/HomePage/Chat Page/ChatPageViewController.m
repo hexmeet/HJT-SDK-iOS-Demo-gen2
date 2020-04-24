@@ -406,7 +406,7 @@
         if (block) {
             block();
         }
-        
+        [[GMenuController sharedMenuController] setMenuVisible:NO];
         [self.navigationController popViewControllerAnimated:YES];
     }
 }

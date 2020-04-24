@@ -36,7 +36,7 @@ class BaseViewController: UIViewController, MFMailComposeViewControllerDelegate 
     
     /// 设置背景颜色
     func setBackGroudColor(color:UIColor) {
-        self.view.backgroundColor = color
+        view.backgroundColor = color
     }
 
     //MARK: Mail composer for sending logs

@@ -23,8 +23,8 @@ class ChatListCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        unreadMessageBg.layer.insertSublayer(Utils.addgradientLayer(UIColor.init(formHexString: "ffab47"), withEnd: UIColor.init(formHexString: "ff4646"), view: self.unreadMessageBg), at: 0)
-        reminderBg.layer.addSublayer(Utils.addgradientLayer(UIColor.init(formHexString: "ffab47"), withEnd: UIColor.init(formHexString: "ff4646"), view: self.reminderBg))
+        unreadMessageBg.layer.insertSublayer(Utils.addgradientLayer(UIColor.init(formHexString: "ffab47"), withEnd: UIColor.init(formHexString: "ff4646"), view: unreadMessageBg), at: 0)
+        reminderBg.layer.addSublayer(Utils.addgradientLayer(UIColor.init(formHexString: "ffab47"), withEnd: UIColor.init(formHexString: "ff4646"), view: reminderBg))
         
     }
 

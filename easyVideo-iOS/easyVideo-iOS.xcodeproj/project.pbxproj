@@ -40,6 +40,31 @@
 		FC349D7723FCE6D0001B948E /* cycle_top_left.png in Resources */ = {isa = PBXBuildFile; fileRef = FC349D7223FCE6D0001B948E /* cycle_top_left.png */; };
 		FC408D60242E2B1F00BB257B /* emsdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC408D5E242E2B0200BB257B /* emsdk.framework */; };
 		FC408D61242E2B1F00BB257B /* emsdk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC408D5E242E2B0200BB257B /* emsdk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC53D4A7244953650004AE55 /* PrivateJoinVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53D4A6244953650004AE55 /* PrivateJoinVC+Ext.swift */; };
+		FC53D4B024497A890004AE55 /* UIView+CornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = FC53D4AF24497A890004AE55 /* UIView+CornerRadius.m */; };
+		FC53D4B324497A980004AE55 /* UIView+CornerBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = FC53D4B224497A980004AE55 /* UIView+CornerBorder.m */; };
+		FC53D4B524498D3E0004AE55 /* BaseViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53D4B424498D3E0004AE55 /* BaseViewController+Ext.swift */; };
+		FC53D4B724498DB30004AE55 /* PrivateVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53D4B624498DB30004AE55 /* PrivateVC+Ext.swift */; };
+		FC53D4B924498DEE0004AE55 /* CloudVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53D4B824498DEE0004AE55 /* CloudVC+Ext.swift */; };
+		FC53D4BB24498E090004AE55 /* PrivateLoginVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53D4BA24498E090004AE55 /* PrivateLoginVC+Ext.swift */; };
+		FC53D4BD24498E310004AE55 /* AdvancedSettingVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53D4BC24498E310004AE55 /* AdvancedSettingVC+Ext.swift */; };
+		FC53D4BF24498E4D0004AE55 /* LoginSettingVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53D4BE24498E4D0004AE55 /* LoginSettingVC+Ext.swift */; };
+		FC53D4C124498E660004AE55 /* CloudLoginVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53D4C024498E660004AE55 /* CloudLoginVC+Ext.swift */; };
+		FC53D4C324498E810004AE55 /* CloudJoinVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53D4C224498E810004AE55 /* CloudJoinVC+Ext.swift */; };
+		FC53D4C524498EA50004AE55 /* MeetingVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53D4C424498EA50004AE55 /* MeetingVC+Ext.swift */; };
+		FC53D4C724498ECA0004AE55 /* JoinMeetingVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53D4C624498ECA0004AE55 /* JoinMeetingVC+Ext.swift */; };
+		FC53D4C924498EF40004AE55 /* ContactVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53D4C824498EF40004AE55 /* ContactVC+Ext.swift */; };
+		FC53D4CB24498F220004AE55 /* Me+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53D4CA24498F220004AE55 /* Me+Ext.swift */; };
+		FC53D4CD24498F3F0004AE55 /* SettingVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53D4CC24498F3F0004AE55 /* SettingVC+Ext.swift */; };
+		FC53D4CF24498F540004AE55 /* InvitaVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53D4CE24498F540004AE55 /* InvitaVC+Ext.swift */; };
+		FC53D4D124498F660004AE55 /* ModifyPasswordVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53D4D024498F660004AE55 /* ModifyPasswordVC+Ext.swift */; };
+		FC53D4D324498F800004AE55 /* AboutVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53D4D224498F800004AE55 /* AboutVC+Ext.swift */; };
+		FC53D4D524498F980004AE55 /* UserInformationVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53D4D424498F980004AE55 /* UserInformationVC+Ext.swift */; };
+		FC53D4D724498FBA0004AE55 /* TermsServiceVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53D4D624498FBA0004AE55 /* TermsServiceVC+Ext.swift */; };
+		FC53D4D924498FDA0004AE55 /* ConnectingVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53D4D824498FDA0004AE55 /* ConnectingVC+Ext.swift */; };
+		FC53D4DB24498FF10004AE55 /* ConferenceVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53D4DA24498FF10004AE55 /* ConferenceVC+Ext.swift */; };
+		FC53D4DD244990110004AE55 /* StatisticalVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53D4DC244990110004AE55 /* StatisticalVC+Ext.swift */; };
+		FC53D4DF244990270004AE55 /* AnonymousLinkVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC53D4DE244990270004AE55 /* AnonymousLinkVC+Ext.swift */; };
 		FC5A667E23CC0C1E002E8CDD /* LoginOutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC5A668023CC0C1E002E8CDD /* LoginOutCell.xib */; };
 		FC5A668823CC0E84002E8CDD /* TermsServiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5A668623CC0E84002E8CDD /* TermsServiceVC.swift */; };
 		FC5A668923CC0E84002E8CDD /* TermsServiceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC5A668723CC0E84002E8CDD /* TermsServiceVC.xib */; };
@@ -111,7 +136,6 @@
 		FC906C2523D5452E0098C844 /* AnonymousLinkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC906C2323D5452E0098C844 /* AnonymousLinkVC.swift */; };
 		FC906C2923D571DD0098C844 /* P2pCallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC906C2823D571DD0098C844 /* P2pCallView.swift */; };
 		FC906C2B23D571EA0098C844 /* P2pCallView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC906C2A23D571EA0098C844 /* P2pCallView.xib */; };
-		FC93990523C037BC00C057B8 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC93990423C037BC00C057B8 /* UIViewController+Ext.swift */; };
 		FC98853F2400ECD5007463FA /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC98853E2400ECD5007463FA /* UIImage+Ext.swift */; };
 		FCA84060240585C900531901 /* SwiftCrashTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8405F240585C900531901 /* SwiftCrashTool.swift */; };
 		FCA8976D23BEF1B300A0C78E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8976C23BEF1B300A0C78E /* AppDelegate.swift */; };
@@ -259,6 +283,33 @@
 		FC349D7123FCE6D0001B948E /* ic_rotate_90_degrees_ccw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_rotate_90_degrees_ccw.png; sourceTree = "<group>"; };
 		FC349D7223FCE6D0001B948E /* cycle_top_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cycle_top_left.png; sourceTree = "<group>"; };
 		FC408D5E242E2B0200BB257B /* emsdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = emsdk.framework; sourceTree = "<group>"; };
+		FC53D4A6244953650004AE55 /* PrivateJoinVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrivateJoinVC+Ext.swift"; sourceTree = "<group>"; };
+		FC53D4AE24497A890004AE55 /* UIView+CornerRadius.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+CornerRadius.h"; sourceTree = "<group>"; };
+		FC53D4AF24497A890004AE55 /* UIView+CornerRadius.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+CornerRadius.m"; sourceTree = "<group>"; };
+		FC53D4B124497A980004AE55 /* UIView+CornerBorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+CornerBorder.h"; sourceTree = "<group>"; };
+		FC53D4B224497A980004AE55 /* UIView+CornerBorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+CornerBorder.m"; sourceTree = "<group>"; };
+		FC53D4B424498D3E0004AE55 /* BaseViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseViewController+Ext.swift"; sourceTree = "<group>"; };
+		FC53D4B624498DB30004AE55 /* PrivateVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrivateVC+Ext.swift"; sourceTree = "<group>"; };
+		FC53D4B824498DEE0004AE55 /* CloudVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudVC+Ext.swift"; sourceTree = "<group>"; };
+		FC53D4BA24498E090004AE55 /* PrivateLoginVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrivateLoginVC+Ext.swift"; sourceTree = "<group>"; };
+		FC53D4BC24498E310004AE55 /* AdvancedSettingVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdvancedSettingVC+Ext.swift"; sourceTree = "<group>"; };
+		FC53D4BE24498E4D0004AE55 /* LoginSettingVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginSettingVC+Ext.swift"; sourceTree = "<group>"; };
+		FC53D4C024498E660004AE55 /* CloudLoginVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudLoginVC+Ext.swift"; sourceTree = "<group>"; };
+		FC53D4C224498E810004AE55 /* CloudJoinVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudJoinVC+Ext.swift"; sourceTree = "<group>"; };
+		FC53D4C424498EA50004AE55 /* MeetingVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MeetingVC+Ext.swift"; sourceTree = "<group>"; };
+		FC53D4C624498ECA0004AE55 /* JoinMeetingVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JoinMeetingVC+Ext.swift"; sourceTree = "<group>"; };
+		FC53D4C824498EF40004AE55 /* ContactVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContactVC+Ext.swift"; sourceTree = "<group>"; };
+		FC53D4CA24498F220004AE55 /* Me+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Me+Ext.swift"; sourceTree = "<group>"; };
+		FC53D4CC24498F3F0004AE55 /* SettingVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingVC+Ext.swift"; sourceTree = "<group>"; };
+		FC53D4CE24498F540004AE55 /* InvitaVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InvitaVC+Ext.swift"; sourceTree = "<group>"; };
+		FC53D4D024498F660004AE55 /* ModifyPasswordVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModifyPasswordVC+Ext.swift"; sourceTree = "<group>"; };
+		FC53D4D224498F800004AE55 /* AboutVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AboutVC+Ext.swift"; sourceTree = "<group>"; };
+		FC53D4D424498F980004AE55 /* UserInformationVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInformationVC+Ext.swift"; sourceTree = "<group>"; };
+		FC53D4D624498FBA0004AE55 /* TermsServiceVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TermsServiceVC+Ext.swift"; sourceTree = "<group>"; };
+		FC53D4D824498FDA0004AE55 /* ConnectingVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConnectingVC+Ext.swift"; sourceTree = "<group>"; };
+		FC53D4DA24498FF10004AE55 /* ConferenceVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConferenceVC+Ext.swift"; sourceTree = "<group>"; };
+		FC53D4DC244990110004AE55 /* StatisticalVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatisticalVC+Ext.swift"; sourceTree = "<group>"; };
+		FC53D4DE244990270004AE55 /* AnonymousLinkVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnonymousLinkVC+Ext.swift"; sourceTree = "<group>"; };
 		FC5A667F23CC0C1E002E8CDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LoginOutCell.xib; sourceTree = "<group>"; };
 		FC5A668223CC0C1F002E8CDD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LoginOutCell.strings; sourceTree = "<group>"; };
 		FC5A668423CC0C20002E8CDD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LoginOutCell.strings"; sourceTree = "<group>"; };
@@ -389,7 +440,6 @@
 		FC906C2323D5452E0098C844 /* AnonymousLinkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnonymousLinkVC.swift; sourceTree = "<group>"; };
 		FC906C2823D571DD0098C844 /* P2pCallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2pCallView.swift; sourceTree = "<group>"; };
 		FC906C2A23D571EA0098C844 /* P2pCallView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = P2pCallView.xib; sourceTree = "<group>"; };
-		FC93990423C037BC00C057B8 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		FC98853E2400ECD5007463FA /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		FCA8405F240585C900531901 /* SwiftCrashTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCrashTool.swift; sourceTree = "<group>"; };
 		FCA8976923BEF1B300A0C78E /* HJT-debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HJT-debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -560,6 +610,7 @@
 			isa = PBXGroup;
 			children = (
 				FC2DAFDD23C70D5A00F802D7 /* ModifyPasswordVC.swift */,
+				FC53D4D024498F660004AE55 /* ModifyPasswordVC+Ext.swift */,
 				FC2DAFDE23C70D5A00F802D7 /* ModifyPasswordVC.xib */,
 			);
 			path = ModifyPasswordVC;
@@ -601,10 +652,22 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		FC53D4AD24497A580004AE55 /* CornerRadius */ = {
+			isa = PBXGroup;
+			children = (
+				FC53D4AE24497A890004AE55 /* UIView+CornerRadius.h */,
+				FC53D4AF24497A890004AE55 /* UIView+CornerRadius.m */,
+				FC53D4B124497A980004AE55 /* UIView+CornerBorder.h */,
+				FC53D4B224497A980004AE55 /* UIView+CornerBorder.m */,
+			);
+			path = CornerRadius;
+			sourceTree = "<group>";
+		};
 		FC5A668523CC0E51002E8CDD /* Terms of Service */ = {
 			isa = PBXGroup;
 			children = (
 				FC5A668623CC0E84002E8CDD /* TermsServiceVC.swift */,
+				FC53D4D624498FBA0004AE55 /* TermsServiceVC+Ext.swift */,
 				FC5A668723CC0E84002E8CDD /* TermsServiceVC.xib */,
 			);
 			path = "Terms of Service";
@@ -821,6 +884,7 @@
 			children = (
 				FCA8979423BF08E000A0C78E /* BaseTabBarVC.swift */,
 				FCA8979723BF092400A0C78E /* BaseViewController.swift */,
+				FC53D4B424498D3E0004AE55 /* BaseViewController+Ext.swift */,
 				FC7FEAF223C479F800BE940F /* PlistAttribute.swift */,
 				FCC096D823CEEDFC006088BC /* enum.swift */,
 				FC79089A23D6A741006CE448 /* Public.swift */,
@@ -850,6 +914,7 @@
 			isa = PBXGroup;
 			children = (
 				FC7FEAD023C4242C00BE940F /* UserInformationVC.swift */,
+				FC53D4D424498F980004AE55 /* UserInformationVC+Ext.swift */,
 				FC7FEAD123C4242C00BE940F /* UserInformationVC.xib */,
 			);
 			path = UserInformationVC;
@@ -901,6 +966,7 @@
 			isa = PBXGroup;
 			children = (
 				FC906C2323D5452E0098C844 /* AnonymousLinkVC.swift */,
+				FC53D4DE244990270004AE55 /* AnonymousLinkVC+Ext.swift */,
 				FC7908C223D6BA3F006CE448 /* AnonymousLinkVC.xib */,
 			);
 			path = AnonymousLinkVC;
@@ -1008,6 +1074,7 @@
 				FCA897B423BF1F0700A0C78E /* LoginVC.swift */,
 				FC79089F23D6B60E006CE448 /* LoginVC.xib */,
 				FC0380E123C044D0001953CA /* LoginSettingVC.swift */,
+				FC53D4BE24498E4D0004AE55 /* LoginSettingVC+Ext.swift */,
 				FC0380E223C044D0001953CA /* LoginSettingVC.xib */,
 			);
 			path = LoginPage;
@@ -1017,10 +1084,13 @@
 			isa = PBXGroup;
 			children = (
 				FCA897BE23BF1FE800A0C78E /* CloudVC.swift */,
+				FC53D4B824498DEE0004AE55 /* CloudVC+Ext.swift */,
 				FC7908CF23D6BB28006CE448 /* CloudVC.xib */,
 				FC0380E923C062FD001953CA /* CloudLoginVC.swift */,
+				FC53D4C024498E660004AE55 /* CloudLoginVC+Ext.swift */,
 				FC7908D623D6BB82006CE448 /* CloudLoginVC.xib */,
 				FC0380ED23C0630E001953CA /* CloudJoinVC.swift */,
+				FC53D4C224498E810004AE55 /* CloudJoinVC+Ext.swift */,
 				FC7908DD23D6BBCB006CE448 /* CloudJoinVC.xib */,
 			);
 			path = CloudServer;
@@ -1030,12 +1100,16 @@
 			isa = PBXGroup;
 			children = (
 				FCA897BA23BF1FD200A0C78E /* PrivateVC.swift */,
+				FC53D4B624498DB30004AE55 /* PrivateVC+Ext.swift */,
 				FC7908A623D6B673006CE448 /* PrivateVC.xib */,
 				FCA897CE23BF3D2700A0C78E /* PrivateLoginVC.swift */,
+				FC53D4BA24498E090004AE55 /* PrivateLoginVC+Ext.swift */,
 				FC7908AD23D6B6E4006CE448 /* PrivateLoginVC.xib */,
 				FCA897D223BF3D3600A0C78E /* PrivateJoinVC.swift */,
+				FC53D4A6244953650004AE55 /* PrivateJoinVC+Ext.swift */,
 				FC7908B423D6B831006CE448 /* PrivateJoinVC.xib */,
 				FC0380D523C04096001953CA /* AdvancedSettingVC.swift */,
+				FC53D4BC24498E310004AE55 /* AdvancedSettingVC+Ext.swift */,
 				FC7908BB23D6B8DC006CE448 /* AdvancedSettingVC.xib */,
 			);
 			path = PrivateServer;
@@ -1050,6 +1124,7 @@
 				FCBD28B023C2F5BA00E1069F /* InvitaVC */,
 				FCBD28AF23C2F5B700E1069F /* AboutVC */,
 				FCA897A923BF0A5600A0C78E /* MeVC.swift */,
+				FC53D4CA24498F220004AE55 /* Me+Ext.swift */,
 				FC2DAFCC23C6FEB300F802D7 /* MeVC.xib */,
 			);
 			path = Me;
@@ -1059,6 +1134,7 @@
 			isa = PBXGroup;
 			children = (
 				FCA897A523BF0A4B00A0C78E /* ContactVC.swift */,
+				FC53D4C824498EF40004AE55 /* ContactVC+Ext.swift */,
 				FCA897A623BF0A4B00A0C78E /* ContactVC.xib */,
 			);
 			path = Contact;
@@ -1078,6 +1154,7 @@
 			isa = PBXGroup;
 			children = (
 				FCA8979D23BF0A2200A0C78E /* JoinMeetingVC.swift */,
+				FC53D4C624498ECA0004AE55 /* JoinMeetingVC+Ext.swift */,
 				FC7908EB23D6C9C3006CE448 /* JoinMeetingVC.xib */,
 			);
 			path = JoinMeeting;
@@ -1087,6 +1164,7 @@
 			isa = PBXGroup;
 			children = (
 				FCA8979923BF0A0F00A0C78E /* MeetingVC.swift */,
+				FC53D4C424498EA50004AE55 /* MeetingVC+Ext.swift */,
 				FCA8979A23BF0A0F00A0C78E /* MeetingVC.xib */,
 			);
 			path = Meeting;
@@ -1095,7 +1173,6 @@
 		FCA897AD23BF0E6100A0C78E /* ExtensionClass */ = {
 			isa = PBXGroup;
 			children = (
-				FC93990423C037BC00C057B8 /* UIViewController+Ext.swift */,
 				FCA897B023BF0EDE00A0C78E /* UIView+Ext.swift */,
 				FCA897D823BF45F600A0C78E /* AppDelegate+Ext.swift */,
 				FCA897B223BF0F0000A0C78E /* UITabBarController+Ext.swift */,
@@ -1125,6 +1202,7 @@
 			children = (
 				FCCEE08524370C46002B7491 /* Feedback */,
 				FCBD28B223C2F60200E1069F /* SettingVC.swift */,
+				FC53D4CC24498F3F0004AE55 /* SettingVC+Ext.swift */,
 				FCBD28B323C2F60200E1069F /* SettingVC.xib */,
 			);
 			path = SettingVC;
@@ -1135,6 +1213,7 @@
 			children = (
 				FC5A668523CC0E51002E8CDD /* Terms of Service */,
 				FCBD28BA23C2F63800E1069F /* AboutVC.swift */,
+				FC53D4D224498F800004AE55 /* AboutVC+Ext.swift */,
 				FCBD28BB23C2F63800E1069F /* AboutVC.xib */,
 			);
 			path = AboutVC;
@@ -1144,6 +1223,7 @@
 			isa = PBXGroup;
 			children = (
 				FCBD28B623C2F62900E1069F /* InvitaVC.swift */,
+				FC53D4CE24498F540004AE55 /* InvitaVC+Ext.swift */,
 				FCB2DC2123C83FAD00AD8E0F /* InvitaVC.xib */,
 			);
 			path = InvitaVC;
@@ -1152,6 +1232,7 @@
 		FCBD28BE23C3009100E1069F /* Widget-View */ = {
 			isa = PBXGroup;
 			children = (
+				FC53D4AD24497A580004AE55 /* CornerRadius */,
 				FCCEE04224370ABB002B7491 /* KeepBGRunManager */,
 				FC6A21462421ECA80033F1F8 /* DDLogWrapper */,
 				FCC9D85E241DD7EB005A92DD /* EMManager */,
@@ -1180,6 +1261,7 @@
 			isa = PBXGroup;
 			children = (
 				FCC096DB23CF1D21006088BC /* ConnectingVC.swift */,
+				FC53D4D824498FDA0004AE55 /* ConnectingVC+Ext.swift */,
 				FCC096DC23CF1D21006088BC /* ConnectingVC.xib */,
 			);
 			path = ConnectingVC;
@@ -1217,6 +1299,7 @@
 			isa = PBXGroup;
 			children = (
 				FCC3BD4823D00C280018045E /* ConferenceVC.swift */,
+				FC53D4DA24498FF10004AE55 /* ConferenceVC+Ext.swift */,
 				FCC3BD4923D00C280018045E /* ConferenceVC.xib */,
 			);
 			path = ConferenceVC;
@@ -1226,6 +1309,7 @@
 			isa = PBXGroup;
 			children = (
 				FCC3BD4D23D041550018045E /* StatisticalVC.swift */,
+				FC53D4DC244990110004AE55 /* StatisticalVC+Ext.swift */,
 				FC7908F223D6D0BA006CE448 /* StatisticalVC.xib */,
 			);
 			path = StatisticalVC;
@@ -1566,7 +1650,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC53D4D924498FDA0004AE55 /* ConnectingVC+Ext.swift in Sources */,
 				FCC9D84C241DD314005A92DD /* EVUserIdManager.m in Sources */,
+				FC53D4D124498F660004AE55 /* ModifyPasswordVC+Ext.swift in Sources */,
 				FCC096B523CEAACB006088BC /* VideoVC+Ext.swift in Sources */,
 				FCA897B623BF1F0700A0C78E /* LoginVC.swift in Sources */,
 				FC125175240CA06100D6CDD3 /* UIAlertController+Ext.swift in Sources */,
@@ -1574,53 +1660,66 @@
 				FC17162F23FB841B007861FE /* UIButton+Ext.swift in Sources */,
 				FC906C2523D5452E0098C844 /* AnonymousLinkVC.swift in Sources */,
 				FC635FD3243C683C0050DC9B /* HQHEmojiFlowLayout.m in Sources */,
+				FC53D4CF24498F540004AE55 /* InvitaVC+Ext.swift in Sources */,
 				FCC9D83F241DD241005A92DD /* MessageFrameModel.m in Sources */,
 				FCC9D845241DD249005A92DD /* UIImage+HQExtension.m in Sources */,
+				FC53D4A7244953650004AE55 /* PrivateJoinVC+Ext.swift in Sources */,
 				FCBD28B423C2F60200E1069F /* SettingVC.swift in Sources */,
 				FCC9D856241DD5D0005A92DD /* UIView+custom.m in Sources */,
 				FC349D6B23FCE655001B948E /* HQEditImageEditView.m in Sources */,
 				FCA897AB23BF0A5600A0C78E /* MeVC.swift in Sources */,
 				FCC9D84F241DD31D005A92DD /* EMMessageManager.m in Sources */,
 				FC635FCC243C683C0050DC9B /* HQHKeyBoardTextView.m in Sources */,
+				FC53D4DD244990110004AE55 /* StatisticalVC+Ext.swift in Sources */,
 				FCA84060240585C900531901 /* SwiftCrashTool.swift in Sources */,
 				FC635FCD243C683C0050DC9B /* HQHAudioRecorder.m in Sources */,
 				FCCEE08F24370C62002B7491 /* FeedBackCell.m in Sources */,
 				FCA897D423BF3D3600A0C78E /* PrivateJoinVC.swift in Sources */,
 				FC76C896240A18A6003DC79E /* SwiftUtils.swift in Sources */,
 				FC6D0AF923D186AE0030D55D /* VideoVC+SDK.swift in Sources */,
+				FC53D4CB24498F220004AE55 /* Me+Ext.swift in Sources */,
 				FC5A668823CC0E84002E8CDD /* TermsServiceVC.swift in Sources */,
 				FCC096D923CEEDFC006088BC /* enum.swift in Sources */,
 				FC635FCA243C683C0050DC9B /* HQHEmojiModel.m in Sources */,
 				FCC9D83A241DD23A005A92DD /* MessageCell.m in Sources */,
+				FC53D4C324498E810004AE55 /* CloudJoinVC+Ext.swift in Sources */,
 				FCC9D836241DD231005A92DD /* ChatPageViewController.m in Sources */,
 				FC635FC5243C683C0050DC9B /* UITextView+ExtentRange.m in Sources */,
 				FCBD28B823C2F62900E1069F /* InvitaVC.swift in Sources */,
 				FCC9D846241DD249005A92DD /* NSString+HQExtension.m in Sources */,
+				FC53D4C724498ECA0004AE55 /* JoinMeetingVC+Ext.swift in Sources */,
 				FCC9D81C241DD0DB005A92DD /* ChatListCell.swift in Sources */,
 				FCCEE08E24370C62002B7491 /* GSCollectionViewFlowLayout.m in Sources */,
 				FC635FC8243C683C0050DC9B /* HQHChatKeyBoardView.m in Sources */,
 				FC7FEAEB23C4621D00BE940F /* DDLogWrapper.m in Sources */,
-				FC93990523C037BC00C057B8 /* UIViewController+Ext.swift in Sources */,
 				FCBD5A5C241FAE1000BE1288 /* EasyVideo.xcdatamodeld in Sources */,
 				FCC9D85C241DD6E5005A92DD /* UIViewController+custom.m in Sources */,
 				FC7E674923C5B50F00B9CAFA /* DispatchQueue+Ext.swift in Sources */,
+				FC53D4BD24498E310004AE55 /* AdvancedSettingVC+Ext.swift in Sources */,
 				FCC3BD4A23D00C280018045E /* ConferenceVC.swift in Sources */,
 				FCA8979B23BF0A0F00A0C78E /* MeetingVC.swift in Sources */,
 				FC635FC3243C683C0050DC9B /* UIImage+HQHKeyBoard.m in Sources */,
 				FCC096DD23CF1D21006088BC /* ConnectingVC.swift in Sources */,
+				FC53D4B024497A890004AE55 /* UIView+CornerRadius.m in Sources */,
+				FC53D4DF244990270004AE55 /* AnonymousLinkVC+Ext.swift in Sources */,
 				FC635FC4243C683C0050DC9B /* UIView+HQHKeyBoard.m in Sources */,
 				FC76C89F240A7ACF003DC79E /* NetworkVC.swift in Sources */,
 				FC79089B23D6A741006CE448 /* Public.swift in Sources */,
+				FC53D4C124498E660004AE55 /* CloudLoginVC+Ext.swift in Sources */,
 				FC0380EB23C062FD001953CA /* CloudLoginVC.swift in Sources */,
 				FC349D6A23FCE655001B948E /* HQEditImageActionView.m in Sources */,
 				FC7FEADA23C4255100BE940F /* NormalWithImgCell.swift in Sources */,
+				FC53D4B924498DEE0004AE55 /* CloudVC+Ext.swift in Sources */,
 				FC7FEAF323C479F800BE940F /* PlistAttribute.swift in Sources */,
 				FCCEE04524370ABB002B7491 /* KeepBGRunManager.m in Sources */,
 				FC076D5D23CDADF00089E0C4 /* VideoVC.swift in Sources */,
 				FCA897D923BF45F600A0C78E /* AppDelegate+Ext.swift in Sources */,
 				FCC3BD4F23D041550018045E /* StatisticalVC.swift in Sources */,
 				FC7E672823C56AE300B9CAFA /* Manager.m in Sources */,
+				FC53D4C524498EA50004AE55 /* MeetingVC+Ext.swift in Sources */,
+				FC53D4BB24498E090004AE55 /* PrivateLoginVC+Ext.swift in Sources */,
 				FCCE787123D425F60027499B /* Utils.m in Sources */,
+				FC53D4CD24498F3F0004AE55 /* SettingVC+Ext.swift in Sources */,
 				FC6A21532421FBD50033F1F8 /* DDLogFileWrapper.m in Sources */,
 				FC635FCF243C683C0050DC9B /* HQHChatEmojiView.m in Sources */,
 				FCC9D859241DD60C005A92DD /* UITextField+ExtentRange.m in Sources */,
@@ -1633,21 +1732,27 @@
 				FC2DAFE723C7142600F802D7 /* NormalWithTFCell.swift in Sources */,
 				FCBD28C123C3012400E1069F /* SwitchCell.swift in Sources */,
 				FCC9D840241DD241005A92DD /* MessageModel.m in Sources */,
+				FC53D4D524498F980004AE55 /* UserInformationVC+Ext.swift in Sources */,
 				FCA8976D23BEF1B300A0C78E /* AppDelegate.swift in Sources */,
 				FC6D0AF523D176850030D55D /* VideoView.swift in Sources */,
 				FC635FC1243C683C0050DC9B /* UIButton+HQHKeyBoard.m in Sources */,
+				FC53D4C924498EF40004AE55 /* ContactVC+Ext.swift in Sources */,
 				FC635FD2243C683C0050DC9B /* HQHChatMoreCollectionViewCell.m in Sources */,
 				FCA897D023BF3D2700A0C78E /* PrivateLoginVC.swift in Sources */,
+				FC53D4BF24498E4D0004AE55 /* LoginSettingVC+Ext.swift in Sources */,
 				FC75EAA123CD5B2000E9C1B3 /* HLogingView.m in Sources */,
+				FC53D4DB24498FF10004AE55 /* ConferenceVC+Ext.swift in Sources */,
 				FC7E674723C5844B00B9CAFA /* String+Ext.swift in Sources */,
 				FCA8979523BF08E000A0C78E /* BaseTabBarVC.swift in Sources */,
 				FC635FD0243C683C0050DC9B /* HQHChatMoreView.m in Sources */,
 				FC635FC7243C683C0050DC9B /* NSString+HQHKeyBoard.m in Sources */,
 				FCA8979F23BF0A2200A0C78E /* JoinMeetingVC.swift in Sources */,
 				FCBD28C523C3013D00E1069F /* NormalCell.swift in Sources */,
+				FC53D4B324497A980004AE55 /* UIView+CornerBorder.m in Sources */,
 				FC635FCB243C683C0050DC9B /* HQHChatMoreItem.m in Sources */,
 				FC79089823D689E8006CE448 /* HistoryCallCell.swift in Sources */,
 				FCA897B923BF1F8A00A0C78E /* BaseVC+jump.swift in Sources */,
+				FC53D4B524498D3E0004AE55 /* BaseViewController+Ext.swift in Sources */,
 				FC0380E723C04779001953CA /* SettingCell.swift in Sources */,
 				FC7FEAD223C4242C00BE940F /* UserInformationVC.swift in Sources */,
 				FCA897B123BF0EDE00A0C78E /* UIView+Ext.swift in Sources */,
@@ -1655,6 +1760,7 @@
 				FC349D6C23FCE655001B948E /* HQEditImageCaptureView.m in Sources */,
 				FC0380D723C04096001953CA /* AdvancedSettingVC.swift in Sources */,
 				FCC9D862241DD812005A92DD /* EMManager.m in Sources */,
+				FC53D4D724498FBA0004AE55 /* TermsServiceVC+Ext.swift in Sources */,
 				FCA897BC23BF1FD200A0C78E /* PrivateVC.swift in Sources */,
 				FCCEE09024370C62002B7491 /* FeedBackVC.m in Sources */,
 				FCF3EAAB240D1D36003A0C46 /* HLogingViewLandscape.m in Sources */,
@@ -1664,8 +1770,10 @@
 				FCC3BD5323D042870018045E /* StatisticalCell.swift in Sources */,
 				FC635FC9243C683C0050DC9B /* HQHChatKeyBoardManager.m in Sources */,
 				FC0380EF23C0630E001953CA /* CloudJoinVC.swift in Sources */,
+				FC53D4B724498DB30004AE55 /* PrivateVC+Ext.swift in Sources */,
 				FCA897B323BF0F0000A0C78E /* UITabBarController+Ext.swift in Sources */,
 				FCA897A723BF0A4B00A0C78E /* ContactVC.swift in Sources */,
+				FC53D4D324498F800004AE55 /* AboutVC+Ext.swift in Sources */,
 				FC349D6223FCE61D001B948E /* HQImageEditViewController.m in Sources */,
 				FC635FC6243C683C0050DC9B /* UIScrollView+HQHKeyBoard.m in Sources */,
 				FC906C2923D571DD0098C844 /* P2pCallView.swift in Sources */,

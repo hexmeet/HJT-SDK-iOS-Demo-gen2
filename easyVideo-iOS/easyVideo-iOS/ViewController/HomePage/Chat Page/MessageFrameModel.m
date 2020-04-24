@@ -44,7 +44,7 @@
     _iconF = CGRectMake(iconX, iconY, iconW, iconH);
     
     //3.名字
-    CGSize maxSize = CGSizeMake(200, MAXFLOAT);
+    CGSize maxSize = CGSizeMake(screenWidth-80, MAXFLOAT);
     CGFloat nameH = [message.name sizeWithFont:[UIFont systemFontOfSize:11] maxSize:maxSize].height;
     CGFloat nameW = [message.name sizeWithFont:[UIFont systemFontOfSize:11] maxSize:maxSize].width;
     CGFloat nameX = 0;

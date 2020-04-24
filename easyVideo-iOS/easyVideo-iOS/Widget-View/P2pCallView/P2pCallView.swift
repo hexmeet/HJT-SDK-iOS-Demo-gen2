@@ -23,18 +23,18 @@ class P2pCallView: UIView {
     override func draw(_ rect: CGRect) {
         playSound()
         
-        headImg.layer.cornerRadius = 50
+        headImg.setCornerRadius(50, .allCorners)
         
         appDelegate.evengine.setLocalVideoWindow(Unmanaged.passUnretained(videoView).toOpaque())
         DDLogWrapper.logInfo("setLocalVideoWindow")
         
         animationView = RippleAnimationView.init(frame: CGRect(x: 0, y: 0, width: 50, height: 50), animationType: .withBackground)
         animationView?.center = headImg.center
-        self.addSubview(animationView!)
-        self.bringSubviewToFront(animationView!)
-        self.bringSubviewToFront(headImg)
-        self.bringSubviewToFront(nameLb)
-        self.bringSubviewToFront(callLb)
+        addSubview(animationView!)
+        bringSubviewToFront(animationView!)
+        bringSubviewToFront(headImg)
+        bringSubviewToFront(nameLb)
+        bringSubviewToFront(callLb)
     }
     
     override func layoutSubviews() {

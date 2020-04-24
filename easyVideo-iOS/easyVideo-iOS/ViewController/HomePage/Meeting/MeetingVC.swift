@@ -46,8 +46,8 @@ class MeetingVC: BaseViewController, WKScriptMessageHandler, WKNavigationDelegat
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        webKit.frame = self.view.frame
-        maskView?.frame = self.view.frame
+        webKit.frame = view.frame
+        maskView?.frame = view.frame
     }
     
     // MARK: WKScriptMessageHandler

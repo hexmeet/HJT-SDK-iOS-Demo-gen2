@@ -85,8 +85,6 @@ extension AppDelegate {
         emengine.initialize(path, filename: "config")
         emengine.setLog(.message, path: logPath, file: "emsdk", size: 1024*1024*20)
         emengine.enableLog(true)
-        emengine.enableSecure(true)
-        emengine.setRootCA(FileTools.bundleFile("rootca.pem"))
         
         DDLogWrapper.logInfo("emsdk-macos: applicationDidFinishLaunching end")
     }
@@ -261,7 +259,7 @@ extension AppDelegate {
         PlistUtils.savePlistFile(user as! [AnyHashable : Any], withFileName: userPlist)
         
         let vc = UIViewControllerCJHelper.findCurrentShowingViewController() as! BaseViewController
-        self.evengine.logout()
+        evengine.logout()
         DDLogWrapper.logInfo("evengine.logout() for loginOut");
         
         vc.whetherTheLogin()

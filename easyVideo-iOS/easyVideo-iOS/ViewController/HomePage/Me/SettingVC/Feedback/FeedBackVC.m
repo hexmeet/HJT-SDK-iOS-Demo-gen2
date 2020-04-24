@@ -194,6 +194,13 @@
     NSString *logPath = [path stringByAppendingPathComponent:@"Log"];
     NSString *zipPath = [logPath stringByAppendingPathComponent:@"log.zip"];
     
+    for (int i = 0; i < 4; i++) {
+        NSString *imgPath = [logPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%d.png", i]];
+        if ([FileTools isExistWithFile:imgPath]) {
+            [FileTools deleteTheFileWithFilePath:imgPath];
+        }
+    }
+    
     //将图片写入磁盘
     if (_selectedPhotos.count != 0) {
         for (int i = 0; i < _selectedPhotos.count; i++) {
@@ -221,9 +228,18 @@
     
     if ([zip CreateZipFile2:zipPath]) {
         for (NSString *fileName in logArr) {
-            
             [zip addFileToZip:[logPath stringByAppendingPathComponent:fileName] newname:fileName];
         }
+    }
+    
+    if ([FileTools isExistWithFile:[path stringByAppendingPathComponent:@"emsdk1.log"]]) {
+        [zip addFileToZip:[path stringByAppendingPathComponent:@"emsdk1.log"] newname:@"emsdk1.log"];
+    }
+    if ([FileTools isExistWithFile:[path stringByAppendingPathComponent:@"emsdk2.log"]]) {
+        [zip addFileToZip:[path stringByAppendingPathComponent:@"emsdk2.log"] newname:@"emsdk2.log"];
+    }
+    if ([FileTools isExistWithFile:[path stringByAppendingPathComponent:@"emsdk3.log"]]) {
+        [zip addFileToZip:[path stringByAppendingPathComponent:@"emsdk3.log"] newname:@"emsdk3.log"];
     }
     
     if( ![zip CloseZipFile2] ){

@@ -148,6 +148,7 @@
 "title.joinmeeting" = "加入会议";
 
 "chat.textview.placeholder" = "说点什么吧...";
+"chat.copy" = "复制";
 
 "tabbar.meetings" = "会议";
 "tabbar.chat" = "消息";

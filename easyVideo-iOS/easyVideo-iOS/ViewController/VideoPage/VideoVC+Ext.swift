@@ -38,7 +38,7 @@ extension VideoVC {
         statisticalBg.addSubview(statisticalVC!.view)
         statisticalBg.bringSubviewToFront(closeStatisticalBtn)
         
-        moreMenuView.setLayer(true, 4, nil, nil)
+        moreMenuView.setCornerRadius(4, .allCorners)
         
         creatGesturesForHiddenToolBar()
         
@@ -53,26 +53,26 @@ extension VideoVC {
     }
     
     func initializeProperty() {
-        contentMenuView.setLayer(true, 8, nil, nil)
+        contentMenuView.setCornerRadius(8, .allCorners)
         
         selectBtn.isSelected = false
         
-        moreView.setLayer(true, 4, nil, nil)
+        moreView.setCornerRadius(4, .allCorners)
         
         alertView.addObserver(self, forKeyPath: "hidden", options: [.new, .old], context: nil)
         alertView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
-        alertView.setLayer(true, 4, nil, nil)
+        alertView.setCornerRadius(4, .allCorners)
         
         leftLb.backgroundColor = UIColor.init(formHexString: "0x5880F7")
         rightLb.backgroundColor = UIColor.white
         leftLb.textColor = UIColor.white
         rightLb.textColor = UIColor.black
         
-        recordingView.setLayer(true, 3, nil, nil)
-        recordingImg.setLayer(true, 7, nil, nil)
+        recordingView.setCornerRadius(3, .allCorners)
+        recordingImg.setCornerRadius(7, .allCorners)
         recordingView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         
-        speakerView.setLayer(true, 3, nil, nil)
+        speakerView.setCornerRadius(3, .allCorners)
         speakerView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
     }
     

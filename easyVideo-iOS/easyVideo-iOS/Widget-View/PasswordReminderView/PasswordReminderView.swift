@@ -18,21 +18,14 @@ class PasswordReminderView: UIView {
     public var joinblock : ((_ str:String)->())?
     
     override func draw(_ rect: CGRect) {
-        backView.layer.cornerRadius = 4
-        backView.layer.masksToBounds = true
-        
-        leftBtn.layer.cornerRadius = 4
-        leftBtn.layer.borderWidth = 1
-        leftBtn.layer.borderColor = UIColor.init(formHexString: "0xc1c1c1").cgColor
-        leftBtn.layer.masksToBounds = true
-        
-        passwordTF.layer.cornerRadius = 4
-        
-        rightBtn.layer.cornerRadius = 4
+        backView.setCornerRadius(4, .allCorners)
+        leftBtn.setBorder(4, .BorderTypeAllCorners, UIColor.init(formHexString: "0xc1c1c1"), 1)
+        passwordTF.setCornerRadius(4, .allCorners)
+        rightBtn.setCornerRadius(4, .allCorners)
     }
     
     @IBAction func cancelAction(_ sender: Any) {
-        self.removeFromSuperview()
+        removeFromSuperview()
     }
     
     @IBAction func joinAction(_ sender: Any) {

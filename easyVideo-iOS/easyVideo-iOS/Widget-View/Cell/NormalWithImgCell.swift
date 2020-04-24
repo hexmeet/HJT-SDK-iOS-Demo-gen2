@@ -15,8 +15,8 @@ class NormalWithImgCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        cellImg.layer.cornerRadius = 20
-        cellImg.layer.masksToBounds = true
+        
+        cellImg.setCornerRadius(20, .allCorners)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
