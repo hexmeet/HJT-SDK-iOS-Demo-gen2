@@ -139,6 +139,8 @@ class VideoVC: BaseViewController, CAAnimationDelegate {
     var timeInteger = 0
     var isMuteforEnd = false
     var isEnableCamera = false
+    var isLocalVideoHidden = false
+    var isReceivedUnmuteMsg = false
     
     public var hiddenWindowblock : (()->())?
 

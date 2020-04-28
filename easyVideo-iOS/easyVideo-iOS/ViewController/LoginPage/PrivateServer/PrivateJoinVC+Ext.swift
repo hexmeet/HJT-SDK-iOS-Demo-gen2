@@ -104,6 +104,9 @@ extension PrivateJoinVC {
             showHud("login.note.writeServerAddress".localized, view, .MBProgressHUBPositionBottom, 3)
         }else if meetingNumberTF.text?.count == 0 {
             showHud("alert.inputmeetingnumber".localized, view, .MBProgressHUBPositionBottom, 3)
+        }else if !Utils.judgeSpecialCharacter(["\"", "<", ">"], withStr: nameTF.text!) {
+            view.endEditing(true)
+            showHud("alert.specialcharacter".localized, view, .MBProgressHUBPositionBottom, 2)
         }else {
             let userInfo = getUserPlist()
             let portstr = getUserParameter(port) != nil ? getUserParameter(port) : "0"
