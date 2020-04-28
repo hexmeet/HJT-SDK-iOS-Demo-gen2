@@ -232,7 +232,7 @@ extension BaseTabBarVC {
         
         if getUserParameter(loginState) != nil && getUserParameter(loginState) == "YES" {
             let headImgPath = "\(FileTools.getDocumentsFailePath())/header.jpg"
-            if try! Data.init(contentsOf: URL.init(fileURLWithPath: headImgPath)).count != 0 {
+            if FileTools.getFileSize(headImgPath) != 0 {
                 self.appDelegate.evengine.setUserImage(Bundle.main.path(forResource: "img_videomute", ofType: "jpg")!, filename: headImgPath)
             }else {
                 self.appDelegate.evengine.setUserImage(Bundle.main.path(forResource: "img_videomute", ofType: "jpg")!, filename: FileTools.bundleFile("default_user_icon.jpg"))
@@ -247,7 +247,7 @@ extension BaseTabBarVC {
         DDLogWrapper.logInfo("evengine.enableCamera(false)")
         if getUserParameter(loginState) != nil && getUserParameter(loginState) == "YES" {
             let headImgPath = "\(FileTools.getDocumentsFailePath())/header.jpg"
-            if try! Data.init(contentsOf: URL.init(fileURLWithPath: headImgPath)).count != 0 {
+            if FileTools.getFileSize(headImgPath) != 0 {
                 self.appDelegate.evengine.setUserImage(Bundle.main.path(forResource: "img_videomute2", ofType: "jpg")!, filename: headImgPath)
             }else {
                 self.appDelegate.evengine.setUserImage(Bundle.main.path(forResource: "img_videomute2", ofType: "jpg")!, filename: FileTools.bundleFile("default_user_icon.jpg"))

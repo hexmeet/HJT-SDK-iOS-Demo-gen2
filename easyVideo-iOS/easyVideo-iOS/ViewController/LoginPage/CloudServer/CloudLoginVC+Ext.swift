@@ -38,6 +38,7 @@ extension CloudLoginVC {
         hud.hide(animated: true)
         let userInfo = NSMutableDictionary(dictionary: PlistUtils.loadPlistFilewithFileName(userPlist))
         userInfo.setValue("YES", forKey: loginState)
+        userInfo.setValue(getInfoString("CloudLoginServer"), forKey: server)
         userInfo.setValue("cloud", forKey: loginMethod)
         userInfo.setValue(passwordTF.text!, forKey: password)
         PlistUtils.savePlistFile(userInfo as! [AnyHashable : Any], withFileName: userPlist)

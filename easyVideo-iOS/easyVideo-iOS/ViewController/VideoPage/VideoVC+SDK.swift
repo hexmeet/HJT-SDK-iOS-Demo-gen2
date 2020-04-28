@@ -44,6 +44,8 @@ extension VideoVC {
         selectBtn.isSelected = false
         local.isHidden = false
         isMuteforEnd = false
+        isLocalVideoHidden = false
+        isReceivedUnmuteMsg = false
         meetingMode = .discussionMode
         contentView.isHidden = true
         contentMenuView.isHidden = true
@@ -349,26 +351,9 @@ extension VideoVC {
             break
         case .unmuteAudioIndication:
             if userModel == .chatMode {
-                return
+                isReceivedUnmuteMsg = true
             }
-            let alert = UIAlertController.init(title: "", message: "alert.unmuteAudioIndication".localized, preferredStyle: .alert)
-            alert.addAction(UIAlertAction.init(title: "alert.cancel".localized, style: .cancel, handler: { (_) in
-                
-            }))
-            alert.addAction(UIAlertAction.init(title: "alert.sure".localized, style: .default, handler: {[weak self] (_) in
-                self?.appDelegate.evengine.enableMic(true)
-                
-                if (self?.appDelegate.evengine.micEnabled())! {
-                    self?.muteBtn.setImage(UIImage.init(named: "icon_unmute"), for: .normal)
-                    self?.muteLb.text = "video.control.btn.mute".localized
-                    self?.muteLb.textColor = UIColor.white
-                }else {
-                    self?.muteBtn.setImage(UIImage.init(named: "icon_mute_"), for: .normal)
-                    self?.muteLb.text = "video.control.btn.unmute".localized
-                    self?.muteLb.textColor = UIColor.init(formHexString: "0xff4747")
-                }
-            }))
-            present(alert, animated: true, completion: nil)
+            showUnmuteMsg()
             break
         default: break
         }

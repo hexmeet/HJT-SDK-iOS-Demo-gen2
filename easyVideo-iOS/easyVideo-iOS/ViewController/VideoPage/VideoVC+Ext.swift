@@ -286,7 +286,14 @@ extension VideoVC {
         exitVoiceWidthConstraint.constant = 150
         exitVoiceHeightConstraint.constant = 150
         
+        local.isHidden = isLocalVideoHidden
+        operateLocalVideoBtn.isSelected = isLocalVideoHidden
+        
         self.changeLayout(layoutType)
+        
+        if isReceivedUnmuteMsg {
+            showUnmuteMsg()
+        }
     }
     
     func showAlert(_ title: String) {
@@ -304,6 +311,35 @@ extension VideoVC {
         }
         
         alertView.isHidden = false
+    }
+    
+    func showUnmuteMsg() {
+        
+        let alert = UIAlertController.init(title: "", message: "alert.unmuteAudioIndication".localized, preferredStyle: .alert)
+        alert.addAction(UIAlertAction.init(title: "alert.cancel".localized, style: .cancel, handler: { (_) in
+            
+        }))
+        alert.addAction(UIAlertAction.init(title: "alert.sure".localized, style: .default, handler: {[weak self] (_) in
+            self?.appDelegate.evengine.enableMic(true)
+            
+            if (self?.appDelegate.evengine.micEnabled())! {
+                self?.muteBtn.setImage(UIImage.init(named: "icon_unmute"), for: .normal)
+                self?.muteLb.text = "video.control.btn.mute".localized
+                self?.muteLb.textColor = UIColor.white
+            }else {
+                self?.muteBtn.setImage(UIImage.init(named: "icon_mute_"), for: .normal)
+                self?.muteLb.text = "video.control.btn.unmute".localized
+                self?.muteLb.textColor = UIColor.init(formHexString: "0xff4747")
+            }
+        }))
+        
+        if isReceivedUnmuteMsg {
+            UIViewControllerCJHelper.findCurrentShowingViewController()?.present(alert, animated: true, completion: nil)
+        }else {
+            present(alert, animated: true, completion: nil)
+        }
+        
+        isReceivedUnmuteMsg = false
     }
     
     func creatGesturesForHiddenToolBar() {
@@ -485,6 +521,7 @@ extension VideoVC {
             break
         case operateLocalVideoBtn:
             local.isHidden = !local.isHidden
+            isLocalVideoHidden = local.isHidden
             operateLocalVideoBtn.isSelected = local.isHidden
             break
         case speechBtn:
