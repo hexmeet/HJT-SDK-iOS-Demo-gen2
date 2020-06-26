@@ -18,6 +18,7 @@
 //Common
 //Log
 - (void) setLog:(EVLogLevel)level path:(NSString *_Nonnull)log_path file:(NSString *_Nullable)log_file_name size:(unsigned int)max_file_size;
+- (void) setConsoleLog:(EVLogLevel)level;
 - (void) enableLog:(BOOL)enable;
 
 //init
@@ -85,7 +86,6 @@
 - (void) setDelegate:(id<EVEngineDelegate>_Nonnull)aDelegate;
 
 //Login
-- (int) login:(NSString *_Nonnull)server port:(unsigned int)port name:(NSString *_Nonnull)username password:(NSString *_Nonnull)password __deprecated;
 - (int) loginWithLocation:(NSString *_Nonnull)location_server port:(unsigned int)port name:(NSString *_Nonnull)username password:(NSString *_Nonnull)password;
 - (int) logout;
 - (int) downloadUserImage:(NSString *_Nonnull)path;
@@ -93,6 +93,8 @@
 - (int) changePassword:(NSString *_Nonnull)oldpassword newpassword:(NSString *_Nonnull)newpassword;
 - (int) changeDisplayName:(NSString *_Nonnull)display_name;
 - (EVUserInfo *_Nullable) getUserInfo;
+- (EVRegisterState) getRegisterState:(EVCallType)type;
+- (EVRegisterInfo *_Nonnull) getRegisterInfo:(EVCallType)type;
 
 //Set Windows
 - (int) setRemoteVideoWindow:(void *_Nullable[_Nonnull])id andSize:(unsigned int)size;
@@ -102,8 +104,9 @@
 - (int) setLayoutCapacity:(EVLayoutMode)mode types:(EVLayoutType[_Nonnull])types size:(unsigned int)size;
 - (int) joinConference:(NSString *_Nonnull)conference_number display_name:(NSString *_Nonnull)display_name password:(NSString *_Nonnull)password;
 - (int) joinConference:(NSString *_Nonnull)conference_number display_name:(NSString *_Nonnull)display_name password:(NSString *_Nonnull)password svcCallType:(EVSvcCallType)type;
-- (int) joinConference:(NSString *_Nonnull)server port:(unsigned int)port conference_number:(NSString *_Nonnull)conference_number display_name:(NSString *_Nonnull)display_name password:(NSString *_Nonnull)password __deprecated;
+- (int) joinConference:(NSString *_Nonnull)conference_name name_type:(EVSvcConferenceNameType)name_type display_name:(NSString *_Nonnull)display_name password:(NSString *_Nonnull)password svcCallType:(EVSvcCallType)type;
 - (int) joinConferenceWithLocation:(NSString *_Nonnull)location_server port:(unsigned int)port conference_number:(NSString *_Nonnull)conference_number display_name:(NSString *_Nonnull)display_name password:(NSString *_Nonnull)password;
+- (int) joinConferenceWithLocation:(NSString *_Nonnull)location_server port:(unsigned int)port conference_name:(NSString *_Nonnull)conference_name name_type:(EVSvcConferenceNameType)name_type display_name:(NSString *_Nonnull)display_name password:(NSString *_Nonnull)password;
 - (int) leaveConference;
 - (int) setLayout:(EVLayoutRequest *_Nonnull)layout;
 - (int) declineIncommingCall:(NSString *_Nonnull)conference_number;

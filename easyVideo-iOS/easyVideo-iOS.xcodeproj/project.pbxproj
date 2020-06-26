@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D5B4A2324652F28008A0BD6 /* PrivacyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D5B4A2224652F28008A0BD6 /* PrivacyView.m */; };
 		83DB2C0A07F600A142527CC9 /* libPods-easyVideo-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C66CB153E2204599DA6CCAB /* libPods-easyVideo-iOS.a */; };
 		FC0380D723C04096001953CA /* AdvancedSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0380D523C04096001953CA /* AdvancedSettingVC.swift */; };
 		FC0380E323C044D0001953CA /* LoginSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0380E123C044D0001953CA /* LoginSettingVC.swift */; };
@@ -237,6 +238,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D5B4A2124652F28008A0BD6 /* PrivacyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivacyView.h; sourceTree = "<group>"; };
+		1D5B4A2224652F28008A0BD6 /* PrivacyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrivacyView.m; sourceTree = "<group>"; };
 		2E32B59F18AC78D59B4A3362 /* Pods-easyVideo-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easyVideo-iOS.release.xcconfig"; path = "Target Support Files/Pods-easyVideo-iOS/Pods-easyVideo-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		7C66CB153E2204599DA6CCAB /* libPods-easyVideo-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-easyVideo-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BC8C6E623E3DA5586C7BD9 /* Pods-easyVideo-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easyVideo-iOS.debug.xcconfig"; path = "Target Support Files/Pods-easyVideo-iOS/Pods-easyVideo-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -569,6 +572,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D5B4A1E24652E6D008A0BD6 /* PrivacyView */ = {
+			isa = PBXGroup;
+			children = (
+				1D5B4A2124652F28008A0BD6 /* PrivacyView.h */,
+				1D5B4A2224652F28008A0BD6 /* PrivacyView.m */,
+			);
+			path = PrivacyView;
+			sourceTree = "<group>";
+		};
 		9F03ECA14341C1E99DC4FE6D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1253,6 +1265,7 @@
 				FC75EA9C23CD5B0E00E9C1B3 /* HLoadingView */,
 				FC7E672523C56A5900B9CAFA /* Delegate */,
 				FC7FEAE023C42DB500BE940F /* Cell */,
+				1D5B4A1E24652E6D008A0BD6 /* PrivacyView */,
 			);
 			path = "Widget-View";
 			sourceTree = "<group>";
@@ -1706,6 +1719,7 @@
 				FC76C89F240A7ACF003DC79E /* NetworkVC.swift in Sources */,
 				FC79089B23D6A741006CE448 /* Public.swift in Sources */,
 				FC53D4C124498E660004AE55 /* CloudLoginVC+Ext.swift in Sources */,
+				1D5B4A2324652F28008A0BD6 /* PrivacyView.m in Sources */,
 				FC0380EB23C062FD001953CA /* CloudLoginVC.swift in Sources */,
 				FC349D6A23FCE655001B948E /* HQEditImageActionView.m in Sources */,
 				FC7FEADA23C4255100BE940F /* NormalWithImgCell.swift in Sources */,

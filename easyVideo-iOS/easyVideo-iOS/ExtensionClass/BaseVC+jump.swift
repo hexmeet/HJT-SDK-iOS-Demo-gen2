@@ -195,11 +195,21 @@ extension BaseViewController {
     }
     
     /// 跳转TermsServiceVC
-    func pushTermsServiceVC(animated flag:Bool) {
+    @objc func pushTermsServiceVC(animated flag:Bool) {
         let termsServiceVC = TermsServiceVC()
+        termsServiceVC.isPravicy = false;
         termsServiceVC.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(termsServiceVC, animated: flag)
     }
+    /// 
+    @objc func pushPrivacyPolicyVC(animated flag:Bool) {
+        let termsServiceVC = TermsServiceVC()
+        termsServiceVC.isPravicy = true
+        termsServiceVC.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(termsServiceVC, animated: flag)
+        
+    }
+
     
     /// 跳转FeedbackVC
     func pushFeedbackVC(animated flag:Bool) {

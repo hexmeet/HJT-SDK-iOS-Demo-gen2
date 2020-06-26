@@ -121,13 +121,13 @@
     if (MessageModelTypeMe == message.type) {
 //        self.iconView.image = [UIImage imageNamed:@"me"];
         [self.contentBtn setBackgroundImage:[UIImage resizableImageWith:@"chat_send_nor"] forState:UIControlStateNormal];
-        [self.contentBtn setTitleColor:HEXCOLOR(0x313131) forState:UIControlStateNormal];
+        [self.contentBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         self.nameLabel.textColor = HEXCOLOR(0x919191);
     }else
     {
         [self.contentBtn setBackgroundImage:[UIImage resizableImageWith:@"chat_recive_nor"]  forState:UIControlStateNormal];
 //        self.iconView.image = [UIImage imageNamed:@"other"];
-        [self.contentBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self.contentBtn setTitleColor:HEXCOLOR(0x313131) forState:UIControlStateNormal];
         self.nameLabel.textColor = HEXCOLOR(0x4381ff);
     }
 //    self.iconView.frame = _messageFrame.iconF;

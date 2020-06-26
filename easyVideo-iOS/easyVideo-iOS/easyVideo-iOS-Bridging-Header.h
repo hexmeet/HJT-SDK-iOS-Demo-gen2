@@ -32,3 +32,5 @@
 #import <GMenuController.h>
 #import "UIView+CornerRadius.h"
 #import "UIView+CornerBorder.h"
+#import "PrivacyView.h"
+

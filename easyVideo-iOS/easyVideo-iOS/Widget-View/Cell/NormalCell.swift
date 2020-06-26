@@ -52,6 +52,8 @@ class NormalCell: UITableViewCell {
         if row == 0 {
             cell?.cellTitle.text = "set.about.licenceAndServiceAgreement".localized
         }else if row == 1 {
+            cell?.cellTitle.text = "set.about.PrivacyPolicy".localized
+        }else if row == 2 {
             cell?.cellTitle.text = "set.about.checkversion".localized
         }
         cell?.bottomConstraint.constant = 0

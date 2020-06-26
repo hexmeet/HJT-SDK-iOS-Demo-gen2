@@ -28,6 +28,11 @@ typedef NS_ENUM (NSUInteger, EVSvcCallType) {
 	EVSvcCallP2P = 1
 };
 
+typedef NS_ENUM (NSUInteger, EVSvcConferenceNameType) {
+    EVSvcConferenceNameId = 1,
+    EVSvcConferenceNameAlias = 2
+};
+
 typedef NS_ENUM (NSUInteger, EVSvcCallAction) {
     EVSvcNoAction = 0,
     EVSvcIncomingCallRing = 1,
@@ -83,9 +88,21 @@ typedef struct _EVVideoSize {
 
 typedef enum EVEncryptType {
     EVEncryptSHA1 = 0,
-    EVEncryptAES = 1
+    EVEncryptAES = 1,
+    EVEncryptDES = 2
 } EVEncryptType;
 
+typedef enum EVDescryptType {
+    EVDescryptSHA1 = 0,
+    EVDescryptAES = 1,
+    EVDescryptDES = 2
+} EVDescryptType;
+
+typedef enum EVTransProtocol {
+    EVTransProtocolUDP = 0,
+    EVTransProtocolTCP = 1,
+    EVTransProtocolTLS = 2
+} EVTransProtocol;
 
 //////////////////////////////
 //  Log
@@ -225,6 +242,15 @@ __attribute__((visibility("default"))) @interface EVFeatureSupport : NSObject
 @property (assign, nonatomic) bool sitenameIsChangeable;
 @end
 
+__attribute__((visibility("default"))) @interface  EVRegisterInfo: NSObject
+@property (assign, nonatomic) EVCallType type;
+@property (assign, nonatomic) EVRegisterState state;
+@property (assign, nonatomic) bool useInternalServer;
+@property (copy, nonatomic) NSString *_Nonnull internalServer;
+@property (copy, nonatomic) NSString *_Nonnull externalServer;
+@property (assign, nonatomic) EVTransProtocol transProtocol;
+@end
+
 __attribute__((visibility("default"))) @interface EVUserInfo : NSObject
 @property (assign, nonatomic) uint64_t userId;
 @property (copy, nonatomic) NSString *_Nonnull username;
@@ -247,7 +273,6 @@ __attribute__((visibility("default"))) @interface EVUserInfo : NSObject
 @property (copy, nonatomic) NSString *_Nonnull urlSuffixForPC;
 @property (copy, nonatomic) NSString *_Nonnull vmr;
 @property (strong, nonatomic) EVFeatureSupport *_Nonnull featureSupport;
-
 @end
 
 __attribute__((visibility("default"))) @interface EVCallInfo : NSObject
@@ -270,6 +295,13 @@ __attribute__((visibility("default"))) @interface EVContentInfo : NSObject
 @property (assign, nonatomic) EVContentStatus status;
 @property (assign, nonatomic) BOOL isBigConference;
 @property (assign, nonatomic) BOOL isRemoteMuted;
+@property (copy, nonatomic) NSString *_Nonnull senderName;
+@property (assign, nonatomic) uint64_t senderDeviceId;
+@end
+
+__attribute__((visibility("default"))) @interface EVChatGroupInfo : NSObject
+@property (copy, nonatomic) NSString *_Nonnull chat_addr;
+@property (copy, nonatomic) NSString *_Nonnull chat_grp_id;
 @end
 
 @protocol EVCommonDelegate <NSObject>
@@ -278,6 +310,7 @@ __attribute__((visibility("default"))) @interface EVContentInfo : NSObject
 - (void)onWarn:(EVWarn *_Nonnull)warn;
 - (void)onLoginSucceed:(EVUserInfo *_Nonnull)user;
 - (void)onRegisterState:(EVCallType)type state:(EVRegisterState)state;
+- (void)onRegisterInfo:(EVRegisterInfo * _Nonnull)info;
 - (void)onDownloadUserImageComplete:(NSString *_Nonnull)path;
 - (void)onUploadUserImageComplete:(NSString *_Nonnull)path;
 - (void)onNetworkState:(bool)reachable;
@@ -292,8 +325,10 @@ __attribute__((visibility("default"))) @interface EVContentInfo : NSObject
 - (void)onMuteSpeakingDetected;
 - (void)onCallLogUpdated:(EVCallLog * _Nonnull)call_log;
 - (void)onMicMutedShow:(int)mic_muted;
+- (void)onWaitQueue:(int)queue_size;
 - (void)onAudioData:(int)sample_rate data:(const unsigned char * _Nonnull)data len:(int)len;
 - (void)onUploadFeedback:(int)number;
+- (void)onNotifyChatInfo:(EVChatGroupInfo *_Nonnull)chatInfo;
 @end
 
 //////////////////////////////
@@ -304,6 +339,7 @@ __attribute__((visibility("default"))) @interface EVContentInfo : NSObject
 @required
 //Log
 - (void) setLog:(EVLogLevel)level path:(NSString *_Nonnull)log_path file:(NSString *_Nullable)log_file_name size:(unsigned int)max_file_size;
+- (void) setConsoleLog:(EVLogLevel)level;
 - (void) enableLog:(BOOL)enable;
 
 //init
@@ -318,9 +354,12 @@ __attribute__((visibility("default"))) @interface EVContentInfo : NSObject
 - (int) enableSecure:(BOOL)enable;
 - (NSString * _Nonnull) encryptPassword:(NSString * _Nonnull)password;
 - (NSString * _Nonnull) encryptPassword:(EVEncryptType)type password:(NSString * _Nonnull)password;
+- (NSString * _Nonnull) encryptPassword:(EVEncryptType)type password:(NSString * _Nonnull)password key:(NSString *)key;
+- (NSString * _Nonnull) descryptPassword:(EVDescryptType)type password:(NSString * _Nonnull)password key:(NSString *)key iv:(NSString *)iv;
 - (int) downloadUserImage:(NSString *_Nonnull)path;
 - (int) uploadUserImage:(NSString *_Nonnull)path;
 - (EVRegisterState) getRegisterState:(EVCallType)type;
+- (EVRegisterInfo *_Nonnull) getRegisterInfo:(EVCallType)type;
 
 //Provision
 - (NSString * _Nonnull) getSerialNumber;

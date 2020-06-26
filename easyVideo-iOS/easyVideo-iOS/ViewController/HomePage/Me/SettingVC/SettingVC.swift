@@ -39,7 +39,7 @@ class SettingVC: BaseViewController, UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 && indexPath.section == 0 {
             sendEmail()
-        }else if indexPath.row == 0 && indexPath.section == 1 {
+        }else if indexPath.row == 0 && indexPath.section == 5 {
             pushFeedbackVC(animated: true)
         }
     }

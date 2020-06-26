@@ -35,5 +35,6 @@
 - (void) dialOut:(NSString *_Nonnull)number video:(BOOL)enable_video;
 - (void) hangUp;
 - (void) acceptCall:(BOOL)enable_video;
+- (void) declineCall;
 
 @end

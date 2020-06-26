@@ -28,6 +28,8 @@ class BaseTabBarVC: UITabBarController, UITabBarControllerDelegate, EVEngineDele
     var portStr = ""
     var p2pImg = ""
     var p2pName = ""
+    var imGrp = ""
+    var imAdr = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -147,6 +149,10 @@ class BaseTabBarVC: UITabBarController, UITabBarControllerDelegate, EVEngineDele
     
     func onUploadFeedback(_ number: Int32) {
         onUploadFeedback_(number)
+    }
+    
+    func onNotifyChatInfo(_ chatInfo: EVChatGroupInfo) {
+        onNotifyChatInfo_(chatInfo)
     }
     
     // MARK: EMEngineDelegate

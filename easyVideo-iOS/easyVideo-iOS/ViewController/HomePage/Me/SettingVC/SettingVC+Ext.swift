@@ -19,7 +19,7 @@ extension SettingVC {
         if indexPath.section == 0 {
             let cell = NormalCell.cellWithTableViewForSeetingVC(tableView, IndexPath: indexPath)
             return cell
-        }else if indexPath.section == 1 {
+        }else if indexPath.section == 5 {
             let cell = NormalCell.cellWithTableViewForSeetingVC(tableView, IndexPath: indexPath)
             return cell
         }else {

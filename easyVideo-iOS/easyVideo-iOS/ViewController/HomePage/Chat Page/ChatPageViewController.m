@@ -165,7 +165,7 @@
             NSMutableArray *models = [NSMutableArray arrayWithCapacity:results.count];
             MessageModel *previousModel = nil;
             for (MessageBody *user in results) {
-                if ([[self->appDelegate.evengine getIMGroupID] isEqualToString:user.groupId]) {
+                if ([self->_groupStr isEqualToString:user.groupId]) {
                     MessageModelType modelType = MessageModelTypeMe;
                     self->_groupStr = user.groupId;
            

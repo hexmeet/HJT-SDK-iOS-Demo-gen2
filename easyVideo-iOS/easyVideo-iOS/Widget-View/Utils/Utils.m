@@ -591,24 +591,25 @@ static NSDateFormatter *sUserVisibleDateFormatter = nil;
                 
             }];
             
+            NSLog(@"sortingMessage content:%@%llu", body.content, body.seq);
+            
             [[EMManager sharedInstance].delegates onMessageReciveData:body];
         }else {
-            BOOL flag = NO;
+            NSMutableArray *seqArray = [NSMutableArray arrayWithCapacity:1];
             for (MessageBody *message in results) {
-                if (message.seq == body.seq) {
-                    flag = NO;
-                    break;
-                }else {
-                    flag = YES;
-                }
+                [seqArray addObject:[NSString stringWithFormat:@"%llu", message.seq]];
             }
             
-            if (flag) {
+            BOOL isbool = [seqArray containsObject:[NSString stringWithFormat:@"%llu", body.seq]];
+            
+            if (!isbool) {
                 [[EMMessageManager sharedInstance] insertNewEntity:body success:^{
                     
                 } fail:^(NSError * _Nonnull error) {
                     
                 }];
+                
+                NSLog(@"sortingMessage content:%@%llu", body.content, body.seq);
                 
                 [[EMManager sharedInstance].delegates onMessageReciveData:body];
             }

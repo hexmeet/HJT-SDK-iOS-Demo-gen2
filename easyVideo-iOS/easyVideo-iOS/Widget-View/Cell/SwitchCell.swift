@@ -54,7 +54,7 @@ class SwitchCell: UITableViewCell {
             }else {
                 cell?.switchBtn.isOn = false
             }
-        }else if indexRow.section == 5 {
+        }else if indexRow.section == 1 {
             cell?.cellTitle.text = "set.autoanswer".localized
             if setInfo[enableAutoAnswer] != nil {
                 cell?.switchBtn.isOn = setInfo[enableAutoAnswer] as! Bool
@@ -73,6 +73,11 @@ class SwitchCell: UITableViewCell {
         let setInfo = getSetPlist()
         
         switch sender.tag {
+        case 1:
+            setInfo.setValue(sender.isOn, forKey: enableAutoAnswer)
+            
+            DDLogWrapper.logInfo("enableAutoAnswer")
+            break
         case 2:
             setInfo.setValue(sender.isOn, forKey: enable1080P)
             appDelegate.evengine.enableHD(sender.isOn)
@@ -87,9 +92,8 @@ class SwitchCell: UITableViewCell {
             break
         case 4:
             setInfo.setValue(sender.isOn, forKey: enableCloseTip)
-            break
-        case 5:
-            setInfo.setValue(sender.isOn, forKey: enableAutoAnswer)
+            
+            DDLogWrapper.logInfo("enableCloseTip")
             break
         default:
             break

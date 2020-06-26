@@ -12,6 +12,7 @@
 #import <objc/message.h>
 #import <TZImagePickerController.h>
 #import "UIViewController+custom.h"
+#import "UITextView+ExtentRange.h"
 #import <sys/utsname.h>
 
 @interface FeedBackVC ()<UICollectionViewDelegate, UICollectionViewDataSource, TZImagePickerControllerDelegate, UITextViewDelegate, MBProgressHUDDelegate>
@@ -25,7 +26,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *limitWordLable;
 @property (weak, nonatomic) IBOutlet UICollectionView *collection;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
-@property (weak, nonatomic) IBOutlet UITextField *contactFd;
+//@property (weak, nonatomic) IBOutlet UITextField *contactFd;
+@property (weak, nonatomic) IBOutlet UITextView *contactFd;
 
 @end
 
@@ -62,6 +64,12 @@
     [self setupplaceholderLabel];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(uploadProgress:) name:@"uploadProgress" object:nil];
+
+    _contactFd.placeholdFont = [UIFont systemFontOfSize:16];
+    _contactFd.placeholder = NSLocalizedString(@"set.contact.placeholder", @"填写您的手机号码或邮箱，方便我们与您联系");
+    _contactFd.placeholdColor = [UIColor lightGrayColor];
+    
+    [_contactFd contentSizeToFit];
 }
 
 - (void)viewDidDisappear:(BOOL)animated

@@ -404,10 +404,12 @@ extension VideoVC {
             muteBtn.setImage(UIImage.init(named: "icon_mute_"), for: .normal)
             muteLb.text = "video.control.btn.unmute".localized
             muteLb.textColor = UIColor.init(formHexString: "0xff4747")
+            showAlert("alert.alertlabel.nospeak".localized)
         }else {
             muteBtn.setImage(UIImage.init(named: "icon_unmute"), for: .normal)
             muteLb.text = "video.control.btn.mute".localized
             muteLb.textColor = UIColor.white
+            showAlert("alert.alertlabel.speak".localized)
         }
     }
 }
