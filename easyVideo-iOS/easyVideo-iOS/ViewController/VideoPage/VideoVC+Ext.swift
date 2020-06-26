@@ -464,7 +464,7 @@ extension VideoVC {
             muteLb.textColor = UIColor.init(formHexString: "0xff4747")
         }
         
-        isEnableCamera = appDelegate.evengine.micEnabled()
+        isEnableCamera = appDelegate.evengine.cameraEnabled()
         
         if appDelegate.evengine.cameraEnabled(){
             operateCameraBtn.setImage(UIImage.init(named: "icon_unmute-camera"), for: .normal)

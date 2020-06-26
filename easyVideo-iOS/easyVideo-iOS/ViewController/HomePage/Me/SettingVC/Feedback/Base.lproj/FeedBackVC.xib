@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,7 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedBackVC">
             <connections>
                 <outlet property="collection" destination="81S-Y3-CFz" id="Uql-T4-b2i"/>
-                <outlet property="contactFd" destination="imE-Gr-mi7" id="g4g-tj-FTF"/>
+                <outlet property="contactFd" destination="rOJ-23-zHu" id="IFl-LJ-xgh"/>
                 <outlet property="limitWordLable" destination="vzV-zd-RCr" id="uoS-zH-qpi"/>
                 <outlet property="textView" destination="sWK-9v-GNP" id="9bD-KJ-VCS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -118,19 +118,21 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nkG-hp-Dqr">
                     <rect key="frame" x="0.0" y="404" width="414" height="55"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="填写您的手机号码或邮箱，方便我们与您联系" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="imE-Gr-mi7">
-                            <rect key="frame" x="10" y="17" width="394" height="21"/>
-                            <color key="textColor" red="0.19215686274509802" green="0.19215686274509802" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rOJ-23-zHu">
+                            <rect key="frame" x="10" y="0.0" width="394" height="55"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstItem="imE-Gr-mi7" firstAttribute="leading" secondItem="nkG-hp-Dqr" secondAttribute="leading" constant="10" id="27a-KZ-DbI"/>
-                        <constraint firstAttribute="trailing" secondItem="imE-Gr-mi7" secondAttribute="trailing" constant="10" id="4Rt-WN-hZu"/>
+                        <constraint firstAttribute="bottom" secondItem="rOJ-23-zHu" secondAttribute="bottom" id="Ijr-54-FeX"/>
+                        <constraint firstItem="rOJ-23-zHu" firstAttribute="top" secondItem="nkG-hp-Dqr" secondAttribute="top" id="LBA-bL-UGR"/>
                         <constraint firstAttribute="height" constant="55" id="Vwc-2Z-J85"/>
-                        <constraint firstItem="imE-Gr-mi7" firstAttribute="centerY" secondItem="nkG-hp-Dqr" secondAttribute="centerY" id="wm3-UF-bgg"/>
+                        <constraint firstItem="rOJ-23-zHu" firstAttribute="leading" secondItem="nkG-hp-Dqr" secondAttribute="leading" constant="10" id="eqY-Of-okW"/>
+                        <constraint firstAttribute="trailing" secondItem="rOJ-23-zHu" secondAttribute="trailing" constant="10" id="lGj-be-Ho1"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9F-pb-PGV">

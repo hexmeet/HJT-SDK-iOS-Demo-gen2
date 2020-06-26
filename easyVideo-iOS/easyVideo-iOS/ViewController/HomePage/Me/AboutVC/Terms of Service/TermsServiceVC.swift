@@ -9,17 +9,30 @@
 import UIKit
 
 class TermsServiceVC: BaseViewController {
-
+    @objc var isPravicy: Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.navigationBar.isTranslucent = false
         inintContent()
+        
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.navigationController?.isNavigationBarHidden = false
         
         createWKWebView()
     }
+    
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.navigationController?.navigationBar.isTranslucent = true
+         
+    }
+    
 
 }

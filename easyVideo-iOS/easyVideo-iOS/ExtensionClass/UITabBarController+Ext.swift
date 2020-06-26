@@ -110,7 +110,7 @@ extension BaseTabBarVC {
             
             let chat = ChatPageViewController()
             chat.hidesBottomBarWhenPushed = true
-            chat.groupStr = self.appDelegate.evengine.getIMGroupID()
+            chat.groupStr = self.imGrp
             chat.backBool = false
             chat.meName = (self.videoVC?.local.nameLb.text!)!;
             chat.userId = getUserParameter(userId) ?? "0"
@@ -169,6 +169,13 @@ extension BaseTabBarVC {
                 self.theDeviceorientation = .portraitUpsideDown
             }else if motionType.rawValue == 1 {
                 self.theDeviceorientation = .portrait
+                let device = self.appDelegate.evengine.getDevice(.videoCapture)
+                let currentCamId = device.name
+                if currentCamId.contains("in_video:0") {
+                    self.appDelegate.evengine.setDeviceRotation(270)
+                }else {
+                    self.appDelegate.evengine.setDeviceRotation(90)
+                }
             }else if motionType.rawValue == 2 {
                 if self.theDeviceorientation != .landscapeLeft {
                     self.theDeviceorientation = .landscapeLeft
@@ -205,17 +212,22 @@ extension BaseTabBarVC {
             switch call.callState {
             case CTCallStateDisconnected:
                 self.callDisconnected()
+                print("CTCallStateDisconnected");
                 DDLogWrapper.logInfo("CTCallStateDisconnected")
                 break
             case CTCallStateConnected:
                 self.callConnectedAndcallIncoming()
+                print("CTCallStateConnected");
                 DDLogWrapper.logInfo("CTCallStateConnected")
                 break
             case CTCallStateIncoming:
                 self.callConnectedAndcallIncoming()
+                print("CTCallStateIncoming");
                 DDLogWrapper.logInfo("CTCallStateIncoming")
                 break
             case CTCallStateDialing:
+                print("CTCallStateDialing");
+                self.callConnectedAndcallIncoming()
                 DDLogWrapper.logInfo("CTCallStateDialing")
                 break
             default:
@@ -227,7 +239,7 @@ extension BaseTabBarVC {
     func callDisconnected() {
         if videoVC!.isEnableCamera {
             appDelegate.evengine.enableCamera(true)
-            DDLogWrapper.logInfo("evengine.enableCamera(true)")
+            DDLogWrapper.logInfo("callDisconnected evengine.enableCamera(true)")
         }
         
         if getUserParameter(loginState) != nil && getUserParameter(loginState) == "YES" {
@@ -240,11 +252,13 @@ extension BaseTabBarVC {
         }else {
             self.appDelegate.evengine.setUserImage(Bundle.main.path(forResource: "img_videomute", ofType: "jpg")!, filename: FileTools.bundleFile("default_user_icon.jpg"))
         }
+        
+        appDelegate.evengine.audioInterruption(0)
     }
     
     func callConnectedAndcallIncoming() {
         appDelegate.evengine.enableCamera(false)
-        DDLogWrapper.logInfo("evengine.enableCamera(false)")
+        DDLogWrapper.logInfo("callConnectedAndcallIncoming evengine.enableCamera(false)")
         if getUserParameter(loginState) != nil && getUserParameter(loginState) == "YES" {
             let headImgPath = "\(FileTools.getDocumentsFailePath())/header.jpg"
             if FileTools.getFileSize(headImgPath) != 0 {
@@ -610,28 +624,6 @@ extension BaseTabBarVC {
                 self.appDelegate.evengine.switchCamera()
             }
             
-            if getFeatureSupportParameter(chatInConference) {
-                self.appDelegate.emengine.setDelegate(self)
-                let url = URL.init(string: self.appDelegate.evengine.getIMAddress())
-                
-                if url != nil {
-                    if url?.scheme == "ws" {
-                        self.appDelegate.emengine.enableSecure(false)
-                    }else {
-                        self.appDelegate.emengine.enableSecure(true)
-                        self.appDelegate.emengine.setRootCA(FileTools.bundleFile("rootca.pem"))
-                    }
-                    self.appDelegate.emengine.anonymousLogin((url?.host)!, port: UInt32.init("\(url?.port ?? 0)")!, displayname: self.appDelegate.evengine.getDisplayName(), external_info: "\(getUserParameter(userId) ?? "0")")
-                    DDLogWrapper.logInfo("getIMAddress address:\(url!.absoluteString) server:\((url?.host)!) port:\(UInt32.init("\(url?.port ?? 0)")!)")
-                    
-                    //启动IM定时器
-                    self.imTimer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.refreshIMLogin), userInfo: nil, repeats: true)
-                    
-                }else {
-                    DDLogWrapper.logInfo("getIMAddress error")
-                }
-            }
-            
             UIApplication.shared.isIdleTimerDisabled = true
             
             if info.svcCallType == .conf {
@@ -980,6 +972,34 @@ extension BaseTabBarVC {
             NotificationCenter.default.post(name: NSNotification.Name("uploadProgress"), object: nil, userInfo: ["Progress":number])
         }
     }
+    
+    func onNotifyChatInfo_(_ chatInfo: EVChatGroupInfo) {
+        DispatchQueue.main.async {
+            self.imAdr = chatInfo.chat_addr
+            self.imGrp = chatInfo.chat_grp_id
+
+            DDLogWrapper.logInfo("getIMGroupID:\(self.imGrp)")
+            self.appDelegate.emengine.setDelegate(self)
+            let url = URL.init(string: self.imAdr)
+            
+            if url != nil {
+                if url?.scheme == "ws" {
+                    self.appDelegate.emengine.enableSecure(false)
+                }else {
+                    self.appDelegate.emengine.enableSecure(true)
+                    self.appDelegate.emengine.setRootCA(FileTools.bundleFile("rootca.pem"))
+                }
+                self.appDelegate.emengine.anonymousLogin((url?.host)!, port: UInt32.init("\(url?.port ?? 0)")!, displayname: self.appDelegate.evengine.getDisplayName(), external_info: "\(getUserParameter(userId) ?? "0")")
+                DDLogWrapper.logInfo("getIMAddress address:\(url!.absoluteString) server:\((url?.host)!) port:\(UInt32.init("\(url?.port ?? 0)")!)")
+
+                //启动IM定时器
+                self.imTimer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.refreshIMLogin), userInfo: nil, repeats: true)
+
+            }else {
+                DDLogWrapper.logInfo("getIMAddress error")
+            }
+        }
+    }
 
     // MARK: EMSDK
     @objc func refreshIMLogin() {
@@ -1001,6 +1021,8 @@ extension BaseTabBarVC {
         DispatchQueue.main.async {
             DDLogWrapper.logInfo("onMessageReciveData content:\(message.content) from:\(message.from)")
             
+            print("sortingMessage content+++:\(message.content) seq:\(message.seq)")
+            
             Utils.sortingMessage(message)
         }
     }
@@ -1016,8 +1038,7 @@ extension BaseTabBarVC {
     func onLoginSucceed_() {
         DispatchQueue.main.async {
             DDLogWrapper.logInfo("IM onLoginSucceed")
-            DDLogWrapper.logInfo("getIMGroupID:\(self.appDelegate.evengine.getIMGroupID())")
-            self.appDelegate.emengine.joinNewGroup(self.appDelegate.evengine.getIMGroupID())
+            self.appDelegate.emengine.joinNewGroup(self.imGrp)
             
             let featurePlist = NSMutableDictionary.init(dictionary: PlistUtils.loadPlistFilewithFileName(featureSupportPlist))
             featurePlist.setValue(true, forKey: imLoginSuccess)

@@ -156,7 +156,7 @@ typedef NS_ENUM (NSUInteger, EVCallError) {
     EVCallByeMruNoPacketReceived = 102,
 
     EVCallInvalidNumericid = 1001,
-    EVCallInvalidUsername = 1003,
+    //EVCallInvalidUsername = 1003,
     EVCallInvalidUserid = 1005,
     EVCallInvalidDeviceid = 1007,
     EVCallInvalidEndpoint = 1009,
@@ -179,7 +179,8 @@ typedef NS_ENUM (NSUInteger, EVCallError) {
     EVCallTrialOrgExpired = 2035,
     EVCallLocalZoneNotStarted = 2043,
     EVCallLocalZoneStopped = 2045,
-    EVCallRoomBusy = 4057
+    EVCallRoomBusy = 4057,
+    EVCallInvalidFromUrl = 4064
 };
 
 //////////////////////////////
@@ -345,7 +346,6 @@ __attribute__((visibility("default"))) @interface EVContactInfo : NSObject
 - (void) setDelegate:(id<EVEngineDelegate>_Nonnull)aDelegate;
 
 //Login
-- (int) login:(NSString *_Nonnull)server port:(unsigned int)port name:(NSString *_Nonnull)username password:(NSString *_Nonnull)password __deprecated;
 - (int) loginWithLocation:(NSString *_Nonnull)location_server port:(unsigned int)port name:(NSString *_Nonnull)username password:(NSString *_Nonnull)password;
 - (int) logout;
 - (int) changePassword:(NSString *_Nonnull)oldpassword newpassword:(NSString *_Nonnull)newpassword;
@@ -360,8 +360,9 @@ __attribute__((visibility("default"))) @interface EVContactInfo : NSObject
 - (int) setLayoutCapacity:(EVLayoutMode)mode types:(EVLayoutType[_Nonnull])types size:(unsigned int)size;
 - (int) joinConference:(NSString *_Nonnull)conference_number display_name:(NSString *_Nonnull)display_name password:(NSString *_Nonnull)password;
 - (int) joinConference:(NSString *_Nonnull)conference_number display_name:(NSString *_Nonnull)display_name password:(NSString *_Nonnull)password svcCallType:(EVSvcCallType)type;
-- (int) joinConference:(NSString *_Nonnull)server port:(unsigned int)port conference_number:(NSString *_Nonnull)conference_number display_name:(NSString *_Nonnull)display_name password:(NSString *_Nonnull)password __deprecated;
+- (int) joinConference:(NSString *_Nonnull)conference_name name_type:(EVSvcConferenceNameType)name_type display_name:(NSString *_Nonnull)display_name password:(NSString *_Nonnull)password svcCallType:(EVSvcCallType)type;
 - (int) joinConferenceWithLocation:(NSString *_Nonnull)location_server port:(unsigned int)port conference_number:(NSString *_Nonnull)conference_number display_name:(NSString *_Nonnull)display_name password:(NSString *_Nonnull)password;
+- (int) joinConferenceWithLocation:(NSString *_Nonnull)location_server port:(unsigned int)port conference_name:(NSString *_Nonnull)conference_name name_type:(EVSvcConferenceNameType)name_type display_name:(NSString *_Nonnull)display_name password:(NSString *_Nonnull)password;
 - (int) leaveConference;
 - (int) declineIncommingCall:(NSString *_Nonnull)conference_number;
 - (int) setLayout:(EVLayoutRequest *_Nonnull)layout;

@@ -62,7 +62,7 @@ extension StatisticalVC {
             if stats.type == .audio {
                 fblArr.add("-")
             }else {
-                fblArr.add("\(stats.resolution.width)x\(stats.resolution.height) (\(String(format:"%.1f", stats.fps)))")
+                fblArr.add("\(stats.resolution.height)p (\(String(format:"%.1f", stats.fps)))")
             }
             
             loseArr.add("\(String(format:"%.1f", stats.packet_loss_rate))")

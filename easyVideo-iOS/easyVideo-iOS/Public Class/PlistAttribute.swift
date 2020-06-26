@@ -31,6 +31,7 @@ let loginMethod = "loginMethod" // cloud private
 let anonymousServer = "anonymousServer"
 let anonymousNumber = "anonymousNumber"
 let anonymousName = "anonymousName"
+let pravicy = "pravicy"  //登录
 
 // MARK: SetPlist
 let setPlist = "setPlist"

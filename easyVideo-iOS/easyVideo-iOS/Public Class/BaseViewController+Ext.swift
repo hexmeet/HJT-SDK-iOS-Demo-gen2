@@ -189,13 +189,30 @@ extension LoginVC {
     }
     
     func viewWillAppear() {
+        
+                     
+
         DispatchQueue.once(token: "LoginVC", block: {
             if getUserPlist()[loginMethod] != nil {
-                if getUserPlist()[loginMethod] as? String == "cloud" {
+               
+                if getUserParameter(pravicy) == nil && getInfoString("HideUserLicense") == "false" && NSLocale.preferredLanguages[0].contains("zh") {
+                    
+                   let privacy = PrivacyView()
+                   privacy.frame = UIScreen.main.bounds
+                   self.view.addSubview(privacy);
+                    
+                    
+                }else if getUserPlist()[loginMethod] as? String == "cloud" {
                     PresentCloudVCPage(animated: false, presentStyle: .fullScreen)
                 }else if getUserPlist()[loginMethod] as? String == "private" {
                     PresentPrivatePage(animated: false, presentStyle: .fullScreen)
                 }
+                
+            }else if getUserParameter(pravicy) == nil && getInfoString("HideUserLicense") == "false" && NSLocale.preferredLanguages[0].contains("zh") {
+                let privacy = PrivacyView()
+                privacy.frame = UIScreen.main.bounds
+                self.view.addSubview(privacy);
+                
             }
         })
     }

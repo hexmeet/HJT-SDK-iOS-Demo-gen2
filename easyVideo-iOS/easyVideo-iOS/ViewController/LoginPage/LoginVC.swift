@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginVC: BaseViewController {
+class LoginVC: BaseViewController{
 
     @IBOutlet weak var companyImg: UIImageView!
     @IBOutlet weak var cloudImg: UIImageView!
@@ -16,7 +16,7 @@ class LoginVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
         initContent()
     }
     
@@ -24,5 +24,7 @@ class LoginVC: BaseViewController {
         super.viewWillAppear(animated)
         
         viewWillAppear()
+         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
+    
 }

@@ -28,7 +28,9 @@
 "set.enablehighframerate" = "Enable high frame rate video";
 "set.disableprompt" = "Disable prompt";
 "set.about.licenceAndServiceAgreement" = "Terms of Service";
+"set.about.PrivacyPolicy" = "Privacy policy";
 "set.about.checkversion" = "Check for Updates";
+"set.contact.placeholder" = "Fill in your mobile phone number or email address, so that we can contact you.";
 
 "conf.wechat.shared.meetingId" = "Meeting ID:";
 "conf.room.room" = "'s room";
@@ -145,6 +147,7 @@
 "title.parametersetting" = "Parameter setting";
 "title.about" = "About";
 "title.termsservice" = "Terms of Service";
+"title.Privacy" = "Privacy Policy";
 "title.joinmeeting" = "Join a Meeting";
 
 "chat.textview.placeholder" = "Say something...";

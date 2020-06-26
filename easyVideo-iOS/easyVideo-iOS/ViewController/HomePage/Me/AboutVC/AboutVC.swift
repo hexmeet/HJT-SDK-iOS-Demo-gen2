@@ -23,7 +23,7 @@ class AboutVC: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -35,6 +35,8 @@ class AboutVC: BaseViewController, UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             pushTermsServiceVC(animated: true)
         }else if indexPath.row == 1 {
+            pushPrivacyPolicyVC(animated: true)
+        }else if indexPath.row == 2 {
             checkVersion()
         }
     }
