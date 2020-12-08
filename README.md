@@ -1,6 +1,7 @@
 # 会捷通客户端 SDK (iOS 版) Demo
 
 
+** 本项目已转移至 https://hexmeet.coding.net/public/evsdk-svc-ios-demo/EVSDK-SVC-iOS-Demo/git/files ** 
 
 ![ios-sdk](./gallery-view.png)
 
